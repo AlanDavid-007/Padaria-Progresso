@@ -1,4 +1,4 @@
-CREATE DATABASE 'padaria';
+CREATE DATABASE `padaria`;
 
 CREATE TABLE `produtos` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -37,7 +37,8 @@ CREATE TABLE `usuario`(
 CREATE TABLE `categorias`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `nome` varchar(45) DEFAULT NULL,
-    PRIMARY KEY (`id`) `produtos_id` INT DEFAULT NULL,
+     `produtos_id` INT DEFAULT NULL,
+    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `pedido`(
