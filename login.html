@@ -4,60 +4,302 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com/%22%3E"></script>
-    
-    <title>login</title>
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://use.fontawesome.com/ea21c98100.js"></script>
+    <script src="https://kit.fontawesome.com/c1e1266368.js" crossorigin="anonymous"></script>
 </head>
 <body>
+     <!-- navbar -->
+     <div class="dark:bg-gray-900">
+        <div>
+            <div class="relative">
+                <!-- For md screen size -->
+                <div id="md-searchbar"
+                    class="bg-white dark:bg-gray-900 hidden lg:hidden py-5 px-6 items-center justify-between">
+                    <div class="flex items-center space-x-3 text-gray-800 dark:text-white">
+                        <div>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
+                            <img class="dark:block hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2dark.svg"
+                                alt="search">
+                        </div>
+                        <input type="text" placeholder="Search for products"
+                            class="text-sm leading-none dark:text-gray-300 dark:bg-gray-900 text-gray-600 focus:outline-none" />
+                    </div>
+                    <div class="space-x-6">
+                        <button aria-label="go to cart"
+                            class="text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
+                            <img class="w-5 dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg" alt="bag">
+                            <img class="w-5 dark:block hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
+                        </button>
+                    </div>
+                </div>
+                <!-- For md screen size -->
 
-            <div class="h-full bg-gradient-to-tl from-green-400 to-indigo-900 w-full py-16 px-4">
-                <div class="flex flex-col items-center justify-center dark:bg-gray-900">
-                   <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg1.svg" alt="logo">
-    
-                    <div class="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
-                        <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Login to your account</p>
-                        <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Dont have account? <a href="javascript:void(0)"   class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Sign up here</a></p>
-                        <button aria-label="Continue with google" role="button" class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">
-                           <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg2.svg" alt="google">
-                            <p class="text-base font-medium ml-4 text-gray-700">Continue with Google</p>
-                        </button>
-                        <button aria-label="Continue with github" role="button" class="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4">
-                           <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg3.svg" alt="github">                            
-                            <p class="text-base font-medium ml-4 text-gray-700">Continue with Github</p>
-                        </button>
-                        <button aria-label="Continue with twitter" role="button" class="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4">
-                           <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg4.svg" alt="twitter">                            
-                            <p class="text-base font-medium ml-4 text-gray-700">Continue with Twitter</p>
-                        </button>
-                        <div class="w-full flex items-center justify-between py-5">
-                             <hr class="w-full bg-gray-400">
-                             <p class="text-base font-medium leading-4 px-2.5 text-gray-400">OR</p>
-                             <hr class="w-full bg-gray-400  ">
+                <!-- For large screens -->
+                <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
+                    <div class="container mx-auto flex items-center justify-between">
+                        <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white" aria-label="the Crib.">
+                            <img class="dark:hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo">
+                            <img class="dark:block hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo">
+                        </h1>
+                        <ul class="hidden w-8/12 md:flex items-center justify-center space-x-8">
+                            <li>
+                                <a href="javascript:void(0)"
+                                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
+                                    style="text-decoration: none;">Início</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"
+                                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
+                                    style="text-decoration: none;">Carrinho</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"
+                                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
+                                    style="text-decoration: none;">Sobre Nós</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"
+                                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
+                                    style="text-decoration: none;">Cadastrar-se</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"
+                                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
+                                    style="text-decoration: none;">Entrar</a>
+                            </li>
+                        </ul>
+
+                        <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
+                            <div class="hidden lg:flex items-center">
+                                <button onclick="toggleSearch()" aria-label="search items"
+                                    class="w-5 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                    <img class="transform rotate-90 dark:hidden"
+                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg"
+                                        alt="search">
+                                    <img class="transform rotate-90 dark:block hidden"
+                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2dark.svg"
+                                        alt="search">
+                                </button>
+                                <input id="searchInput" type="text" placeholder="search"
+                                    class="hidden text-sm dark:bg-gray-900 dark:placeholder-gray-300 text-gray-600 rounded ml-1 border border-transparent focus:outline-none focus:border-gray-400 px-1" />
                             </div>
+                            <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+                                <button aria-label="go to cart"
+                                    class="w-6 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                    <img class=" dark:hidden"
+                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg"
+                                        alt="bag">
+                                    <img class=" dark:block hidden"
+                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg"
+                                        alt="bag">
+                                </button>
+                            </div>
+
+                            <div class="flex lg:hidden">
+                                <button aria-label="show options" onclick="mdOptionsToggle()"
+                                    class="text-black dark:text-white dark:hover:text-gray-300 hidden md:flex focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
+                                    <img class=" dark:hidden"
+                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5.svg"
+                                        alt="toggler">
+                                    <img class=" dark:block hidden"
+                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5dark.svg"
+                                        alt="toggler">
+                                </button>
+
+                                <button aria-label="open menu" onclick="openMenu()"
+                                    class="text-black dark:text-white dark:hover:text-gray-300 md:hidden focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
+                                    <img class=" dark:hidden"
+                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5.svg"
+                                        alt="toggler">
+                                    <img class=" dark:block hidden"
+                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5dark.svg"
+                                        alt="toggler">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- For small screen -->
+                <div id="mobile-menu"
+                    class="hidden absolute dark:bg-gray-900 z-10 inset-0 md:hidden bg-white flex flex-col h-screen w-full">
+                    <div
+                        class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 p-4">
+                        <div class="flex items-center space-x-3">
                             <div>
-                                <label id="email" class="text-sm font-medium leading-none text-gray-800">
-                                    Email
-                                </label>
-                                <input aria-labelledby="email" type="email" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"/>
+                                <img class="dark:hidden"
+                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg"
+                                    alt="search">
+                                <img class="dark:block hidden"
+                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2dark.svg"
+                                    alt="search">
                             </div>
-                            <div class="mt-6  w-full">
-                                <label for="pass" class="text-sm font-medium leading-none text-gray-800">
-                                    Password
-                                </label>
-                               <div class="relative flex items-center justify-center">
-                                <input id="pass" type="password" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"/>
-                                <div class="absolute right-0 mt-2 mr-3 cursor-pointer">
-                                  <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg5.svg" alt="viewport">                                    
-                                </div>
-                               </div>
-                            </div>
-                            <div class="mt-8">
-                                <button role="button" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">Create my account</button>
-                            </div>
+                            <input type="text" placeholder="Search for products"
+                                class="text-sm dark:bg-gray-900 text-gray-600 placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none" />
+                        </div>
+
+                        <button onclick="closeMenu()" aria-label="close menu"
+                            class="focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg6.svg" alt="cross">
+                            <img class="dark:block hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg6dark.svg"
+                                alt="cross">
+                        </button>
+                    </div>
+                    <div class="mt-6 p-4">
+                        <ul class="flex flex-col space-y-6">
+                            <li>
+                                <a href="javascript:void(0)"
+                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                    Início
+                                    <div>
+                                        <img class="dark:hidden"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg"
+                                            alt="arrow">
+                                        <img class="dark:block hidden"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg"
+                                            alt="arrow">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"
+                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                    Carrinho
+                                    <div>
+                                        <img class="dark:hidden"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg"
+                                            alt="arrow">
+                                        <img class="dark:block hidden"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg"
+                                            alt="arrow">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"
+                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                    Sobre Nós
+                                    <div>
+                                        <img class="dark:hidden"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg"
+                                            alt="arrow">
+                                        <img class="dark:block hidden"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg"
+                                            alt="arrow">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"
+                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                    Cadastrar-se
+                                    <div>
+                                        <img class="dark:hidden"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg"
+                                            alt="arrow">
+                                        <img class="dark:block hidden"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg"
+                                            alt="arrow">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"
+                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                    Entrar
+                                    <div>
+                                        <img class="dark:hidden"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg"
+                                            alt="arrow">
+                                        <img class="dark:block hidden"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg"
+                                            alt="arrow">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="h-full flex items-end">
+                        <ul class="flex flex-col space-y-8 bg-gray-50 w-full py-10 p-4 dark:bg-gray-800">
+                            <li>
+                                <a href="javascript:void(0)"
+                                    class="dark:text-white text-gray-800 flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
+                                    <div>
+                                        <img class="w-5 dark:hidden"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg"
+                                            alt="bag">
+                                        <img class="w-5 dark:block hidden"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg"
+                                            alt="bag">
+                                    </div>
+                                    <p class="text-base"></p>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <!-- footer -->
+        </div>
+    </div>
+
+    <!-- login -->
+        <div class="h-full bg-gradient-to-tl from-green-400 to-indigo-900 w-full py-16 px-4">
+            <div class="flex flex-col items-center justify-center">
+
+                <div class="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
+                    <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Entre naa sua conta</p>
+                    <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Você não tem uma conta? <a href="javascript:void(0)"   class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Clique aqui.</a></p>
+                    <button aria-label="Continue com google" role="button" class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">
+                       <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg2.svg" alt="google">
+                        <p class="text-base font-medium ml-4 text-gray-700">Continue com Google</p>
+                    </button>
+                    <button aria-label="Continue com github" role="button" class="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4">
+                       <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg3.svg" alt="github">                            
+                        <p class="text-base font-medium ml-4 text-gray-700">Continue com Github</p>
+                    </button>
+                    <button aria-label="Continue com twitter" role="button" class="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4">
+                       <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg4.svg" alt="twitter">                            
+                        <p class="text-base font-medium ml-4 text-gray-700">Continue com Twitter</p>
+                    </button>
+                    <div class="w-full flex items-center justify-between py-5">
+                         <hr class="w-full bg-gray-400">
+                         <p class="text-base font-medium leading-4 px-2.5 text-gray-400">OU</p>
+                         <hr class="w-full bg-gray-400  ">
+                        </div>
+                        <div>
+                            <label id="email" class="text-sm font-medium leading-none text-gray-800">
+                                Email
+                            </label>
+                            <input aria-labelledby="email" type="email" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"/>
+                        </div>
+                        <div class="mt-6  w-full">
+                            <label for="pass" class="text-sm font-medium leading-none text-gray-800">
+                                Senha
+                            </label>
+                           <div class="relative flex items-center justify-center">
+                            <input id="pass" type="password" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"/>
+                            <div class="absolute right-0 mt-2 mr-3 cursor-pointer">
+                              <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg5.svg" alt="viewport">                                    
+                            </div>
+                           </div>
+                        </div>
+                        <div class="mt-8">
+                            <a href="index.html"><button role="button" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">Crie sua conta</button></a>
+                        </div>
+                </div>
+            </div>
+        </div>
+          <!-- login -->
+        
+
+          <!-- footer -->
     <div class="dark:bg-gray-900">
         <div>
             <div class="relative">
@@ -301,7 +543,5 @@
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
                     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
                     crossorigin="anonymous"></script>
-        
-</body>
-
+</body>    
 </html>
