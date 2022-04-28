@@ -42,32 +42,27 @@
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
                     <div class="container mx-auto flex items-center justify-between">
                         <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white" aria-label="the Crib.">
-                            <img class="dark:hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo">
-                            <img class="dark:block hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo">
+                        <a href="index.php"><img class="dark:hidden" src="./Assets/logo.png"style="width: 150px;" alt="logo"></a>
+                           <a href="index.php"><img class="dark:block hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo"></a>
                         </h1>
-                        <ul class="hidden w-8/12 md:flex items-center justify-center space-x-8">
-                            <li>
-                                <a href="javascript:void(0)"
+                        <ul class="hidden w-8/12 md:flex items-center justify-center space-x-6">
+                        <li>
+                                <a href="index.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Início</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"
+                                <a href="carrinho.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Carrinho</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"
+                                <a href="sobre.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Sobre Nós</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"
-                                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
-                                    style="text-decoration: none;">Cadastrar-se</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"
+                                <a href="login.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Entrar</a>
                             </li>
@@ -252,7 +247,7 @@
             <div class="flex flex-col items-center justify-center">
 
                 <div class="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
-                    <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Entre naa sua conta</p>
+                    <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Entre na sua conta</p>
                     <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Você não tem uma conta? <a href="javascript:void(0)"   class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Clique aqui.</a></p>
                     <button aria-label="Continue com google" role="button" class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">
                        <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg2.svg" alt="google">
@@ -289,7 +284,7 @@
                            </div>
                         </div>
                         <div class="mt-8">
-                            <a href="index.html"><button role="button" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">Crie sua conta</button></a>
+                            <a href="configuracoes.php"><button role="button" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">Crie sua conta</button></a>
                         </div>
                 </div>
             </div>
@@ -331,8 +326,8 @@
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
                     <div class="container mx-auto flex items-center justify-between">
                         <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white " aria-label="the Crib.">
-                            <img class="dark:hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo">
-                            <img class="dark:block hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo">
+                        <a href="index.php"><img class="dark:hidden" src="./Assets/logo.png"style="width: 150px;" alt="logo"></a>
+                            <a href="index.php"><img class="dark:block hidden" src="./Assets/logo.png"style="width: 150px;" alt="logo"></a>
                         </h1>
                         <div class="flex flex-col">
                             <h2 class="text-base font-semibold leading-4 text-gray-800 dark:text-white">Contato</h2>

@@ -50,32 +50,27 @@
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
                     <div class="container mx-auto flex items-center justify-between">
                         <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white" aria-label="the Crib.">
-                            <img class="dark:hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo">
-                            <img class="dark:block hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo">
-                        </h1>
-                        <ul class="hidden w-8/12 md:flex items-center justify-center space-x-8">
+                           <a href="../index.php"><img class="dark:hidden" src="../Assets/logo.png" style="width: 150px;" alt="logo"></a>
+                           <a href="../index.php"><img class="dark:block hidden" src="../Assets/logo.png"style="width: 150px;" alt="logo"></a>
+                       </h1>
+                     <ul class="hidden w-8/12 md:flex items-center justify-center space-x-6">
                             <li>
-                                <a href="javascript:void(0)"
+                                <a href="../index.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Início</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"
+                                <a href="../carrinho.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Carrinho</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"
+                                <a href="../sobre.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Sobre Nós</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"
-                                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
-                                    style="text-decoration: none;">Cadastrar-se</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"
+                                <a href="../login.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Entrar</a>
                             </li>
@@ -254,32 +249,22 @@
             </div>
         </div>
     </div>
-    <!-- bg hero -->
-    <div class="dark:bg-gray-900">
-        <div class="container mx-auto py-9 md:py-12 lg:py-24">
-            <div class="relative mx-40">
-                <img src="./Assets/hero.png" alt="header" role="img" />
-                <div class="absolute z-10 top-0 left-0 mx-40 pl-5  flex flex-col sm:justify-start items-start">
-                    <img src="./Assets/logo.png" alt="logo" role="img" />
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- products grid -->
+        <!-- products grid -->
 
 <!-- Implementar clicks em imagens para paginas com escolha de tais produtos -->
 
 
-    <div class="mx-auto container px-6 xl:px-0 py-12 ">
-        <p class="uppercase text-center font-serif text-lg">Confira os nossos produtos!</p>
+<div class="mx-auto container px-6 xl:px-0 py-12 ">
+        <p class="uppercase text-center font-serif text-lg">Confira os nossos salgados!</p>
     </div>
     <hr>
     <div class="mx-auto container px-6 xl:px-0 py-12">
         <div class="flex flex-col">
             <div class="mt-10 grid lg:grid-cols-2 gap-x-8 gap-y-8 items-center">
-                <div
+<a href="../produtos_detalhes/risoles_detalhe.php"><div
                     class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
-                    <img class="group-hover:opacity-60 transition duration-500" src="./Assets/risoles.png"
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/risoles.png"
                         alt="risoles" />
                     <div
                         class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
@@ -323,16 +308,17 @@
                         </button>
                     </div>
                 </div>
-
-                <div
+    </a>
+                <a href="../produtos_detalhes/risoles_detalhe.php"><div
                     class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
-                    <img class="group-hover:opacity-60 transition duration-500" src="./Assets/doces.png" alt="doces" />
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/risoles.png"
+                        alt="risoles" />
                     <div
                         class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
                         <div>
                             <p
                                 class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
-                                Doces</p>
+                                Risóles</p>
                         </div>
                         <div>
                             <p
@@ -369,16 +355,16 @@
                         </button>
                     </div>
                 </div>
-
-                <div
+                <a href="../produtos_detalhes/risoles</a>_detalhe.php"><div
                     class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
-                    <img class="group-hover:opacity-60 transition duration-500" src="./Assets/cucas.png" alt="cucas" />
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/risoles.png"
+                        alt="risoles" />
                     <div
                         class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
                         <div>
                             <p
                                 class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
-                                Cucas</p>
+                                Risóles</p>
                         </div>
                         <div>
                             <p
@@ -415,66 +401,16 @@
                         </button>
                     </div>
                 </div>
-
-                <div
+                <a href="../produtos_detalhes/risoles</a>_detalhe.php"><div
                     class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
-                    <img class="group-hover:opacity-60 transition duration-500" src="./Assets/bolos.png" alt="bolos" />
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/risoles.png"
+                        alt="risoles" />
                     <div
                         class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
                         <div>
                             <p
                                 class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
-                                Bolos</p>
-                        </div>
-                        <div>
-                            <p
-                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
-                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
-                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
-                    </div>
-                    <div
-                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
-                        <button>
-                            <img class="dark:hidden"
-                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
-                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
-                
-                " alt="add">
-                        </button>
-                        <button>
-                            <img class="dark:hidden"
-                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
-                            <img class="hidden dark:block"
-                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
-                                alt="view">
-                        </button>
-                        <button>
-                            <img class="dark:hidden"
-                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
-                            <img class="hidden dark:block" src="
-                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
-                        </button>
-                    </div>
-                    <div class="absolute top-4 right-6">
-                        <p class="text-base leading-4 pb-0.5 text-gray-600 dark:text-white border-b-2 border-gray-600">
-                            New</p>
-                    </div>
-                </div>
-
-                <div
-                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
-                    <img class="group-hover:opacity-60 transition duration-500" src="./Assets/paes.png" alt="paes" />
-                    <div
-                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
-                        <div>
-                            <p
-                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
-                                Pães</p>
+                                Risóles</p>
                         </div>
                         <div>
                             <p
@@ -511,17 +447,16 @@
                         </button>
                     </div>
                 </div>
-
-                <div
+                <a href="../produtos_detalhes/risoles</a>_detalhe.php"><div
                     class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
-                    <img class="group-hover:opacity-60 transition duration-500" src="./Assets/kit_festa.png"
-                        alt="kit_festa" />
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/risoles.png"
+                        alt="risoles" />
                     <div
                         class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
                         <div>
                             <p
                                 class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
-                                Kit Festa</p>
+                                Risóles</p>
                         </div>
                         <div>
                             <p
@@ -558,8 +493,239 @@
                         </button>
                     </div>
                 </div>
-            </div>
-            <div class="flex justify-end items-end mt-12">
+                <a href="../produtos_detalhes/risoles</a>_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/risoles.png"
+                        alt="risoles" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Risóles</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div>
+                <a href="../produtos_detalhes/risoles</a>_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/risoles.png"
+                        alt="risoles" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Risóles</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div>
+                <a href="../produtos_detalhes/risoles</a>_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/risoles.png"
+                        alt="risoles" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Risóles</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div>
+                <a href="../produtos_detalhes/risoles</a>_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/risoles.png"
+                        alt="risoles" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Risóles</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div>
+                <a href="../produtos_detalhes/risoles</a>_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/risoles.png"
+                        alt="risoles" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Risóles</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div>
+</div></a>
+    
+                <div class="flex justify-end items-end mt-12">
                 <div class="flex flex-row items-center justify-center space-x-8">
                     <button
                         class="text-base leading-none text-gray-800 dark:text-white border-b-2 border-transparent focus:outline-none focus:border-gray-800">
@@ -583,9 +749,8 @@
             </div>
         </div>
     </div>
-
-    <!-- footer -->
-    <div class="dark:bg-gray-900">
+        <!-- footer -->
+        <div class="dark:bg-gray-900">
         <div>
             <div class="relative">
                 <!-- For md screen size -->
@@ -618,8 +783,8 @@
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
                     <div class="container mx-auto flex items-center justify-between">
                         <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white " aria-label="the Crib.">
-                            <img class="dark:hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo">
-                            <img class="dark:block hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo">
+                        <a href="../index.php"><img class="dark:hidden" src="../Assets/logo.png"style="width: 150px;" alt="logo"></a>
+                            <a href="../index.php"><img class="dark:block hidden" src="../Assets/logo.png"style="width: 150px;" alt="logo"></a>
                         </h1>
                         <div class="flex flex-col">
                             <h2 class="text-base font-semibold leading-4 text-gray-800 dark:text-white">Contato</h2>

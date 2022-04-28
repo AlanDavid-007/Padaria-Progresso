@@ -1,23 +1,15 @@
-<!doctype html>
-<html lang="pt-br">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://use.fontawesome.com/ea21c98100.js"></script>
-    <script src="https://kit.fontawesome.com/c1e1266368.js" crossorigin="anonymous"></script>
-    <title>Padaria Progresso</title>
 </head>
-
 <body class="dark:bg-gray-400">
-    <!-- navbar -->
-    <div class="dark:bg-gray-900">
+     <!-- navbar -->
+     <div class="dark:bg-gray-900">
         <div>
             <div class="relative">
                 <!-- For md screen size -->
@@ -50,11 +42,11 @@
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
                     <div class="container mx-auto flex items-center justify-between">
                         <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white" aria-label="the Crib.">
-                           <a href="index.php"><img class="dark:hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo"></a>
-                           <a href="index.php"><img class="dark:block hidden" src="./Assets/logo.png"style="width: 150px;" alt="logo"></a>
-                       </h1>
-                     <ul class="hidden w-8/12 md:flex items-center justify-center space-x-6">
-                            <li>
+                        <a href="index.php"><img class="dark:hidden" src="./Assets/logo.png"style="width: 150px;" alt="logo"></a>
+                           <a href="index.php"><img class="dark:block hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo"></a>
+                        </h1>
+                        <ul class="hidden w-8/12 md:flex items-center justify-center space-x-6">
+                        <li>
                                 <a href="index.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Início</a>
@@ -240,7 +232,7 @@
                                             src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg"
                                             alt="bag">
                                     </div>
-                                    <p class="text-base">Cart</p>
+                                    <p class="text-base"></p>
                                 </a>
                             </li>
                         </ul>
@@ -249,30 +241,66 @@
             </div>
         </div>
     </div>
-    <!-- sobre nós -->
-                                   
+          <!-- component -->
+        <div class="container mx-auto">
+            <div class="inputs w-full max-w-2xl p-6 mx-auto">
+                <h2 class="text-2xl text-gray-900">Configurações de Conta</h2>
+                <form class="mt-6 border-t border-gray-400 pt-4">
+                    <div class='flex flex-wrap -mx-3 mb-6'>
+                        <div class='w-full md:w-full px-3 mb-6'>
+                            <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>E-mail</label>
+                            <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Enter email'  required>
+                        </div>
+                        <div class='w-full md:w-full px-3 mb-6 '>
+                            <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Senha</label>
+                            <button class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md ">Troque sua senha</button>
+                        </div>
+                        <div class='w-full md:w-full px-3 mb-6'>
+                            <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Coloque seu país</label>
+                            <div class="flex-shrink w-full inline-block relative">
+                                <select class="block appearance-none text-gray-600 w-full bg-white border border-gray-400 shadow-inner px-4 py-2 pr-8 rounded">
+                                    <option>Escolha</option>
+                                    <option>USA</option>
+                                    <option>França</option>
+                                    <option>Brasil</option>
+                                    <option>UK</option>
+                                </select>
+                                <div class="pointer-events-none absolute top-0 mt-3  right-0 flex items-center px-2 text-gray-600">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="personal w-full border-t border-gray-400 pt-4">
+                            <h2 class="text-2xl text-gray-900">Personal info:</h2>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class='w-full md:w-1/2 px-3 mb-6'>
+                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' >Primeiro nome</label>
+                                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'  required>
+                                </div>
+                                <div class='w-full md:w-1/2 px-3 mb-6'>
+                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' >Último nome</label>
+                                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'  required>
+                                </div>
+                            </div>
+                            <div class='w-full md:w-full px-3 mb-6'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Nome de usuário</label>
+                                <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'  required>
+                            </div>
+                            <div class='w-full md:w-full px-3 mb-6'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' >Bio</label>
+                                <textarea class='bg-gray-100 rounded-md border leading-normal resize-none w-full h-20 py-2 px-3 shadow-inner border border-gray-400 font-medium placeholder-gray-700 focus:outline-none focus:bg-white'  required></textarea>
+                            </div>
+                            <div class="flex justify-end">
+                                <button class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md mr-3" type="submit">Salvar mudanças</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
-<div class="py-16 bg-gradient-to-br from-blue-50 to-blue-100">  
-  <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-      <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-        <div class="space-y-6 md:7/12 lg:w-6/12">
-          <h2 class="text-2xl text-blue-900 font-bold md:text-5xl">Uma breve descrição sobre nossa história e nossa maravilhosa Equipe!</h2>
-          <div class="space-y-4">
-            <p class="text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis voluptatem accusantium nemo perspiciatis delectus atque autem! Voluptatum tenetur beatae unde aperiam, repellat expedita consequatur! Officiis id consequatur atque doloremque!</p>
-            <p class="mt-4 text-gray-600"> Nobis minus voluptatibus pariatur dignissimos libero quaerat iure expedita at? Asperiores nemo possimus nesciunt dicta veniam aspernatur quam mollitia.</p>
-          </div>
-        </div>
-        <div class="md:5/12 lg:w-6/12">
-          <img src="https://tailus.io/images/icons/responsive.png" alt="image" loading="lazy" width="" height="" class="px-60">
-        </div>
-      </div>
-  </div>
-</div>
-                                
- 
-                            
-     <!-- footer -->
-     <div class="dark:bg-gray-900">
+          <!-- footer -->
+    <div class="dark:bg-gray-900">
         <div>
             <div class="relative">
                 <!-- For md screen size -->
@@ -515,6 +543,5 @@
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
                     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
                     crossorigin="anonymous"></script>
-</body>
-
+</body>    
 </html>

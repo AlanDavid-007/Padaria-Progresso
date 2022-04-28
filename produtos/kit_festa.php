@@ -50,27 +50,27 @@
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
                     <div class="container mx-auto flex items-center justify-between">
                         <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white" aria-label="the Crib.">
-                           <a href="index.php"><img class="dark:hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo"></a>
-                           <a href="index.php"><img class="dark:block hidden" src="./Assets/logo.png"style="width: 150px;" alt="logo"></a>
+                           <a href="../index.php"><img class="dark:hidden" src="../Assets/logo.png" style="width: 150px;" alt="logo"></a>
+                           <a href="../index.php"><img class="dark:block hidden" src="../Assets/logo.png"style="width: 150px;" alt="logo"></a>
                        </h1>
                      <ul class="hidden w-8/12 md:flex items-center justify-center space-x-6">
                             <li>
-                                <a href="index.php"
+                                <a href="../index.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Início</a>
                             </li>
                             <li>
-                                <a href="carrinho.php"
+                                <a href="../carrinho.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Carrinho</a>
                             </li>
                             <li>
-                                <a href="sobre.php"
+                                <a href="../sobre.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Sobre Nós</a>
                             </li>
                             <li>
-                                <a href="login.php"
+                                <a href="../login.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none;">Entrar</a>
                             </li>
@@ -249,30 +249,508 @@
             </div>
         </div>
     </div>
-    <!-- sobre nós -->
-                                   
+    <!-- products grid -->
+        <!-- products grid -->
 
-<div class="py-16 bg-gradient-to-br from-blue-50 to-blue-100">  
-  <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-      <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-        <div class="space-y-6 md:7/12 lg:w-6/12">
-          <h2 class="text-2xl text-blue-900 font-bold md:text-5xl">Uma breve descrição sobre nossa história e nossa maravilhosa Equipe!</h2>
-          <div class="space-y-4">
-            <p class="text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis voluptatem accusantium nemo perspiciatis delectus atque autem! Voluptatum tenetur beatae unde aperiam, repellat expedita consequatur! Officiis id consequatur atque doloremque!</p>
-            <p class="mt-4 text-gray-600"> Nobis minus voluptatibus pariatur dignissimos libero quaerat iure expedita at? Asperiores nemo possimus nesciunt dicta veniam aspernatur quam mollitia.</p>
-          </div>
-        </div>
-        <div class="md:5/12 lg:w-6/12">
-          <img src="https://tailus.io/images/icons/responsive.png" alt="image" loading="lazy" width="" height="" class="px-60">
-        </div>
-      </div>
-  </div>
+<!-- Implementar clicks em imagens para paginas com escolha de tais produtos -->
+
+
+<div class="mx-auto container px-6 xl:px-0 py-12 ">
+        <p class="uppercase text-center font-serif text-lg">Confira os nossos kits-festa!</p>
+    </div>
+    <hr>
+    <div class="mx-auto container px-6 xl:px-0 py-12">
+        <div class="flex flex-col">
+            <div class="mt-10 grid lg:g</a>rid-cols-2 gap-x-8 gap-y-8 items-center">
+<a href="../produtos_detalhes/kit_festa_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/kit_festa.png"
+                        alt="kit_festa" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Kit-festa</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div>
+    </a>
+                <a href="../produtos_detalhes/kit_festa_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/kit_festa.png"
+                        alt="kit_festa" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Kit-festa</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div></a>
+                <a href="../produtos_detalhes/kit_festa_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/kit_festa.png"
+                        alt="kit_festa" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Kit-festa</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div></a>
+                <a href="../produtos_detalhes/kit_festa_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/kit_festa.png"
+                        alt="kit_festa" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Kit-festa</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div></a>
+                <a href="../produtos_detalhes/kit_festa_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/kit_festa.png"
+                        alt="kit_festa" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Kit-festa</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div></a>
+                <a href="../produtos_detalhes/kit_festa_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/kit_festa.png"
+                        alt="kit_festa" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Kit-festa</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div></a>
+                <a href="../produtos_detalhes/kit_festa_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/kit_festa.png"
+                        alt="kit_festa" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Kit-festa</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div></a>
+                <a href="../produtos_detalhes/kit_festa_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/kit_festa.png"
+                        alt="kit_festa" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Kit-festa</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div></a>
+                <a href="../produtos_detalhes/kit_festa_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/kit_festa.png"
+                        alt="kit_festa" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Kit-festa</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div></a>
+                <a href="../produtos_detalhes/kit_festa_detalhe.php"><div
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    <img class="group-hover:opacity-60 transition duration-500" src="../Assets/kit_festa.png"
+                        alt="kit_festa" />
+                    <div
+                        class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl leading-5 text-gray-600 dark:text-white">
+                                Kit-festa</p>
+                        </div>
+                        <div>
+                            <p
+                                class="group-hover:opacity-60 transition duration-500 text-xl font-semibold leading-5 text-gray-800 dark:text-white">
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
+                    </div>
+                    <div
+                        class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
+                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
+                
+                " alt="add">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
+                            <img class="hidden dark:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg"
+                                alt="view">
+                        </button>
+                        <button>
+                            <img class="dark:hidden"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
+                            <img class="hidden dark:block" src="
+                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
+                        </button>
+                    </div>
+                </div>
 </div>
-                                
- 
-                            
-     <!-- footer -->
-     <div class="dark:bg-gray-900">
+    
+                <div class="flex justify-end items-end mt-12">
+                <div class="flex flex-row items-center justify-center space-x-8">
+                    <button
+                        class="text-base leading-none text-gray-800 dark:text-white border-b-2 border-transparent focus:outline-none focus:border-gray-800">
+                        <p>1</p>
+                    </button>
+                    <button
+                        class="text-base leading-none text-gray-800 dark:text-white border-b-2 border-transparent focus:outline-none focus:border-gray-800">
+                        <p>2</p>
+                    </button>
+                    <button
+                        class="text-base leading-none text-gray-800 dark:text-white border-b-2 border-transparent focus:outline-none focus:border-gray-800">
+                        <p>3</p>
+                    </button>
+                    <button class="flex justify-center items-center">
+                        <img class="dark:hidden"
+                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg4.svg" alt="next">
+                        <img class="hidden dark:block"
+                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg4dark.svg" alt="next">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- footer -->
+        <div class="dark:bg-gray-900">
         <div>
             <div class="relative">
                 <!-- For md screen size -->
@@ -305,8 +783,8 @@
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
                     <div class="container mx-auto flex items-center justify-between">
                         <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white " aria-label="the Crib.">
-                        <a href="index.php"><img class="dark:hidden" src="./Assets/logo.png"style="width: 150px;" alt="logo"></a>
-                            <a href="index.php"><img class="dark:block hidden" src="./Assets/logo.png"style="width: 150px;" alt="logo"></a>
+                        <a href="../index.php"><img class="dark:hidden" src="../Assets/logo.png"style="width: 150px;" alt="logo"></a>
+                            <a href="../index.php"><img class="dark:block hidden" src="../Assets/logo.png"style="width: 150px;" alt="logo"></a>
                         </h1>
                         <div class="flex flex-col">
                             <h2 class="text-base font-semibold leading-4 text-gray-800 dark:text-white">Contato</h2>
