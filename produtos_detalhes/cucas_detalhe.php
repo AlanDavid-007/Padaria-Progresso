@@ -55,22 +55,22 @@
                        </h1>
                      <ul class="hidden w-8/12 md:flex items-center justify-center space-x-6 font-serif">
                             <li>
-                                <a href="index.php"
+                                <a href="../index.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none; font-size: 20px;">Início</a>
                             </li>
                             <li>
-                                <a href="carrinho.php"
+                                <a href="../carrinho.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none; font-size: 20px;">Carrinho</a>
                             </li>
                             <li>
-                                <a href="sobre.php"
+                                <a href="../sobre.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none; font-size: 20px;">Sobre Nós</a>
                             </li>
                             <li>
-                                <a href="login.php"
+                                <a href="../login.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none; font-size: 20px;">Entrar</a>
                             </li>
