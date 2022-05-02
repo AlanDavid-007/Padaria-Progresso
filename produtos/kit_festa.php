@@ -15,7 +15,7 @@
     <title>Padaria Progresso</title>
 </head>
 
-<body class="dark:bg-gray-400">
+<body class="bg-black">
     <!-- navbar -->
     <div class="dark:bg-gray-900">
         <div>
@@ -53,26 +53,26 @@
                            <a href="../index.php"><img class="dark:hidden" src="../Assets/logo.png" style="width: 150px;" alt="logo"></a>
                            <a href="../index.php"><img class="dark:block hidden" src="../Assets/logo.png"style="width: 150px;" alt="logo"></a>
                        </h1>
-                     <ul class="hidden w-8/12 md:flex items-center justify-center space-x-6">
+                     <ul class="hidden w-8/12 md:flex items-center justify-center space-x-6 font-serif">
                             <li>
-                                <a href="../index.php"
+                                <a href="index.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
-                                    style="text-decoration: none;">Início</a>
+                                    style="text-decoration: none; font-size: 20px;">Início</a>
                             </li>
                             <li>
-                                <a href="../carrinho.php"
+                                <a href="carrinho.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
-                                    style="text-decoration: none;">Carrinho</a>
+                                    style="text-decoration: none; font-size: 20px;">Carrinho</a>
                             </li>
                             <li>
-                                <a href="../sobre.php"
+                                <a href="sobre.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
-                                    style="text-decoration: none;">Sobre Nós</a>
+                                    style="text-decoration: none; font-size: 20px;">Sobre Nós</a>
                             </li>
                             <li>
-                                <a href="../login.php"
+                                <a href="login.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
-                                    style="text-decoration: none;">Entrar</a>
+                                    style="text-decoration: none; font-size: 20px;">Entrar</a>
                             </li>
                         </ul>
 
@@ -128,7 +128,7 @@
                 </div>
                 <!-- For small screen -->
                 <div id="mobile-menu"
-                    class="hidden absolute dark:bg-gray-900 z-10 inset-0 md:hidden bg-white flex flex-col h-screen w-full">
+                    class="hidden absolute dark:bg-gray-900 z-10 inset-0 md:hidden flex flex-col h-screen w-full">
                     <div
                         class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 p-4">
                         <div class="flex items-center space-x-3">
@@ -153,11 +153,11 @@
                                 alt="cross">
                         </button>
                     </div>
-                    <div class="mt-6 p-4">
+                    <div class="mt-6 p-4 ">
                         <ul class="flex flex-col space-y-6">
                             <li>
-                                <a href="javascript:void(0)"
-                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                <a href="../index.php"
+                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
                                     Início
                                     <div>
                                         <img class="dark:hidden"
@@ -170,8 +170,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"
-                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                <a href="../carrinho.php"
+                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
                                     Carrinho
                                     <div>
                                         <img class="dark:hidden"
@@ -184,8 +184,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"
-                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                <a href="../sobre.php"
+                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
                                     Sobre Nós
                                     <div>
                                         <img class="dark:hidden"
@@ -198,22 +198,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"
-                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
-                                    Cadastrar-se
-                                    <div>
-                                        <img class="dark:hidden"
-                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg"
-                                            alt="arrow">
-                                        <img class="dark:block hidden"
-                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg"
-                                            alt="arrow">
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"
-                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                <a href="../login.php"
+                                    class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
                                     Entrar
                                     <div>
                                         <img class="dark:hidden"
@@ -256,7 +242,7 @@
 
 
 <div class="mx-auto container px-6 xl:px-0 py-12 ">
-        <p class="uppercase text-center font-serif text-lg">Confira os nossos kits-festa!</p>
+        <p class="uppercase text-center font-serif text-xl text-light">Confira os nossos kits-festa!</p>
     </div>
     <hr>
     <div class="mx-auto container px-6 xl:px-0 py-12">
