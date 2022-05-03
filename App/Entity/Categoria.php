@@ -20,25 +20,10 @@ class Categoria
     public $nome;
 
     /** 
-     * Descrição da Categoria (pode conter html)
-     * @var string
-     */
-    public $descricao;
-
-    /** 
-     * Autor da Categoria
+     * Id da categoria
      * @var int
      */
-    public $ordem;
-
-    
-    /** 
-     * Define se a Categoria está ativa (s or n)
-     * @var string
-     */
-    public $status;
-
-    
+    public $pedidos_id;
 
     /** 
      * Função para cadastrar a Categoria no banco
@@ -53,9 +38,7 @@ class Categoria
         $objDatabase = new Database('categorias');
         $this->id = $objDatabase->insert([
             'nome' => $this->nome,
-            'descricao' => $this->descricao,
-            'ordem'=> $this->ordem,
-            'status' => $this->status,
+            'produtos' => $this->produtos_id,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 

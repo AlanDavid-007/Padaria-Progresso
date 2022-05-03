@@ -4,8 +4,6 @@ namespace App\Entity;
 
 use \App\Db\Database;
 use \PDO;
-use \App\Entity\Professor;
-use \App\Entity\Categoria;
 
 
 
@@ -14,20 +12,8 @@ use \App\Entity\Categoria;
 
 // mudar dados
 
-class Curso
+class Cliente
 {
-    /** 
-     * Objeto de professor
-     * @var object
-     */
-    public $obProfessores;
-
-    /** 
-     * Objeto de professor
-     * @var object
-     */
-    public $obCategorias;
-
     /** 
      * Identificador único da Curso
      * @var integer
@@ -35,40 +21,40 @@ class Curso
     public $id;
 
     /** 
-     * Título da Curso
+     * nome do cliente
      * @var string
      */
     public $nome;
 
     /** 
-     * Data da publicação da Curso
-     * @var timestamp
-     */
-    public $data;
-
-    /** 
-     * palavra_chave da Curso
-     * @var int
-     */
-    public $palavra_chave;
-
-     /** 
-     * define o valor do curso
-     * @var float
-     */
-    public $valor;
-
-     /** 
-     * Define a ordem do curso
-     * @var int
-     */
-    public $ordem;
-    
-    /** 
-     * Define se a Curso está ativa (s or n)
+     * senha do cliente
      * @var string
      */
-    public $status;
+    public $senha;
+
+    /** 
+     * cidade do cliente
+     * @var string
+     */
+    public $cidade;
+
+     /** 
+     * define o telefone
+     * @var bigint
+     */
+    public $telefone;
+
+     /** 
+     * Define o endereço
+     * @var string
+     */
+    public $endereco;
+    
+    /** 
+     * Define o email
+     * @var string
+     */
+    public $email;
 
     
 
@@ -81,16 +67,14 @@ class Curso
     {
         // echo "<pre>"; print_r($this); echo "</pre>"; exit;
         //Inserir a Curso no banco e retornar o ID
-        $objDatabase = new Database('cursos');
+        $objDatabase = new Database('cliente');
         $this->id = $objDatabase->insert([
             'nome' => $this->nome,
-            'palavra_chave' => $this->palavra_chave,
-            'valor'=> $this->valor,
-            'ordem'=> $this->ordem,
-            'professor'=> $this->professor,
-            'categoria'=> $this->categoria,
-            'data' => $this->data,
-            'status' => $this->status,
+            'senha' => $this->senha,
+            'cidade'=> $this->cidade,
+            'telefone'=> $this->telefone,
+            'endereco'=> $this->endereco,
+            'email'=> $this->email,
             
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
@@ -108,30 +92,13 @@ class Curso
      *@return array
      */
 
-    public static function getCursos($where = null, $order = null, $limit = null)
+    public static function getClientes($where = null, $order = null, $limit = null)
     {
 
-        $obProfessores = new Professor;
-        $obCategorias = new Categoria;
-        $objDatabase = new Database('cursos');
+        $objDatabase = new Database('cliente');
 
-        $return = ($objDatabase)->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
-        $result = array();
 
-        foreach ($return as $key => $value) {
-            $result[$key]['id'] = $value->id;
-            $result[$key]['nome'] = $value->nome;
-            $result[$key]['data'] = $value->data;
-            $result[$key]['palavra_chave'] = $value->palavra_chave;
-            $result[$key]['valor'] = $value->valor;
-            $result[$key]['ordem'] = $value->ordem;
-            $result[$key]['status'] = $value->status;
-            $result[$key]['professor'] = $obProfessores::getProfessor($value->professor);
-            $result[$key]['categoria'] = $obCategorias::getCategoria($value->categoria);
-        }
-
-        // echo "<pre>"; print_r($result); echo "</pre>"; exit;
-        return $result;
+        return ($objDatabase)->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
     }
 
     /**
@@ -141,10 +108,10 @@ class Curso
      *@return Curso
      */
 
-    public static function getCurso($id)
+    public static function getCliente($id)
     {
 
-        $objDatabase = new Database('cursos');
+        $objDatabase = new Database('cliente');
 
         return ($objDatabase)->select('id = ' . $id)->fetchObject(self::class);
     }
@@ -156,7 +123,7 @@ class Curso
 
     public function excluir()
     {
-        $objDatabase = new Database('cursos');
+        $objDatabase = new Database('cliente');
 
         return ($objDatabase)->delete('id =' . $this->id);
     }
@@ -171,17 +138,16 @@ class Curso
         //Definir a data
         $this->data = date('Y-m-d');
 
-        $objDatabase = new Database('cursos');
+        $objDatabase = new Database('cliente');
 
         return ($objDatabase)->update('id = ' . $this->id, [
             'nome' => $this->nome,
-            'palavra_chave' => $this->palavra_chave,
-            'valor'=> $this->valor,
-            'ordem'=> $this->ordem,
-            'professor'=> $this->professor,
-            'categoria'=> $this->categoria,
-            'data' => $this->data,
-            'status' => $this->status,
+            'senha' => $this->senha,
+            'cidade'=> $this->cidade,
+            'telefone'=> $this->telefone,
+            'endereco'=> $this->endereco,
+            'email'=> $this->email,
+            
         ]);
     }
 }

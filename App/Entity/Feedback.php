@@ -10,70 +10,31 @@ use \pDO;
 
 // mudar dados
 
-class professor
+class Feedback
 {
     /** 
-     * Identificador único da professor
+     * Identificador único 
      * @var integer
      */
     public $id;
 
     /** 
-     * Nome da professor
-     * @var string
-     */
-    public $nome;
-
-    /** 
-     * Sobrenome do professor
-     * @var string
-     */
-    public $sobrenome;
-
-    /** 
-     * CpF da professor
-     * @var Bigint
-     */
-    public $cpf;
-
-
-    /** 
-     * Formação do professor
-     * @var varchar
-     */
-    public $formação;
-
-    /** 
-     * Endereço do professor
-     * @var varchar
-     */
-    public $endereco;
-
-     /** 
-     * tel da professor
-     * @var Bigint
-     */
-    public $telefone;
-    
-     /** 
-     * CpF da professor
-     * @var varchar
-     */
-    public $email;
-
-    /** 
-     * Define a ordem do professor
+     * nota do feedback
      * @var int
      */
-    public $ordem;
+    public $nota;
 
     /** 
-     * Define se a professor está ativa (s or n)
-     * @var string
+     * Comentario
+     * @var text
      */
-    public $status;
+    public $comentario;
 
-    
+    /** 
+     * feedback
+     * @var int
+     */
+    public $cliente_id;
 
     /** 
      * Função para cadastrar a professor no banco
@@ -85,17 +46,11 @@ class professor
         // echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
         //Inserir a professor no banco e retornar o ID
-        $objDatabase = new Database('professores');
+        $objDatabase = new Database('feedback');
         $this->id = $objDatabase->insert([
-            'nome' => $this->nome,
-            'sobrenome' => $this->sobrenome,
-            'cpf'=> $this->cpf,
-            'formacao' => $this->formacao,
-            'endereco' => $this->endereco,
-            'telefone' => $this->telefone,
-            'email' => $this->email,
-            'ordem' => $this->ordem,
-            'status' => $this->status,
+            'nota' => $this->nota,
+            'comentario' => $this->comentario,
+            'cliente_id'=> $this->cliente_id,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -112,10 +67,10 @@ class professor
      *@return array
      */
 
-    public static function getProfessores($where = null, $order = null, $limit = null)
+    public static function getFeedbacks($where = null, $order = null, $limit = null)
     {
 
-        $objDatabase = new Database('professores');
+        $objDatabase = new Database('feedback');
 
         return ($objDatabase)->select($where, $order, $limit)->fetchAll(pDO::FETCH_CLASS, self::class);
     }
@@ -127,10 +82,10 @@ class professor
      *@return professor
      */
 
-    public static function getProfessor($id)
+    public static function getFeedback($id)
     {
 
-        $objDatabase = new Database('professores');
+        $objDatabase = new Database('feedback');
 
         return ($objDatabase)->select('id = ' . $id)->fetchObject(self::class);
     }
@@ -142,7 +97,7 @@ class professor
 
     public function excluir()
     {
-        $objDatabase = new Database('professores');
+        $objDatabase = new Database('feedback');
 
         return ($objDatabase)->delete('id =' . $this->id);
     }
@@ -154,18 +109,12 @@ class professor
     public function atualizar()
     {
 
-        $objDatabase = new Database('professores');
+        $objDatabase = new Database('feedback');
 
         return ($objDatabase)->update('id = ' . $this->id, [
-            'nome' => $this->nome,
-            'sobrenome' => $this->sobrenome,
-            'cpf'=> $this->cpf,
-            'formacao' => $this->formacao,
-            'endereco' => $this->endereco,
-            'telefone' => $this->telefone,
-            'email' => $this->email,
-            'ordem' => $this->ordem,
-            'status' => $this->status,
+            'nota' => $this->nota,
+            'comentario' => $this->comentario,
+            'cliente_id'=> $this->cliente_id,
         ]);
     }
 }
