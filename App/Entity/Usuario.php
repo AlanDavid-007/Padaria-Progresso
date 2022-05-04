@@ -10,7 +10,7 @@ use \pDO;
 
 // mudar dados
 
-class Feedback
+class Usuario
 {
     /** 
      * Identificador único 
@@ -19,22 +19,28 @@ class Feedback
     public $id;
 
     /** 
-     * nota do feedback
-     * @var int
+     * nome
+     * @var varchar
      */
-    public $nota;
+    public $nome;
 
     /** 
-     * Comentario
-     * @var text
+     * senha
+     * @var varchar
      */
-    public $comentario;
+    public $senha;
 
     /** 
-     * feedback
-     * @var int
+     * cargo
+     * @var varchar
      */
-    public $cliente_id;
+    public $cargo;
+
+     /** 
+     * email
+     * @var varchar
+     */
+    public $email;
 
     /** 
      * Função para cadastrar a professor no banco
@@ -46,11 +52,12 @@ class Feedback
         // echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
         //Inserir a professor no banco e retornar o ID
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('usuario');
         $this->id = $objDatabase->insert([
-            'nota' => $this->nota,
-            'comentario' => $this->comentario,
-            'cliente_id'=> $this->cliente_id,
+            'nome' => $this->nome,
+            'senha' => $this->senha,
+            'cargo'=> $this->cargo,
+            'email'=> $this->email,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -67,10 +74,10 @@ class Feedback
      *@return array
      */
 
-    public static function getFeedbacks($where = null, $order = null, $limit = null)
+    public static function getUsuarios($where = null, $order = null, $limit = null)
     {
 
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('usuario');
 
         return ($objDatabase)->select($where, $order, $limit)->fetchAll(pDO::FETCH_CLASS, self::class);
     }
@@ -82,10 +89,10 @@ class Feedback
      *@return professor
      */
 
-    public static function getFeedback($id)
+    public static function getUsuario($id)
     {
 
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('usuario');
 
         return ($objDatabase)->select('id = ' . $id)->fetchObject(self::class);
     }
@@ -97,7 +104,7 @@ class Feedback
 
     public function excluir()
     {
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('usuario');
 
         return ($objDatabase)->delete('id =' . $this->id);
     }
@@ -109,12 +116,13 @@ class Feedback
     public function atualizar()
     {
 
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('usuario');
 
         return ($objDatabase)->update('id = ' . $this->id, [
-            'nota' => $this->nota,
-            'comentario' => $this->comentario,
-            'cliente_id'=> $this->cliente_id,
+            'nome' => $this->nome,
+            'senha' => $this->senha,
+            'cargo'=> $this->cargo,
+            'email'=> $this->email,
         ]);
     }
 }

@@ -10,7 +10,7 @@ use \pDO;
 
 // mudar dados
 
-class Feedback
+class Promocao
 {
     /** 
      * Identificador único 
@@ -19,22 +19,58 @@ class Feedback
     public $id;
 
     /** 
-     * nota do feedback
-     * @var int
+     * nome
+     * @var varchar
      */
-    public $nota;
+    public $nome;
 
     /** 
-     * Comentario
+     * descricao
      * @var text
      */
-    public $comentario;
+    public $descricao;
 
     /** 
-     * feedback
+     * desconto
+     * @var float
+     */
+    public $desconto;
+
+     /** 
+     * dataInicio
+     * @var date
+     */
+    public $dataInicio;
+
+    /** 
+     *dataTermino
+     * @var date
+     */
+    public $dataTermino;
+
+    /** 
+     * pedido_id
      * @var int
      */
-    public $cliente_id;
+    public $pedido_id;
+
+     /** 
+     * pedido_pagamento_id
+     * @var int
+     */
+    public $pedido_pagamento_id;
+
+    /** 
+     * pedido_usuario_id
+     * @var int
+     */
+    public $pedido_usuario_id;
+
+    /** 
+     * pedido_cliente_id
+     * @var int
+     */
+    public $pedido_cliente_id;
 
     /** 
      * Função para cadastrar a professor no banco
@@ -46,11 +82,17 @@ class Feedback
         // echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
         //Inserir a professor no banco e retornar o ID
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('promocoes');
         $this->id = $objDatabase->insert([
-            'nota' => $this->nota,
-            'comentario' => $this->comentario,
-            'cliente_id'=> $this->cliente_id,
+            'nome' => $this->nome,
+            'descricao' => $this->descricao,
+            'desconto'=> $this->desconto,
+            'dataInicio' => $this->dataInicio,
+            'dataTermino' => $this->dataTermino,
+            'pedido_id'=> $this->pedido_id,
+            'pedido_pagamento_id' => $this->pedido_pagamento_id,
+            'pedido_usuario_id' => $this->pedido_usuario_id,
+            'pedido_cliente_id'=> $this->pedido_cliente_id,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -67,10 +109,10 @@ class Feedback
      *@return array
      */
 
-    public static function getFeedbacks($where = null, $order = null, $limit = null)
+    public static function getPromocoes($where = null, $order = null, $limit = null)
     {
 
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('promocoes');
 
         return ($objDatabase)->select($where, $order, $limit)->fetchAll(pDO::FETCH_CLASS, self::class);
     }
@@ -82,10 +124,10 @@ class Feedback
      *@return professor
      */
 
-    public static function getFeedback($id)
+    public static function getPromocao($id)
     {
 
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('promocoes');
 
         return ($objDatabase)->select('id = ' . $id)->fetchObject(self::class);
     }
@@ -97,7 +139,7 @@ class Feedback
 
     public function excluir()
     {
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('promocoes');
 
         return ($objDatabase)->delete('id =' . $this->id);
     }
@@ -109,12 +151,18 @@ class Feedback
     public function atualizar()
     {
 
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('promocoes');
 
         return ($objDatabase)->update('id = ' . $this->id, [
-            'nota' => $this->nota,
-            'comentario' => $this->comentario,
-            'cliente_id'=> $this->cliente_id,
+            'nome' => $this->nome,
+            'descricao' => $this->descricao,
+            'desconto'=> $this->desconto,
+            'dataInicio' => $this->dataInicio,
+            'dataTermino' => $this->dataTermino,
+            'pedido_id'=> $this->pedido_id,
+            'pedido_pagamento_id' => $this->pedido_pagamento_id,
+            'pedido_usuario_id' => $this->pedido_usuario_id,
+            'pedido_cliente_id'=> $this->pedido_cliente_id,
         ]);
     }
 }

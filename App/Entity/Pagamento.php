@@ -19,22 +19,34 @@ class Pagamento
     public $id;
 
     /** 
-     * nota do feedback
-     * @var int
+     * debito
+     * @var float
      */
-    public $nota;
+    public $debito;
 
     /** 
-     * Comentario
-     * @var text
+     * credito
+     * @var float
      */
-    public $comentario;
+    public $credito;
 
     /** 
-     * feedback
+     * pix
+     * @var float
+     */
+    public $pix;
+
+     /** 
+     * dinheiro
+     * @var float
+     */
+    public $dinheiro;
+
+     /** 
+     * parcela
      * @var int
      */
-    public $cliente_id;
+    public $parcela;
 
     /** 
      * Função para cadastrar a professor no banco
@@ -46,11 +58,13 @@ class Pagamento
         // echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
         //Inserir a professor no banco e retornar o ID
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('pagamento');
         $this->id = $objDatabase->insert([
-            'nota' => $this->nota,
-            'comentario' => $this->comentario,
-            'cliente_id'=> $this->cliente_id,
+            'debito' => $this->debito,
+            'credito' => $this->credito,
+            'pix'=> $this->pix,
+            'dinheiro' => $this->dinheiro,
+            'parcela'=> $this->parcela,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -67,10 +81,10 @@ class Pagamento
      *@return array
      */
 
-    public static function getFeedbacks($where = null, $order = null, $limit = null)
+    public static function getPagamentos($where = null, $order = null, $limit = null)
     {
 
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('pagamento');
 
         return ($objDatabase)->select($where, $order, $limit)->fetchAll(pDO::FETCH_CLASS, self::class);
     }
@@ -82,10 +96,10 @@ class Pagamento
      *@return professor
      */
 
-    public static function getFeedback($id)
+    public static function getPagamento($id)
     {
 
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('pagamento');
 
         return ($objDatabase)->select('id = ' . $id)->fetchObject(self::class);
     }
@@ -97,7 +111,7 @@ class Pagamento
 
     public function excluir()
     {
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('pagamento');
 
         return ($objDatabase)->delete('id =' . $this->id);
     }
@@ -109,12 +123,14 @@ class Pagamento
     public function atualizar()
     {
 
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('pagamento');
 
         return ($objDatabase)->update('id = ' . $this->id, [
-            'nota' => $this->nota,
-            'comentario' => $this->comentario,
-            'cliente_id'=> $this->cliente_id,
+            'debito' => $this->debito,
+            'credito' => $this->credito,
+            'pix'=> $this->pix,
+            'dinheiro' => $this->dinheiro,
+            'parcela'=> $this->parcela,
         ]);
     }
 }

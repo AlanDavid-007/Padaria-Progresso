@@ -4,13 +4,14 @@ namespace App\Entity;
 
 use \App\Db\Database;
 use \pDO;
-
+use \App\Entity\Pedido;
+use \App\Entity\Promocao;
 
 
 
 // mudar dados
 
-class Feedback
+class Produto
 {
     /** 
      * Identificador único 
@@ -18,23 +19,42 @@ class Feedback
      */
     public $id;
 
+    
     /** 
-     * nota do feedback
-     * @var int
+     * nome
+     * @var varchar
      */
-    public $nota;
+    public $nome;
 
     /** 
-     * Comentario
+     * descricao
      * @var text
      */
-    public $comentario;
+    public $descricao;
 
     /** 
-     * feedback
+     * quantidade
      * @var int
      */
-    public $cliente_id;
+    public $quantidade;
+
+    /** 
+     * tipo
+     * @var varchar
+     */
+    public $tipo;
+
+    /** 
+     * pedido_id
+     * @var int
+     */
+    public $pedido_id;
+
+    /** 
+     * promocoes_id
+     * @var int
+     */
+    public $promocoes_id;
 
     /** 
      * Função para cadastrar a professor no banco
@@ -46,11 +66,14 @@ class Feedback
         // echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
         //Inserir a professor no banco e retornar o ID
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('produtos');
         $this->id = $objDatabase->insert([
-            'nota' => $this->nota,
-            'comentario' => $this->comentario,
-            'cliente_id'=> $this->cliente_id,
+            'nome' => $this->nome,
+            'descricao' => $this->descricao,
+            'quantidade'=> $this->quantidade,
+            'tipo' => $this->tipo,
+            'pedido_id' => $this->pedido_id,
+            'promocoes_id'=> $this->promocoes_id,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -67,10 +90,10 @@ class Feedback
      *@return array
      */
 
-    public static function getFeedbacks($where = null, $order = null, $limit = null)
+    public static function getProdutos($where = null, $order = null, $limit = null)
     {
 
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('produtos');
 
         return ($objDatabase)->select($where, $order, $limit)->fetchAll(pDO::FETCH_CLASS, self::class);
     }
@@ -82,10 +105,10 @@ class Feedback
      *@return professor
      */
 
-    public static function getFeedback($id)
+    public static function getProduto($id)
     {
 
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('produtos');
 
         return ($objDatabase)->select('id = ' . $id)->fetchObject(self::class);
     }
@@ -97,7 +120,7 @@ class Feedback
 
     public function excluir()
     {
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('produtos');
 
         return ($objDatabase)->delete('id =' . $this->id);
     }
@@ -109,12 +132,15 @@ class Feedback
     public function atualizar()
     {
 
-        $objDatabase = new Database('feedback');
+        $objDatabase = new Database('produtos');
 
         return ($objDatabase)->update('id = ' . $this->id, [
-            'nota' => $this->nota,
-            'comentario' => $this->comentario,
-            'cliente_id'=> $this->cliente_id,
+            'nome' => $this->nome,
+            'descricao' => $this->descricao,
+            'quantidade'=> $this->quantidade,
+            'tipo' => $this->tipo,
+            'pedido_id' => $this->pedido_id,
+            'promocoes_id'=> $this->promocoes_id,
         ]);
     }
 }
