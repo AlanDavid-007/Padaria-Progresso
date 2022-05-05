@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use \App\Db\Database;
 use \PDO;
+use \App\Entity\Produto;
 
 class Categoria
 {

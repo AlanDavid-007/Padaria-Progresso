@@ -4,7 +4,9 @@ namespace App\Entity;
 
 use \App\Db\Database;
 use \pDO;
-
+use \App\Db\Pagamento;
+use \App\Db\Usuario;
+use \App\Db\Cliente;
 
 
 

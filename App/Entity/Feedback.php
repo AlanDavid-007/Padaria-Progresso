@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use \App\Db\Database;
 use \pDO;
-
+use \App\Db\Cliente;
 
 
 

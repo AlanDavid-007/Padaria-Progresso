@@ -258,7 +258,10 @@
     <div class="mx-auto container px-6 xl:px-0 py-12">
         <div class="flex flex-col">
             <div class="mt-10 grid lg:grid-cols-2 gap-x-8 gap-y-8 items-center">
-            <a href="produtos/risoles.php"><div
+            <!-- <a href="produtos/risoles.php"> -->
+            <a href="produtos/produtos.php?categoria=1&categoria_nome=risolis">
+            
+            <div
                     class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
                     <img class="group-hover:opacity-60 transition duration-500" src="./Assets/risoles.png"
                         alt="risoles" />
