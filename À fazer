@@ -1,0 +1,37 @@
+<!-- Página de categorias(onde irá ter a visualização dos produtos de acordo com a categoria escolhida pelo usuário) -->
+<!-- Link que irá redirecionar o usuário para a página do devido produto  -->
+
+<a href="index.php?Pagina=pag&filtro=pedido">Pedidos de Vendas</a>
+
+<!-- Operador de Condição para verificar a existência da página que irá ser visualizada após o redirecionamento -->
+
+<?php
+    if(isset($_GET['Pagina'])) <!-- Verificando se existe o atributo(na table do Database), o mesmo deve estar exposto no arquivo com use no arquivo para funcionar -->
+    {
+        $pagina =($_GET['Pagina']); <!-- Tal variável irá receber o get -->
+        if(file_exists('arquivos/'.$pagina.'.php')) <!-- Verificando se existe a página -->
+        {
+            @include_once("arquivos/$pagina.php"); <!-- Se existe manda para a página -->
+        }
+        else
+        {
+            @include_once("arquivos/404.php"); <!-- Senão manda para uma page de erro 404 -->
+        }
+    }
+   
+?>
+<!-- Página de Formulário de produtos(Permissão de Admin) Colocar input de imagem e atributo do mesmo no banco tags php para puxar dados do cadastro-->
+
+<!-- Colocar no Formulário também um select com a categoria do produto(doces,risóle ...) - utilizar do último projeto -->
+
+<!-- Fazer na entity de produtos o use em categorias e fazer o array pra validar os dados e depois mandar pro select -->
+
+<!-- Colocar em Cadastro o use na Entity e Os condicionadores para validar os atributos da Tabela(Reutilizar do projeto anterior) -->
+
+<!-- Colocar nas páginas de produtos as listagens que puxarão os dados recebidos pelo formulário -->
+
+<!-- Deixar dinâmico a visualização de acordo com a categoria escolhida no cadastro do produto -->
+
+<!-- Resultado esperado: Visualização dinâmica na página de categorias -->
+<!-- Passo que irá ser importante para o uso dinâmico do carrinho -->
+
