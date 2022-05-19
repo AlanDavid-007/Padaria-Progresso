@@ -10,6 +10,9 @@ CREATE TABLE `produtos` (
     `promocoes_id` INT DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
+ALTER TABLE produtos ADD CONSTRAINT pedido_id FOREIGN KEY(pedido_id) REFERENCES pedido (id);
+ALTER TABLE produtos ADD CONSTRAINT promocoes_id FOREIGN KEY(promocoes_id) REFERENCES promocoes (id);
+ALTER TABLE produtos ADD CONSTRAINT tipo FOREIGN KEY(tipo) REFERENCES categorias (id);
 
 CREATE TABLE `promocoes`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -24,6 +27,10 @@ CREATE TABLE `promocoes`(
     `pedido_cliente_id` INT DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
+ALTER TABLE promocoes ADD CONSTRAINT pedido_id FOREIGN KEY(pedido_id) REFERENCES pedido (id);
+ALTER TABLE promocoes ADD CONSTRAINT pedido_pagamento_id FOREIGN KEY(pedido_pagamento_id) REFERENCES pagamento (id);
+ALTER TABLE promocoes ADD CONSTRAINT pedido_usuario_id FOREIGN KEY(pedido_usuario_id) REFERENCES usuario (id);
+ALTER TABLE promocoes ADD CONSTRAINT pedido_cliente_id FOREIGN KEY(pedido_cliente_id) REFERENCES cliente (id);
 
 CREATE TABLE `usuario`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -40,6 +47,7 @@ CREATE TABLE `categorias`(
      `produtos_id` INT DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
+ALTER TABLE categorias ADD CONSTRAINT produtos_id FOREIGN KEY(produtos_id) REFERENCES produtos (id);
 
 CREATE TABLE `pedido`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -53,6 +61,9 @@ CREATE TABLE `pedido`(
     `cliente_id` INT DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
+ALTER TABLE pedido ADD CONSTRAINT pagamento_id FOREIGN KEY(pagamento_id) REFERENCES pagamento (id);
+ALTER TABLE pedido ADD CONSTRAINT usuario_id FOREIGN KEY(usuario_id) REFERENCES usuario (id);
+ALTER TABLE pedido ADD CONSTRAINT cliente_id FOREIGN KEY(cliente_id) REFERENCES cliente (id);
 
 CREATE TABLE `pagamento`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -82,3 +93,4 @@ CREATE TABLE `feedback`(
     `cliente_id` int DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
+ALTER TABLE feedback ADD CONSTRAINT cliente_id FOREIGN KEY(cliente_id) REFERENCES cliente (id);

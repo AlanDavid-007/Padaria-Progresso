@@ -6,6 +6,7 @@ use \App\Db\Database;
 use \pDO;
 use \App\Entity\Pedido;
 use \App\Entity\Promocao;
+use \App\Entity\Categoria;
 
 
 
@@ -19,7 +20,25 @@ class Produto
      */
     public $id;
 
-    
+    /** 
+     * Identificador único 
+     * @var integer
+     */
+    public $obCategorias;
+
+    /** 
+     * Identificador único 
+     * @var integer
+     */
+    public $obPedidos;
+
+    /** 
+     * Identificador único 
+     * @var integer
+     */
+    public $obPromocoes;
+
+
     /** 
      * nome
      * @var varchar
@@ -70,10 +89,10 @@ class Produto
         $this->id = $objDatabase->insert([
             'nome' => $this->nome,
             'descricao' => $this->descricao,
-            'quantidade'=> $this->quantidade,
+            'quantidade' => $this->quantidade,
             'tipo' => $this->tipo,
             'pedido_id' => $this->pedido_id,
-            'promocoes_id'=> $this->promocoes_id,
+            'promocoes_id' => $this->promocoes_id,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -92,12 +111,26 @@ class Produto
 
     public static function getProdutos($where = null, $order = null, $limit = null)
     {
-
+        $obCategorias = new Categoria;
+        $obPedidos = new Pedido;
+        $obPromocoes = new Promocao;
         $objDatabase = new Database('produtos');
 
-        return ($objDatabase)->select($where, $order, $limit)->fetchAll(pDO::FETCH_CLASS, self::class);
-    }
 
+        $return = ($objDatabase)->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
+        $result = array();
+
+        foreach ($return as $key => $value) {
+            $result[$key]['id'] = $value->id;
+            $result[$key]['nome'] = $value->nome;
+            $result[$key]['descricao'] = $value->data;
+            $result[$key]['quantidade'] = $value->quantidade;
+            $result[$key]['tipo'] = $obCategorias::getCategoria($value->tipo);
+            $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
+            $result[$key]['promocoes_id'] = $obCategorias::getCategoria($value->promocoes_id);
+        }
+        return $result;
+    }
     /**
      * Método responsável por obter as professors do banco de dados
 
@@ -137,10 +170,10 @@ class Produto
         return ($objDatabase)->update('id = ' . $this->id, [
             'nome' => $this->nome,
             'descricao' => $this->descricao,
-            'quantidade'=> $this->quantidade,
+            'quantidade' => $this->quantidade,
             'tipo' => $this->tipo,
             'pedido_id' => $this->pedido_id,
-            'promocoes_id'=> $this->promocoes_id,
+            'promocoes_id' => $this->promocoes_id,
         ]);
     }
 }

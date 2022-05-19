@@ -1,14 +1,20 @@
 <?php
 require __DIR__ . '../../vendor/autoload.php';
 
+use \App\Entity\Pedido;
+use \App\Db\Pagamento;
+use \App\Db\Usuario;
+use \App\Db\Cliente;
 
-
-use App\Entity\Produto;
-
-$obProduto = new Produto;
-
+$obPagamento = new Pagamento;
+$obUsuario = new Usuario;
+$obPedido = new Pedido;
+$obCliente = new Cliente;
+$listaPagamentos = $obPagamentos::getPagamentos();
+$listaUsuarios = $obUsuario::getUsuarios();
+$listaClientes = $obCliente::getClientes();
 //   echo "<pre>"; print_r($arrayProfessor); echo "</pre>"; exit;
-if (isset($_POST['nome'], $_POST['descricao'],$_POST['quantidade'], $_POST['tipo'],$_POST['pedido_id'],$_POST['promocoes_id'],$_POST['data'], $_POST['status'])) {
+if (isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['tipo'], $_POST['pedido_id'], $_POST['promocoes_id'])) {
 
     $obProduto->nome = $_POST['nome'];
     $obProduto->descricao = $_POST['descricao'];
