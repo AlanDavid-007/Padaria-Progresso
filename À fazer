@@ -21,6 +21,12 @@
    
 ?>
 
+
+
+
+
+<!-- Continuar -->
+
 <!-- Página de Formulário de produtos(Permissão de Admin) Colocar input de imagem e atributo do mesmo no banco tags php para puxar dados do cadastro-->
 <input type="file" id="myfile" name="myfile"> ------> input de imagem
 
@@ -35,6 +41,12 @@ use \App\Entity\Produto ------- $obCategorias = new Categoria ------- $listaCate
 
 <!-- Colocar nas páginas de produtos as listagens que puxarão os dados recebidos pelo formulário -->
 O card irá ser no formato que já esta no html, mas as informações puxar em forma de array ----- <?php echo $value['id'];?>
+
+-->
+
+
+
+
 
 <!-- Deixar dinâmico a visualização de acordo com a categoria escolhida no cadastro do produto -->
 Utilizar link do get nas divs botões ------- <a href="index.php?Pagina=pag&filtro=pedido">Pedidos de Vendas</a>
