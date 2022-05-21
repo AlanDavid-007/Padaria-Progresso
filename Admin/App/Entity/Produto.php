@@ -123,11 +123,11 @@ class Produto
         foreach ($return as $key => $value) {
             $result[$key]['id'] = $value->id;
             $result[$key]['nome'] = $value->nome;
-            $result[$key]['descricao'] = $value->data;
+            $result[$key]['descricao'] = $value->descricao;
             $result[$key]['quantidade'] = $value->quantidade;
             $result[$key]['tipo'] = $obCategorias::getCategoria($value->tipo);
             $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
-            $result[$key]['promocoes_id'] = $obCategorias::getCategoria($value->promocoes_id);
+            $result[$key]['promocoes_id'] = $obPromocoes::getPromocao($value->promocoes_id);
         }
         return $result;
     }

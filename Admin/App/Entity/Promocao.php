@@ -21,6 +21,30 @@ class Promocao
      */
     public $id;
 
+        /** 
+     * Identificador único 
+     * @var integer
+     */
+    public $obPedidos;
+
+    /** 
+     * valor
+     * @var float
+     */
+    public $obPagamentos;
+
+    /** 
+     * valor
+     * @var float
+     */
+    public $obUsuarios;
+
+    /** 
+     * valor
+     * @var float
+     */
+    public $obClientes;
+
     /** 
      * nome
      * @var varchar
@@ -114,10 +138,28 @@ class Promocao
 
     public static function getPromocoes($where = null, $order = null, $limit = null)
     {
+        $obPedidos = new Pedido;
+        $obClientes = new Cliente;
+        $obPagamentos = new Pagamento;
+        $obUsuarios = new Usuario;
+        $objDatabase = new Database('pedido');
 
-        $objDatabase = new Database('promocoes');
+        $return = ($objDatabase)->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
+        $result = array();
 
-        return ($objDatabase)->select($where, $order, $limit)->fetchAll(pDO::FETCH_CLASS, self::class);
+        foreach ($return as $key => $value) {
+            $result[$key]['id'] = $value->id;
+            $result[$key]['nome'] = $value->nome;
+            $result[$key]['descricao'] = $value->descricao;
+            $result[$key]['desconto'] = $value->desconto;
+            $result[$key]['dataInicio'] = $value->dataInicio;
+            $result[$key]['dataTermino'] = $value->valor_tele_entrega;
+            $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
+            $result[$key]['pagamento_id'] = $obPagamentos::getPagamento($value->pagamento_id);
+            $result[$key]['usuario_id'] = $obUsuarios::getUsuario($value->pedido_id);
+            $result[$key]['cliente_id'] = $obClientes::getCliente($value->cliente_id);
+        }
+        return $result;
     }
 
     /**

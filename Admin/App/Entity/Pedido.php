@@ -24,6 +24,24 @@ class Pedido
      * valor
      * @var float
      */
+    public $obPagamentos;
+
+    /** 
+     * valor
+     * @var float
+     */
+    public $obUsuarios;
+
+    /** 
+     * valor
+     * @var float
+     */
+    public $obClientes;
+
+    /** 
+     * valor
+     * @var float
+     */
     public $valor;
 
     /** 
@@ -106,12 +124,27 @@ class Pedido
 
     public static function getPedidos($where = null, $order = null, $limit = null)
     {
-
+        $obClientes = new Cliente;
+        $obPagamentos = new Pagamento;
+        $obUsuarios = new Usuario;
         $objDatabase = new Database('pedido');
 
-        return ($objDatabase)->select($where, $order, $limit)->fetchAll(pDO::FETCH_CLASS, self::class);
-    }
+        $return = ($objDatabase)->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
+        $result = array();
 
+        foreach ($return as $key => $value) {
+            $result[$key]['id'] = $value->id;
+            $result[$key]['valor'] = $value->valor;
+            $result[$key]['aprovapedido'] = $value->aprovapedido;
+            $result[$key]['descricao'] = $value->descricao;
+            $result[$key]['data'] = $value->data;
+            $result[$key]['valor_tele_entrega'] = $value->valor_tele_entrega;
+            $result[$key]['pagamento_id'] = $obPagamentos::getPagamento($value->pagamento_id);
+            $result[$key]['usuario_id'] = $obUsuarios::getUsuario($value->pedido_id);
+            $result[$key]['cliente_id'] = $obClientes::getCliente($value->cliente_id);
+        }
+        return $result;
+    }
     /**
      * Método responsável por obter as professors do banco de dados
 

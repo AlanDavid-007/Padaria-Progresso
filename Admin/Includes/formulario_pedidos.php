@@ -304,7 +304,7 @@
             <select class="form-control" style="width: 50%; margin-left:25%" name="promocoes" value="">
                 <option value="">Selecione um Cliente</option>
                 <option value="">Nenhum Cliente</option>
-                <?php foreach ($listaUsuario as $key => $value) { ?>
+                <?php foreach ($listaCliente as $key => $value) { ?>
                     <option value="<?php echo $value->id; ?>" <?php echo $obPedido->id == $value->id ? "selected" : ''; ?>> <?php echo $value->nome; ?></option>
                 <?php } ?>
             </select>

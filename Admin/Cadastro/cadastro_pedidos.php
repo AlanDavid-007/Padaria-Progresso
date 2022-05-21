@@ -14,19 +14,20 @@ $listaPagamentos = $obPagamentos::getPagamentos();
 $listaUsuarios = $obUsuario::getUsuarios();
 $listaClientes = $obCliente::getClientes();
 //   echo "<pre>"; print_r($arrayProfessor); echo "</pre>"; exit;
-if (isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['tipo'], $_POST['pedido_id'], $_POST['promocoes_id'])) {
+if (isset($_POST['descricao'], $_POST['valor'], $_POST['data'], $_POST['valor_tele_entrega'], $_POST['pagamento_id'], $_POST['usuario_id'], $_POST['cliente_id'])) {
 
-    $obProduto->nome = $_POST['nome'];
-    $obProduto->descricao = $_POST['descricao'];
-    $obProduto->quantidade = $_POST['quantidade'];
-    $obProduto->tipo = $_POST['tipo'];
-    $obProduto->pedido_id = $_POST['pedido_id'];
-    $obProduto->promocoes_id = $_POST['promocoes_id'];
-    $obProduto->cadastrar();
+    $obPedido->descricao = $_POST['descricao'];
+    $obPedido->valor = $_POST['valor'];
+    $obPedido->data = $_POST['data'];
+    $obPedido->valor_tele_entrega = $_POST['valor_tele_entrega'];
+    $obPedido->pagamento_id = $_POST['pagamento_id'];
+    $obPedido->usuario_id = $_POST['usuario_id'];
+    $obPedido->cliente_id = $_POST['cliente_id'];
+    $obPedido->cadastrar();
     // echo "<pre>"; print_r($obProduto); echo "</pre>"; exit; 
 
-    header('location: ../Index/index_cursos.php?status=success');
+    header('location: ../produtos/categorias.php?status=success');
     exit;
 }
 
-require __DIR__ . './Includes/formulario_produtos.php';
+require __DIR__ . './Includes/formulario_pedidos.php';
