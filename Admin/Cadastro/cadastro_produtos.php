@@ -14,12 +14,13 @@ $listaCategoria = $obCategorias::getCategorias();
 $listaPedido = $obPedidos::getPedidos();
 $listaPromocao = $obPromocoes::getPromocoes();
 //   echo "<pre>"; print_r($arrayProfessor); echo "</pre>"; exit;
-if (isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['tipo'], $_POST['pedido_id'], $_POST['promocoes_id'])) {
+if (isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['tipo'], $_POST['imagem'], $_POST['pedido_id'], $_POST['promocoes_id'])) {
 
     $obProduto->nome = $_POST['nome'];
     $obProduto->descricao = $_POST['descricao'];
     $obProduto->quantidade = $_POST['quantidade'];
     $obProduto->tipo = $_POST['tipo'];
+    $obProduto->imagem = $_POST['imagem'];
     $obProduto->pedido_id = $_POST['pedido_id'];
     $obProduto->promocoes_id = $_POST['promocoes_id'];
     $obProduto->cadastrar();

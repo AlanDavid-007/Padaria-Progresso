@@ -6,6 +6,7 @@ CREATE TABLE `produtos` (
     `descricao` text,
     `quantidade` INT DEFAULT NULL,
     `tipo` varchar(45) DEFAULT NULL,
+    `imagem` BLOB DEFAULT NULL,
     `pedido_id` INT DEFAULT NULL,
     `promocoes_id` INT DEFAULT NULL,
     PRIMARY KEY (`id`)

@@ -91,6 +91,7 @@ class Produto
             'descricao' => $this->descricao,
             'quantidade' => $this->quantidade,
             'tipo' => $this->tipo,
+            'imagem' => $this->imagem,
             'pedido_id' => $this->pedido_id,
             'promocoes_id' => $this->promocoes_id,
         ]);
@@ -126,6 +127,7 @@ class Produto
             $result[$key]['descricao'] = $value->descricao;
             $result[$key]['quantidade'] = $value->quantidade;
             $result[$key]['tipo'] = $obCategorias::getCategoria($value->tipo);
+            $result[$key]['imagem'] = $value->imagem;
             $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
             $result[$key]['promocoes_id'] = $obPromocoes::getPromocao($value->promocoes_id);
         }
@@ -172,6 +174,7 @@ class Produto
             'descricao' => $this->descricao,
             'quantidade' => $this->quantidade,
             'tipo' => $this->tipo,
+            'imagem' => $this->imagem,
             'pedido_id' => $this->pedido_id,
             'promocoes_id' => $this->promocoes_id,
         ]);

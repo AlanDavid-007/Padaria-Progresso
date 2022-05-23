@@ -1,11 +1,11 @@
 <?php
 require __DIR__ . '../../vendor/autoload.php';
 
+use \App\Entity\Pedido;
+use \App\Entity\Pagamento;
+use \App\Entity\Usuario;
+use \App\Entity\Cliente;
 use \App\Entity\Promocao;
-use \App\Db\Pagamento;
-use \App\Db\Usuario;
-use \App\Db\Cliente;
-use \App\Db\Promocao;
 
 $obPagamento = new Pagamento;
 $obUsuario = new Usuario;

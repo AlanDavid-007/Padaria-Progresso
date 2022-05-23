@@ -1,3 +1,9 @@
+<?php
+
+require __DIR__ . '../../vendor/autoload.php';
+
+use \App\Entity\Produto;
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -162,33 +168,11 @@
             </div>
         </div>
     </div>
-
-
-
-    <a href="categorias.php?nome=bolos">Pedidos de Vendas</a>
-
-<?php
-     if(isset($_GET['Pagina'])) //Verificando se existe o atributo(na table do Database), o mesmo deve estar exposto no arquivo com use no arquivo para funcionar 
-    {
-        $pagina =($_GET['Pagina']);  // Tal variável irá receber o get 
-        if(file_exists('arquivos/'.$pagina.'.php')) // Verificando se existe a página 
-        {
-            @include_once("arquivos/$pagina.php"); // Se existe manda para a página 
-        }
-        else
-        {
-            @include_once("arquivos/404.php"); // Senão manda para uma page de erro 404 
-        }
-    }
-   
-?>
-
-
-
-
-
-
-
+<!-- listagem -->
+<?php foreach ($cursos as $key => $value) { ?>
+    
+    <?php }?>
+    <?php $produtos = Produto::getProdutos();?>
     <!-- footer -->
     <div class="dark:bg-gray-900">
         <div>
