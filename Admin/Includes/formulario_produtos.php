@@ -193,6 +193,7 @@
                 <label style="margin-left:25%">Tipo</label>
                 <select class="form-control" style="width: 50%; margin-left:25%" name="pedido" value="">
                     <option value="">Selecione um Tipo</option>
+                    <option value="">Nenhum tipo</option>
                     <?php foreach ($listaCategoria as $key => $value) { ?>
                         <option value="<?php echo $value->id; ?>" <?php echo $obProduto->id == $value->id ? "selected" : ''; ?>> <?php echo $value->nome; ?></option>
                     <?php } ?>

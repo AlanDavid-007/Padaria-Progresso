@@ -26,8 +26,8 @@ if (isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['tip
     $obProduto->cadastrar();
     // echo "<pre>"; print_r($obProduto); echo "</pre>"; exit; 
 
-    header('location: ../produtos/categorias.php?status=success');
+    header('location: ../../produtos/categorias.php?status=success');
     exit;
 }
 
-require __DIR__ . './Includes/formulario_produtos.php';
+require __DIR__ . '../../Includes/formulario_produtos.php';

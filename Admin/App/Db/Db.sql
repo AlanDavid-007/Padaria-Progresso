@@ -5,7 +5,7 @@ CREATE TABLE `produtos` (
     `nome` varchar(45) DEFAULT NULL,
     `descricao` text,
     `quantidade` INT DEFAULT NULL,
-    `tipo` varchar(45) DEFAULT NULL,
+    `tipo` INT DEFAULT NULL,
     `imagem` BLOB DEFAULT NULL,
     `pedido_id` INT DEFAULT NULL,
     `promocoes_id` INT DEFAULT NULL,
@@ -45,7 +45,6 @@ CREATE TABLE `usuario`(
 CREATE TABLE `categorias`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `nome` varchar(45) DEFAULT NULL,
-     `produtos_id` INT DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
 ALTER TABLE categorias ADD CONSTRAINT produtos_id FOREIGN KEY(produtos_id) REFERENCES produtos (id);
