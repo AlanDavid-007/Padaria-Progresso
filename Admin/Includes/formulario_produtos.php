@@ -166,7 +166,7 @@
     </div>
 
     <section class="formulario">
-        <a href="../Index/index_cursos.php">
+        <a href="../produtos/categorias.php">
             <button class="btn btn-header btn-lg">Voltar</button>
         </a>
 
@@ -220,29 +220,6 @@
                     <?php } ?>
                 </select>
             </div>
-
-            <!-- <div class="form-group">
-            <label>Data</label>
-            <input type="date" required class="form-control" name="data" value="<?php echo isset($obProduto->data) ? date('Y-m-d', strtotime($obProduto->data)) : ''; ?>">
-        </div>
-
-        <div class="form-group">
-            <label>Status</label>
-            <div>
-                <div class="form-check form-check-inline">
-
-                    <label>
-                        <input type="radio" name="status" value="s" <?php echo isset($obProduto->status) && $obProduto->status == 's' ? 'checked' : ''; ?>>
-                        Ativo
-                    </label>
-
-                    <label class="ml-3">
-                        <input type="radio" name="status" value="n" <?php echo isset($obProduto->status) && $obProduto->status == 'n' ? 'checked' : ''; ?>>
-                        Inativo
-                    </label>
-                </div>
-            </div>
-        </div> -->
 
             <div class="form-group">
                 <button style="margin-left:25%" type="submit" class="btn btn-header btn-lg">Enviar</button>

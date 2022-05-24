@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use \App\Db\Database;
 use \PDO;
-use \App\Entity\Produto;
 
 class Categoria
 {
@@ -20,11 +19,6 @@ class Categoria
      */
     public $nome;
 
-    /** 
-     * Id da categoria
-     * @var int
-     */
-    public $pedidos_id;
 
     /** 
      * Função para cadastrar a Categoria no banco
@@ -39,7 +33,6 @@ class Categoria
         $objDatabase = new Database('categorias');
         $this->id = $objDatabase->insert([
             'nome' => $this->nome,
-            'produtos' => $this->produtos_id,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -101,9 +94,6 @@ class Categoria
 
         return ($objDatabase)->update('id = ' . $this->id, [
             'nome' => $this->nome,
-            'descricao' => $this->descricao,
-            'ordem'=> $this->ordem,
-            'status' => $this->status,
         ]);
     }
 }

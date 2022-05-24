@@ -47,8 +47,6 @@ CREATE TABLE `categorias`(
     `nome` varchar(45) DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
-ALTER TABLE categorias ADD CONSTRAINT produtos_id FOREIGN KEY(produtos_id) REFERENCES produtos (id);
-
 CREATE TABLE `pedido`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `valor` float DEFAULT NULL,

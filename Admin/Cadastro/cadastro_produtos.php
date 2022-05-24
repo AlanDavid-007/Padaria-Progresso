@@ -4,7 +4,7 @@ require __DIR__ . '../../vendor/autoload.php';
 use \App\Entity\Pedido;
 use \App\Entity\Promocao;
 use \App\Entity\Categoria;
-use App\Entity\Produto;
+use \App\Entity\Produto;
 
 $obProduto = new Produto;
 $obCategorias = new Categoria;
@@ -26,7 +26,7 @@ if (isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['tip
     $obProduto->cadastrar();
     // echo "<pre>"; print_r($obProduto); echo "</pre>"; exit; 
 
-    header('location: ../../produtos/categorias.php?status=success');
+    header('location: ../produtos/categorias.php?status=success');
     exit;
 }
 

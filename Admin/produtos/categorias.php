@@ -1,3 +1,28 @@
+<?php
+
+require __DIR__ . '../../vendor/autoload.php';
+
+use \App\Entity\Produto;
+//busca
+$busca = filter_input(INPUT_GET, 'busca_categoria');
+
+//Filtro status
+$FiltroTipo = filter_input(INPUT_GET, 'tipo');
+
+
+//condiçoes sql 
+$condicoes = [
+    strlen($busca) ? 'tipo LIKE "%' . str_replace(' ', '%', $busca) . '%"' : null,
+];
+
+$condicoes = array_filter($condicoes);
+
+//clausula where
+$where = implode(' AND ', $condicoes);
+
+$produtos = Produto::getProdutos($where);
+ echo "<pre>"; print_r($produtos); echo "</pre>"; exit;
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -162,31 +187,6 @@
             </div>
         </div>
     </div>
-
-    <?php
-
-    require __DIR__ . '../../vendor/autoload.php';
-
-    use \App\Entity\Produto;
-    //busca
-    $busca = filter_input(INPUT_GET, 'busca_categoria');
-
-    //Filtro status
-    $FiltroTipo = filter_input(INPUT_GET, 'tipo');
-
-
-    //condiçoes sql 
-    $condicoes = [
-        strlen($busca) ? 'tipo LIKE "%' . str_replace(' ', '%', $busca) . '%"' : null,
-    ];
-
-    $condicoes = array_filter($condicoes);
-
-    //clausula where
-    $where = implode(' AND ', $condicoes);
-
-    $produtos = Produto::getProdutos($where);
-    ?>
     
     <section>
         <form method="get">
@@ -226,7 +226,7 @@
     <?php } ?>
     <section>
 
-        <?php if (count($produtos) == 0) { ?>
+        <?php if (count($produtos) == 0) {  ?>
             <div class="alert alert-secondary mt-3" style="color:white;">Nenhum Produto encontrado</div>
         <?php } else { ?>
             <?php foreach ($produtos as $key => $value) { ?>
