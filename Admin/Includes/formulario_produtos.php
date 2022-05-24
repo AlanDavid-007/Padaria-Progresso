@@ -178,12 +178,12 @@
 
             <div class="form-group">
                 <label style="margin-left:25%">Descrição</label>
-                <textarea class="form-control" style="width: 50%; margin-left:25%" required name="descricao" rows="5"><?php echo isset($obProduto->descricao) ? $obProduto->palavra_chave : ''; ?></textarea>
+                <textarea class="form-control" style="width: 50%; margin-left:25%" required name="descricao" rows="5"><?php echo isset($obProduto->descricao) ? $obProduto->descricao : ''; ?></textarea>
             </div>
 
             <div class="form-group">
                 <label style="margin-left:25%">Quantidade</label>
-                <textarea class="form-control" style="width: 50%; margin-left:25%" required name="quantidade" rows="1"><?php echo isset($obProduto->quantidade) ? $obProduto->valor : ''; ?></textarea>
+                <textarea class="form-control" style="width: 50%; margin-left:25%" required name="quantidade" rows="1"><?php echo isset($obProduto->quantidade) ? $obProduto->quantidade : ''; ?></textarea>
             </div>
             <div class="form-group">
                 <label for="formFile" style="margin-left:25%">Imagem</label>
