@@ -2,17 +2,18 @@
 require __DIR__ . '../../vendor/autoload.php';
 
 use \App\Entity\Pedido;
-use \App\Db\Pagamento;
-use \App\Db\Usuario;
-use \App\Db\Cliente;
+use \App\Entity\Pagamento;
+use \App\Entity\Usuario;
+use \App\Entity\Cliente;
 
-$obPagamento = new Pagamento;
-$obUsuario = new Usuario;
+$obPagamentos = new Pagamento;
+$obUsuarios = new Usuario;
 $obPedido = new Pedido;
-$obCliente = new Cliente;
+$obClientes = new Cliente;
+
 $listaPagamentos = $obPagamentos::getPagamentos();
-$listaUsuarios = $obUsuario::getUsuarios();
-$listaClientes = $obCliente::getClientes();
+$listaUsuarios = $obUsuarios::getUsuarios();
+$listaClientes = $obClientes::getClientes();
 //   echo "<pre>"; print_r($arrayProfessor); echo "</pre>"; exit;
 if (isset($_POST['descricao'], $_POST['valor'], $_POST['data'], $_POST['valor_tele_entrega'], $_POST['pagamento_id'], $_POST['usuario_id'], $_POST['cliente_id'])) {
 
@@ -30,4 +31,4 @@ if (isset($_POST['descricao'], $_POST['valor'], $_POST['data'], $_POST['valor_te
     exit;
 }
 
-require __DIR__ . './Includes/formulario_pedidos.php';
+require __DIR__ . '../../Includes/formulario_pedidos.php';

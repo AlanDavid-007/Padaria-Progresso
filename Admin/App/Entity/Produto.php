@@ -64,6 +64,12 @@ class Produto
     public $tipo;
 
     /** 
+     * imagem
+     * @var blob
+     */
+    public $imagem;
+
+    /** 
      * pedido_id
      * @var int
      */
@@ -95,7 +101,7 @@ class Produto
             'pedido_id' => $this->pedido_id,
             'promocoes_id' => $this->promocoes_id,
         ]);
-        echo "<pre>"; print_r($this); echo "</pre>"; exit;
+        // echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
         //Retornar sucesso
         return true;

@@ -17,7 +17,7 @@ $listaUsuarios = $obUsuario::getUsuarios();
 $listaClientes = $obCliente::getClientes();
 $listaPedidos = $obPedido::getPedidos();
 //   echo "<pre>"; print_r($arrayProfessor); echo "</pre>"; exit;
-if (isset($_POST['nome'], $_POST['descricao'], $_POST['desconto'], $_POST['dataInicio'], $_POST['dataTermino'], $_POST['pedido_id'], $_POST['pagamento_id'], $_POST['usuario_id'], $_POST['cliente_id'])) {
+if (isset($_POST['nome'], $_POST['descricao'], $_POST['desconto'], $_POST['dataInicio'], $_POST['dataTermino'], $_POST['pedido_id'], $_POST['pedido_pagamento_id'], $_POST['pedido_usuario_id'], $_POST['pedido_cliente_id'])) {
 
     $obPromocao->nome = $_POST['nome'];
     $obPromocao->descricao = $_POST['descricao'];
@@ -25,9 +25,9 @@ if (isset($_POST['nome'], $_POST['descricao'], $_POST['desconto'], $_POST['dataI
     $obPromocao->dataInicio = $_POST['dataInicio'];
     $obPromocao->dataTermino = $_POST['dataTermino'];
     $obPromocao->pedido_id = $_POST['pedido_id'];
-    $obPromocao->pagamento_id = $_POST['pagamento_id'];
-    $obPromocao->usuario_id = $_POST['usuario_id'];
-    $obPromocao->cliente_id = $_POST['cliente_id'];
+    $obPromocao->pedido_pagamento_id = $_POST['pedido_pagamento_id'];
+    $obPromocao->pedido_usuario_id = $_POST['pedido_usuario_id'];
+    $obPromocao->pedido_cliente_id = $_POST['pedido_cliente_id'];
     $obPromocao->cadastrar();
     // echo "<pre>"; print_r($obProduto); echo "</pre>"; exit; 
 

@@ -142,7 +142,7 @@ class Promocao
         $obClientes = new Cliente;
         $obPagamentos = new Pagamento;
         $obUsuarios = new Usuario;
-        $objDatabase = new Database('pedido');
+        $objDatabase = new Database('promocoes');
 
         $return = ($objDatabase)->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
         $result = array();
@@ -153,11 +153,11 @@ class Promocao
             $result[$key]['descricao'] = $value->descricao;
             $result[$key]['desconto'] = $value->desconto;
             $result[$key]['dataInicio'] = $value->dataInicio;
-            $result[$key]['dataTermino'] = $value->valor_tele_entrega;
+            $result[$key]['dataTermino'] = $value->dataTermino;
             $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
-            $result[$key]['pagamento_id'] = $obPagamentos::getPagamento($value->pagamento_id);
-            $result[$key]['usuario_id'] = $obUsuarios::getUsuario($value->pedido_id);
-            $result[$key]['cliente_id'] = $obClientes::getCliente($value->cliente_id);
+            $result[$key]['pedido_pagamento_id'] = $obPagamentos::getPagamento($value->pedido_pagamento_id);
+            $result[$key]['pedido_usuario_id'] = $obUsuarios::getUsuario($value->pedido_usuario_id);
+            $result[$key]['pedido_cliente_id'] = $obClientes::getCliente($value->pedido_cliente_id);
         }
         return $result;
     }

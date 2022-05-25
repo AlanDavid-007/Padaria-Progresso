@@ -21,7 +21,7 @@ $condicoes = array_filter($condicoes);
 $where = implode(' AND ', $condicoes);
 
 $produtos = Produto::getProdutos($where);
- echo "<pre>"; print_r($produtos); echo "</pre>"; exit;
+//  echo "<pre>"; print_r($produtos); echo "</pre>"; exit;
 ?>
 <!doctype html>
 <html lang="pt-br">

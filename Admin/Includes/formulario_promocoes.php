@@ -264,7 +264,7 @@
 
         <div class="form-group">
             <label style="margin-left:25%">Data Inicio</label>
-            <input type="date" required class="form-control" name="dataInicio" value="<?php echo isset($obPedido->dataInicio) ? date('Y-m-d', strtotime($obPedido->dataInicio)) : ''; ?>">
+            <input type="date" style="width: 50%; margin-left:25%" required class="form-control" name="dataInicio" value="<?php echo isset($obPedido->dataInicio) ? date('Y-m-d', strtotime($obPedido->dataInicio)) : ''; ?>">
         </div>
         
         <div class="form-group">

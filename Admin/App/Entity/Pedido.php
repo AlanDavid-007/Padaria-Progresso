@@ -140,7 +140,7 @@ class Pedido
             $result[$key]['data'] = $value->data;
             $result[$key]['valor_tele_entrega'] = $value->valor_tele_entrega;
             $result[$key]['pagamento_id'] = $obPagamentos::getPagamento($value->pagamento_id);
-            $result[$key]['usuario_id'] = $obUsuarios::getUsuario($value->pedido_id);
+            $result[$key]['usuario_id'] = $obUsuarios::getUsuario($value->usuario_id);
             $result[$key]['cliente_id'] = $obClientes::getCliente($value->cliente_id);
         }
         return $result;
