@@ -202,7 +202,7 @@
 
             <div class="form-group">
                 <label style="margin-left:25%">Pedido</label>
-                <select class="form-control" style="width: 50%; margin-left:25%" name="pedido" value="">
+                <select class="form-control" style="width: 50%; margin-left:25%" name="pedido_id" value="">
                     <option value="">Selecione um Pedido</option>
                     <option value="">Nenhum pedido</option>
                     <?php foreach ($listaPedido as $key => $value) { ?>
@@ -212,7 +212,7 @@
             </div>
             <div class="form-group">
                 <label style="margin-left:25%">Promoções</label>
-                <select class="form-control" style="width: 50%; margin-left:25%" name="promocoes" value="">
+                <select class="form-control" style="width: 50%; margin-left:25%" name="promocoes_id" value="">
                     <option value="">Selecione uma Promoção</option>
                     <option value="">Nenhuma Promoção</option>
                     <?php foreach ($listaPromocao as $key => $value) { ?>
