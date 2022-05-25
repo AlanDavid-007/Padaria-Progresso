@@ -1,56 +1,36 @@
-<!-- Página de categorias(onde irá ter a visualização dos produtos de acordo com a categoria escolhida pelo usuário) -->
-<!-- Link que irá redirecionar o usuário para a página do devido produto  -->
+<!--
 
-<a href="index.php?Pagina=pag&filtro=pedido">Pedidos de Vendas</a>
+Revisar mudanças de código -Entitys, dbsql, categorias.php, cadastro_produtos.php e formulario_produtos.php
 
-<!-- Operador de Condição para verificar a existência da página que irá ser visualizada após o redirecionamento -->
+Criar arquivo de header e footer, para deixar dinamico a visualização
 
-<?php
-    if(isset($_GET['Pagina'])) <!-- Verificando se existe o atributo(na table do Database), o mesmo deve estar exposto no arquivo com use no arquivo para funcionar -->
-    {
-        $pagina =($_GET['Pagina']); <!-- Tal variável irá receber o get -->
-        if(file_exists('arquivos/'.$pagina.'.php')) <!-- Verificando se existe a página -->
-        {
-            @include_once("arquivos/$pagina.php"); <!-- Se existe manda para a página -->
-        }
-        else
-        {
-            @include_once("arquivos/404.php"); <!-- Senão manda para uma page de erro 404 -->
-        }
-    }
-   
-?>
+Tirar arquivos db e entity do cliente e se precisar usar os do Admin - Tirar código desnecessário
 
+Colocar visualização de listagens para o cliente sem as opções de exclusão e edição
 
+Fazer listagem de categorias - método de cadastro... - tanto cliente quanto admin 
 
+Colocar link get dinâmico nas categorias para ter acesso as listagens de produtos de acordo com a url deixada pelo filtro
 
+Ver com o sor como fazer visualização dinâmica de categoria e produto
 
-<!-- Continuar -->
+Fazer listagem de produtos detalhes - puxar os mesmos detalhes da de produtos, mas colocar mais informações 
 
-<!-- Página de Formulário de produtos(Permissão de Admin) Colocar input de imagem e atributo do mesmo no banco tags php para puxar dados do cadastro-->
-<input type="file" id="myfile" name="myfile"> ------> input de imagem
+--------------Finalizado listagens de produtos e categorias------------------
+Passos futuros:
 
-<!-- Colocar no Formulário também um select com a categoria do produto(doces,risóle ...) - utilizar do último projeto / puxar do banco-->
-Arquivos: Entity e cadastrar, editar
+Carrinho - listagens dos produtos trazidas através de click em botão
 
-<!-- Fazer na entity de produtos o use em categorias e fazer o array pra validar os dados e depois mandar pro select -->
-use \App\Entity\Categoria; ----- $obCategorias; -------- $obCategorias = new Categoria; -------- array com os atributos da tabela
+login e cadastro - Usar $SESSION 
 
-<!-- Colocar em Cadastro o use na Entity e Os condicionadores para validar os atributos da Tabela(Reutilizar do projeto anterior) -->
-use \App\Entity\Produto ------- $obCategorias = new Categoria ------- $listaCategoria = $obCategorias::getCategoria();
+Configurações - Deixar salvo as mudanças de acordo com ação do formulário
 
-<!-- Colocar nas páginas de produtos as listagens que puxarão os dados recebidos pelo formulário -->
-O card irá ser no formato que já esta no html, mas as informações puxar em forma de array ----- <?php echo $value['id'];?>
+Index - deixar a primeira vista só as informações básicas - home, login/cadastro e sobre, 
+se tiver tentativa de colocar produto no carrinho levar a página de login
 
--->
+Pagamento - Transferir para Whats
 
+----------------------------------------------------------------------------
 
-
-
-
-<!-- Deixar dinâmico a visualização de acordo com a categoria escolhida no cadastro do produto -->
-Utilizar link do get nas divs botões ------- <a href="index.php?Pagina=pag&filtro=pedido">Pedidos de Vendas</a>
-
-<!-- Resultado esperado: Visualização dinâmica na página de categorias -->
-<!-- Passo que irá ser importante para o uso dinâmico do carrinho -->
+Mudanças Finais de Layout e Revisamento do Projeto
 
