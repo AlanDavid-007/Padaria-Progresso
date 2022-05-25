@@ -28,7 +28,7 @@ if (isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['tip
     $obProdutos->cadastrar();
     //  echo "<pre>"; print_r($obProdutos); echo "</pre>"; exit; 
 
-    header('location: ../produtos/categorias.php?status=success');
+    header('location: ../../produtos/categorias.php?status=success');
     exit;
 }
 
