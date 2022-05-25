@@ -1,56 +1,53 @@
 <?php
 require __DIR__ . '../../vendor/autoload.php';
-//adaptar
-define('TITLE', 'Editar Curso');
 
-use App\Entity\Categoria;
-use \App\Entity\Curso;
-use \App\Entity\Professor;
+use \App\Entity\Pedido;
+use \App\Entity\Promocao;
+use \App\Entity\Categoria;
+use \App\Entity\Produto;
 
-$obCurso = new Curso;
-$obProfessores = new Professor;
+$obProdutos = new Produto;
 $obCategorias = new Categoria;
+$obPedidos = new Pedido;
+$obPromocoes = new Promocao;
 
-$listaProfessor = $obProfessores::getProfessores();
 $listaCategoria = $obCategorias::getCategorias();
+$listaPedido = $obPedidos::getPedidos();
+$listaPromocao = $obPromocoes::getPromocoes();
 
 //Validação do ID
 if (!isset($_GET['id'])  || !is_numeric($_GET['id'])) {
-    header('location: ../Index/index_cursos.php?status=error');
+    header('location: ../../produtos/categorias.php?status=error');
     exit;
 }
 
 //Consulta Vaga
-$obCurso = $obCurso::getCurso($_GET['id']);
+$obProdutos = $obProdutos::getProduto($_GET['id']);
 // echo "<pre>"; print_r($obCurso); echo "<pre>"; exit;
 
 //Validação da Vaga
-if (!$obCurso instanceof $obCurso) {
-    header('location: ../Index/index_cursos.php?status=error');
+if (!$obProdutos instanceof $obProdutos) {
+    header('location: ../../produtos/categorias.php?status=error');
     exit;
 }
 
-//Validação do POST
-if (isset($_POST['nome'], $_POST['palavra_chave'], $_POST['valor'], $_POST['ordem'], $_POST['professor'], $_POST['categoria'], $_POST['data'], $_POST['status'])) {
+//    echo "<pre>"; print_r($obProdutos); echo "</pre>"; exit;
+if (isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['tipo'], $_POST['imagem'], $_POST['pedido_id'], $_POST['promocoes_id'])) {
 
-    $obCurso->nome = $_POST['nome'];
-    $obCurso->palavra_chave = $_POST['palavra_chave'];
-    $obCurso->valor = $_POST['valor'];
-    $obCurso->ordem = $_POST['ordem'];
-    $obCurso->professor = $_POST['professor'];
-    $obCurso->categoria = $_POST['categoria'];
-    $obCurso->data = $_POST['data'];
-    $obCurso->status = $_POST['status'];
-    $obCurso->atualizar();
-    // echo "<pre>"; print_r($obCurso); echo "</pre>"; exit; 
+    $obProdutos->nome = $_POST['nome'];
+    $obProdutos->descricao = $_POST['descricao'];
+    $obProdutos->quantidade = $_POST['quantidade'];
+    $obProdutos->tipo = $_POST['tipo'];
+    $obProdutos->imagem = $_POST['imagem'];
+    $obProdutos->pedido_id = $_POST['pedido_id'];
+    $obProdutos->promocoes_id = $_POST['promocoes_id'];
+    $obProdutos->cadastrar();
+    //  echo "<pre>"; print_r($obProdutos); echo "</pre>"; exit; 
 
-    header('location: ../Index/index_cursos.php?status=success');
+    header('location: ../../produtos/categorias.php?status=success');
     exit;
 }
 
+require __DIR__ . '../../Includes/formulario_produtos.php';
 
-require __DIR__ . '../../INCLUDES/header_editar.php';
-
-require __DIR__ . '../../INCLUDES/formulario_cursos.php';
-
-require __DIR__ . '../../INCLUDES/footer.php';
+?>
