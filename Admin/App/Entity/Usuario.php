@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use \App\Db\Database;
-use \pDO;
+use \PDO;
 
 
 
