@@ -8,6 +8,8 @@ Colocar pasta e arquivos de Confirmar Exclusão
 
 Criar arquivo de header e footer, para deixar dinamico a visualização
 
+Colocar Pasta Css - puxar css do Cursos para este para usar estilo de botões
+
 Tirar arquivos db e entity do cliente e se precisar usar os do Admin - Tirar código desnecessário
 
 Colocar visualização de listagens para o cliente sem as opções de exclusão e edição
