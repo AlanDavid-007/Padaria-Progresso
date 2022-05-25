@@ -2,36 +2,32 @@
 //adaptar
 require __DIR__ . '../../vendor/autoload.php';
 
-define('TITLE', 'Cadastrar Cursos');
-define('HREF2', '../Index/index_cursos.php');
-define('TEXT', 'Curso');
-
-use \App\Entity\Curso;
+use \App\Entity\Produto;
 
 //Validação do ID
 if (!isset($_GET['id'])  || !is_numeric($_GET['id'])) {
-    header('location: ../Index/index_cursos.php?status=error');
+    header('location: ../../produtos/categorias.php?status=error');
     exit;
 }
 
 //Consulta Curso
-$obCurso = Curso::getCurso($_GET['id']);
-// echo "<pre>"; print_r($obCurso); echo "<pre>"; exit;
+$obProdutos = Produto::getProduto($_GET['id']);
+// echo "<pre>"; print_r($obProdutos); echo "<pre>"; exit;
 
 //Validação da Curso
-if (!$obCurso instanceof Curso) {
-    header('location: ../Index/index_cursos.php?status=error');
+if (!$obProdutos instanceof Produto) {
+    header('location: ../../produtos/categorias.php?status=error');
     exit;
 }
 //Validação do POST
 if (isset($_POST['excluir'])) {
 
-    $obCurso->excluir();
+    $obProdutos->excluir();
 
-    header('location: ../Index/index_cursos.php?status=success');
+    header('location: ../../produtos/categorias.php?status=success');
     exit;
 }
 
-require __DIR__ . '../../INCLUDES/header_editar.php';
-require __DIR__ . '../../INCLUDES/confirmarExclusao_cursos.php';
-require __DIR__ . '../../INCLUDES/footer.php';
+require __DIR__ . '../../Includes/header_editar.php';
+require __DIR__ . '../../Includes/confirmarExclusao_produtos.php';
+require __DIR__ . '../../Includes/footer.php';
