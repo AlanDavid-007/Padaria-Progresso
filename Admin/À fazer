@@ -2,6 +2,10 @@
 
 Revisar mudanças de código -Entitys, dbsql, categorias.php, cadastro_produtos.php e formulario_produtos.php
 
+Trocar nomes dos arquivos de editar e excluir
+
+Colocar pasta e arquivos de Confirmar Exclusão
+
 Criar arquivo de header e footer, para deixar dinamico a visualização
 
 Tirar arquivos db e entity do cliente e se precisar usar os do Admin - Tirar código desnecessário
