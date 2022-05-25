@@ -18,7 +18,7 @@ Fazer listagem de categorias - método de cadastro... - tanto cliente quanto adm
 
 Colocar link get dinâmico nas categorias para ter acesso as listagens de produtos de acordo com a url deixada pelo filtro
 
-Ver com o sor como fazer visualização dinâmica de categoria e produto
+Ver com o sor como fazer visualização dinâmica de categoria e produto - Ver se pode fazer atributo para pegar get
 
 Fazer listagem de produtos detalhes - puxar os mesmos detalhes da de produtos, mas colocar mais informações 
 
