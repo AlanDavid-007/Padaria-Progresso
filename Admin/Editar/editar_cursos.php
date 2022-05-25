@@ -41,7 +41,7 @@ if (isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['tip
     $obProdutos->imagem = $_POST['imagem'];
     $obProdutos->pedido_id = $_POST['pedido_id'];
     $obProdutos->promocoes_id = $_POST['promocoes_id'];
-    $obProdutos->cadastrar();
+    $obProdutos->atualizar();
     //  echo "<pre>"; print_r($obProdutos); echo "</pre>"; exit; 
 
     header('location: ../../produtos/categorias.php?status=success');
