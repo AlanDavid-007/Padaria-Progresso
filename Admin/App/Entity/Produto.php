@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use \App\Db\Database;
-use \pDO;
+use \PDO;
 use \App\Entity\Pedido;
 use \App\Entity\Promocao;
 use \App\Entity\Categoria;
@@ -137,6 +137,7 @@ class Produto
             $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
             $result[$key]['promocoes_id'] = $obPromocoes::getPromocao($value->promocoes_id);
         }
+        // echo "<pre>"; print_r($result); echo "</pre>"; exit;
         return $result;
     }
     /**
