@@ -225,15 +225,14 @@ $produtos = Produto::getProdutos($where);
         </section>
     <?php } ?>
     <section>
-
+    <div class="mx-auto container px-6 xl:px-0 py-12 ">
+                    <p class="uppercase text-center font-serif text-xl text-light">Confira os nossos bolos!</p>
+                </div>
+                <hr>
         <?php if (count($produtos) == 0) {  ?>
             <div class="alert alert-secondary mt-3" style="color:white;">Nenhum Produto encontrado</div>
         <?php } else { ?>
             <?php foreach ($produtos as $key => $value) { ?>
-                <div class="mx-auto container px-6 xl:px-0 py-12 ">
-                    <p class="uppercase text-center font-serif text-xl text-light">Confira os nossos bolos!</p>
-                </div>
-                <hr>
                 <div class="mx-auto container px-6 xl:px-0 py-12">
                     <div class="flex flex-col">
                         <div class="mt-10 grid lg:grid-cols-2 gap-x-8 gap-y-8 items-center">

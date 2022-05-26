@@ -4,8 +4,8 @@ namespace App\Entity;
 
 use \App\Db\Database;
 use \PDO;
-use \App\Entity\Pedido;
-use \App\Entity\Promocao;
+// use \App\Entity\Pedido;
+// use \App\Entity\Promocao;
 use \App\Entity\Categoria;
 
 
@@ -30,13 +30,13 @@ class Produto
      * Identificador único 
      * @var integer
      */
-    public $obPedidos;
+    // public $obPedidos;
 
     /** 
      * Identificador único 
      * @var integer
      */
-    public $obPromocoes;
+    // public $obPromocoes;
 
 
     /** 
@@ -98,8 +98,8 @@ class Produto
             'quantidade' => $this->quantidade,
             'tipo' => $this->tipo,
             'imagem' => $this->imagem,
-            'pedido_id' => $this->pedido_id,
-            'promocoes_id' => $this->promocoes_id,
+            // 'pedido_id' => $this->pedido_id,
+            // 'promocoes_id' => $this->promocoes_id,
         ]);
         // echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -134,8 +134,8 @@ class Produto
             $result[$key]['quantidade'] = $value->quantidade;
             $result[$key]['tipo'] = $obCategorias::getCategoria($value->tipo);
             $result[$key]['imagem'] = $value->imagem;
-            $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
-            $result[$key]['promocoes_id'] = $obPromocoes::getPromocao($value->promocoes_id);
+            // $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
+            // $result[$key]['promocoes_id'] = $obPromocoes::getPromocao($value->promocoes_id);
         }
         // echo "<pre>"; print_r($result); echo "</pre>"; exit;
         return $result;
@@ -182,8 +182,8 @@ class Produto
             'quantidade' => $this->quantidade,
             'tipo' => $this->tipo,
             'imagem' => $this->imagem,
-            'pedido_id' => $this->pedido_id,
-            'promocoes_id' => $this->promocoes_id,
+            // 'pedido_id' => $this->pedido_id,
+            // 'promocoes_id' => $this->promocoes_id,
         ]);
     }
 }

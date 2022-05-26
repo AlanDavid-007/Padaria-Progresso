@@ -170,7 +170,7 @@
             <button class="btn btn-header btn-lg btn-success">Voltar</button>
         </a>
 
-        <form method="post" action="../../produtos/categorias.php" class="form-send ">
+        <form method="post" class="form-send ">
             <div class="form-group">
                 <label style="margin-left:25%">Nome</label>
                 <input type="text" required class="form-control " style="width: 50%; margin-left:25%" name="nome" value="<?php echo isset($obProdutos->nome) ? $obProdutos->nome : ''; ?>">
@@ -200,7 +200,7 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label style="margin-left:25%">Pedido</label>
                 <select class="form-control" style="width: 50%; margin-left:25%" name="pedido_id" value="">
                     <option value="">Selecione um Pedido</option>
@@ -219,7 +219,7 @@
                         <option value="<?php echo $value->id; ?>" <?php echo $obProdutos->id == $value->id ? "selected" : ''; ?>> <?php echo $value->nome; ?></option>
                     <?php } ?>
                 </select>
-            </div>
+            </div> -->
 
             <div class="form-group">
                 <button style="margin-left:25%" type="submit" class="btn btn-header btn-success btn-lg">Enviar</button>
