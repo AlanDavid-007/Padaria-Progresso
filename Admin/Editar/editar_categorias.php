@@ -35,8 +35,8 @@ if (isset($_POST['nome'], $_POST['descricao'], $_POST['ordem'], $_POST['status']
 }
 
 
-require __DIR__ . '../../INCLUDES/header_editar.php';
+require __DIR__ . '../Includes/header_pasta.php';
 
 require __DIR__ . '../../INCLUDES/formulario_categorias.php';
 
-require __DIR__ . '../../INCLUDES/footer.php';
+require __DIR__ . '../Includes/footer_pasta.php';

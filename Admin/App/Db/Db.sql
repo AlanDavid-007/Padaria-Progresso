@@ -71,7 +71,7 @@ CREATE TABLE `pagamento`(
     `dinheiro` float DEFAULT NULL,
     `parcela` int DEFAULT NULL,
     PRIMARY KEY (`id`)
-);
+    );
 
 CREATE TABLE `cliente`(
     `id` int(11) NOT NULL AUTO_INCREMENT,

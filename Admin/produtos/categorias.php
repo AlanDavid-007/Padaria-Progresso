@@ -233,9 +233,9 @@ $produtos = Produto::getProdutos($where);
             <div class="alert alert-secondary mt-3" style="color:white;">Nenhum Produto encontrado</div>
         <?php } else { ?>
             <?php foreach ($produtos as $key => $value) { ?>
-                <div class="mx-auto container px-6 xl:px-0 py-12">
+                <div class="mx-auto container px-6 xl:px-0 py-8">
                     <div class="flex flex-col">
-                        <div class="mt-10 grid lg:grid-cols-2 gap-x-8 gap-y-8 items-center">
+                        <div class="mt-2 grid lg:grid-cols-1 gap-x-8 gap-y-8 items-center">
                             <a href="../produtos_detalhes/bolos_detalhe.php">
                                 <div class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
                                     <img class="group-hover:opacity-60 transition duration-500" src="<?php echo $value['imagem']; ?>" alt="bolos" />
@@ -250,25 +250,6 @@ $produtos = Produto::getProdutos($where);
                                         </div>
                                     </div>
                                     <div class="group-hover:opacity-60 transition duration-500 absolute bottom-8 right-8 flex justify-start items-start flex-row space-x-2">
-                                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
-                                        <button class="bg-white border rounded-full focus:bg-gray-800 border-gray-600 p-1.5"></button>
-                                    </div>
-                                    <div class="flex flex-col bottom-8 left-8 space-y-4 absolute opacity-0 group-hover:opacity-100 transition duration-500">
-                                        <button>
-                                            <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1.svg" alt="add">
-                                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg1dark.svg
-                
-                " alt="add">
-                                        </button>
-                                        <button>
-                                            <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2.svg" alt="view">
-                                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg2dark.svg" alt="view">
-                                        </button>
-                                        <button>
-                                            <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3.svg" alt="like">
-                                            <img class="hidden dark:block" src="
-                https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-2-svg3dark.svg" alt="like" />
-                                        </button>
                                         <a href="../Editar/editar_produtos.php?id=<?php echo $value['id']; ?>" style="margin-right:10px;">
                         <button type="button" class="neon-bt3 "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" style="margin-left:43%;" viewBox="0 0 16 16">
                                 <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
