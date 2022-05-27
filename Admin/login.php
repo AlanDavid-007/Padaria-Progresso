@@ -1,7 +1,8 @@
 <?php
 require __DIR__ . './Includes/header.php';
-?>
-    <!-- login -->
+    ?>
+
+
         <div class="h-full bg-gradient-to-tl from-black-400 to-gray-900 w-full py-16 px-4">
             <div class="flex flex-col items-center justify-center">
 
@@ -25,6 +26,7 @@ require __DIR__ . './Includes/header.php';
                          <p class="text-base font-medium leading-4 px-2.5 text-gray-400">OU</p>
                          <hr class="w-full bg-gray-400  ">
                         </div>
+                        <form method="post">
                         <div>
                             <label id="email" class="text-sm font-medium leading-none text-gray-800">
                                 Email
@@ -43,14 +45,12 @@ require __DIR__ . './Includes/header.php';
                            </div>
                         </div>
                         <div class="mt-8">
-                            <a href="configuracoes.php"><button role="button" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">Crie sua conta</button></a>
+                            <button role="button" name="resposta" type="submit" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">Crie sua conta</button>
                         </div>
+                        </form>
                 </div>
             </div>
         </div>
-          <!-- login -->
-        
-
-          <?php
+        <?php
 require __DIR__ . './Includes/footer.php';
-?>
+?>  

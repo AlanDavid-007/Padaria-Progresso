@@ -1,5 +1,43 @@
 <?php
+require __DIR__ . '../vendor/autoload.php';
+session_start();
+?>
+<?php
 require __DIR__ . './Includes/header.php';
+
+    session_start();
+    
+        if(!isset($_SESSION['login'])){
+
+            if(isset($_POST['resposta']) ){
+                $login = 'admin@gmail.com';
+                $senha = 'admin';
+
+                $loginForm = $_POST['login'];
+                $senhaForm = $_POST['senha'];
+
+                if($login == $loginForm && $Senha == $SenhaForm){
+                    //Login efetuado com sucesso!
+                    $_SESSION['login'] = $login;
+                    header('location: index.php');
+                }else{
+                    //Falha no login!
+                    echo 'Dados invalidos.';
+                }
+            }
+
+            include('login.php');
+        }   else{
+            if(isset($_GET['logout'])){
+                unset($_SESSION['login']);
+                session_destroy();
+                header('Location: index.php');
+            }
+            include('index.php');
+        }
+
+        echo '<h1> Bem-vindo '.$_session['login']. '</h1>';
+    echo '<a href="?logout">Fazer logout!</a>'
 ?>
     <!-- bg hero -->
     <div class="dark:bg-gray-900">
