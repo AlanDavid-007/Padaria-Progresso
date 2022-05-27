@@ -2,7 +2,7 @@
 require __DIR__ . '../../Includes/header_pasta.php';
 ?>
 <section style="margin-top:10%">
-    <a class="mt-5"href="../produtos/categorias.php">
+    <a class="mt-5"href="../index.php">
         <button class="btn-header btn-lg">Voltar</button>
     </a>
 
@@ -10,7 +10,7 @@ require __DIR__ . '../../Includes/header_pasta.php';
     <form method="post">
         <div class="form-group">
             <p>Você deseja realmente excluir a <?php echo TEXT ?>
-                <strong><?php echo $obProdutos->nome; ?></strong>
+                <strong><?php echo $obCategoria->nome; ?></strong>
             </p>
         </div>
 

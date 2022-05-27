@@ -19,6 +19,12 @@ class Categoria
      */
     public $nome;
 
+    /** 
+     * Título da Categoria
+     * @var string
+     */
+    public $imagem;
+
 
     /** 
      * Função para cadastrar a Categoria no banco
@@ -33,6 +39,7 @@ class Categoria
         $objDatabase = new Database('categorias');
         $this->id = $objDatabase->insert([
             'nome' => $this->nome,
+            'imagem' =>$this->imagem,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -94,6 +101,7 @@ class Categoria
 
         return ($objDatabase)->update('id = ' . $this->id, [
             'nome' => $this->nome,
+            'imagem' =>$this->imagem,
         ]);
     }
 }

@@ -34,6 +34,7 @@ if (isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['tip
     exit;
 }
 
+require __DIR__ . '../../Includes/header_pasta.php';
 require __DIR__ . '../../Includes/formulario_produtos.php';
-
+require __DIR__ . '../../Includes/footer_pasta.php';
 ?>

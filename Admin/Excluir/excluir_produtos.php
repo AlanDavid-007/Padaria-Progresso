@@ -27,11 +27,11 @@ if (isset($_POST['excluir'])) {
 
     $obProdutos->excluir();
 
-    header('location: ../../produtos/categorias.php?status=success');
+    header('location: ../produtos/categorias.php?status=success');
     exit;
 }
 
 
-require __DIR__ . '../Includes/header_pasta.php';
+require __DIR__ . '../../Includes/header_pasta.php';
 require __DIR__ . '../../ConfirmarExclusao/confirmarExclusao_produtos.php';
-require __DIR__ . '../Includes/footer_pasta.php';
+require __DIR__ . '../../Includes/footer_pasta.php';

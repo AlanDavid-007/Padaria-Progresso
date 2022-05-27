@@ -1,7 +1,4 @@
-<?php
-require __DIR__ . '../Includes/header_pasta.php';
-?>
-    <section class="formulario">
+    <section class="formulario bg-white">
         <a href="../produtos/categorias.php">
             <button class="btn btn-header btn-lg btn-success">Voltar</button>
         </a>
@@ -63,5 +60,5 @@ require __DIR__ . '../Includes/header_pasta.php';
         </form>
     </section>
     <?php
-require __DIR__ . '../Includes/footer_pasta.php';
+require __DIR__ . '../../Includes/footer_pasta.php';
 ?>

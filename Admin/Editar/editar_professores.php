@@ -41,8 +41,8 @@ if (isset($_POST['nome'],$_POST['sobrenome'],$_POST['cpf'],$_POST['formacao'],$_
 
 
 
-require __DIR__ . '../Includes/header_pasta.php';
+require __DIR__ . '../../Includes/header_pasta.php';
 
 require __DIR__ . '../../INCLUDES/formulario_professores.php';
 
-require __DIR__ . '../Includes/footer_pasta.php';
+require __DIR__ . '../../Includes/footer_pasta.php';

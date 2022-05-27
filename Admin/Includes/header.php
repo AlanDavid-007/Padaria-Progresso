@@ -79,6 +79,11 @@
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none; font-size: 20px;">Cadastro</a>
                             </li>
+                            <li>
+                                <a href="./produtos/categorias.php"
+                                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
+                                    style="text-decoration: none; font-size: 20px;">Categoria</a>
+                            </li>
                         </ul>
 
                         <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">

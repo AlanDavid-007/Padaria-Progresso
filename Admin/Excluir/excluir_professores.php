@@ -33,6 +33,6 @@ if (isset($_POST['excluir'])) {
 }
 
 
-require __DIR__ . '../Includes/header_pasta.php';
+require __DIR__ . '../../Includes/header_pasta.php';
 require __DIR__ . '../../INCLUDES/confirmarExclusao_professores.php';
-require __DIR__ . '../Includes/footer_pasta.php';
+require __DIR__ . '../../Includes/footer_pasta.php';

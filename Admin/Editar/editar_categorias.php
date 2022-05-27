@@ -7,7 +7,7 @@ use \App\Entity\Categoria;
 
 //Validação do ID
 if (!isset($_GET['id'])  || !is_numeric($_GET['id'])) {
-    header('location: ../Index/index_categorias.php?status=error');
+    header('location: ../index.php?status=error');
     exit;
 }
 
@@ -17,26 +17,22 @@ $obCategoria = Categoria::getCategoria($_GET['id']);
 
 //Validação da Vaga
 if (!$obCategoria instanceof Categoria) {
-    header('location: ../Index/index_categorias.php?status=error');
+    header('location: ../index.php?status=error');
     exit;
 }
 //Validação do POST
-if (isset($_POST['nome'], $_POST['descricao'], $_POST['ordem'], $_POST['status'])) {
+if (isset($_POST['nome'], $_POST['imagem'])) {
 
     $obCategoria->nome = $_POST['nome'];
-    $obCategoria->descricao = $_POST['descricao'];
-    $obCategoria->ordem = $_POST['ordem'];
-    $obCategoria->status = $_POST['status'];
-    $obCategoria->atualizar();
-    // echo "<pre>"; print_r($obCategoria); echo "</pre>"; exit; 
+    $obCategoria->imagem = $_POST['imagem'];
 
-    header('location: ../Index/index_categorias.php?status=success');
+    $obCategoria->cadastrar();
+    // echo "<pre>"; print_r($obProduto); echo "</pre>"; exit; 
+
+    header('location: ../index.php?status=success');
     exit;
 }
 
-
-require __DIR__ . '../Includes/header_pasta.php';
-
-require __DIR__ . '../../INCLUDES/formulario_categorias.php';
-
-require __DIR__ . '../Includes/footer_pasta.php';
+require __DIR__ . '../../Includes/header_pasta.php';
+require __DIR__ . '../../Includes/formulario_categorias.php';
+require __DIR__ . '../../Includes/footer_pasta.php';
