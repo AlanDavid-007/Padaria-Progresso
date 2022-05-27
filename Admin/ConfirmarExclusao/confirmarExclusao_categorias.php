@@ -1,6 +1,4 @@
-<?php
-require __DIR__ . '../../Includes/header_pasta.php';
-?>
+
 <section style="margin-top:10%">
     <a class="mt-5"href="../index.php">
         <button class="btn-header btn-lg">Voltar</button>
@@ -23,6 +21,3 @@ require __DIR__ . '../../Includes/header_pasta.php';
     </form>
 
 </section>
-<?php
-require __DIR__ . '../../Includes/footer_pasta.php';
-?>

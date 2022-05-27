@@ -100,6 +100,3 @@
         </div>
     </form>
 </section>
-<?php
-require __DIR__ . '../../Includes/footer_pasta.php';
-?>

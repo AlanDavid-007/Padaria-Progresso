@@ -53,7 +53,7 @@ if (isset($_GET['status'])) {
             <div class="grid grid-cols-3 gap-4">
                 <?php foreach ($categorias as $key => $value) { ?>
                     <div class="mt-2 items-center">
-                        <a href="">
+                        <a href="<?php echo $value->link;?>">
                             <div class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center col-span-2 mr-5">
                                 <img class="group-hover:opacity-60 transition duration-500" src="<?php echo $value->imagem; ?>" alt="bolos" />
                                 <div class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">

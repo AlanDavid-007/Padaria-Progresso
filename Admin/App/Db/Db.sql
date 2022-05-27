@@ -46,6 +46,7 @@ CREATE TABLE `categorias`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `nome` varchar(45) DEFAULT NULL,
     `imagem` BLOB DEFAULT NULL,
+    `link` varchar(100) DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
 CREATE TABLE `pedido`(

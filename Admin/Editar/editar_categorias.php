@@ -21,12 +21,13 @@ if (!$obCategoria instanceof Categoria) {
     exit;
 }
 //Validação do POST
-if (isset($_POST['nome'], $_POST['imagem'])) {
+if (isset($_POST['nome'], $_POST['imagem'], $_POST['link'])) {
 
     $obCategoria->nome = $_POST['nome'];
     $obCategoria->imagem = $_POST['imagem'];
+    $obCategoria->link = $_POST['link'];
 
-    $obCategoria->cadastrar();
+    $obCategoria->atualizar();
     // echo "<pre>"; print_r($obProduto); echo "</pre>"; exit; 
 
     header('location: ../index.php?status=success');
