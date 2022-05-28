@@ -95,7 +95,7 @@ class Produto
         $this->id = $objDatabase->insert([
             'nome' => $this->nome,
             'descricao' => $this->descricao,
-            'quantidade' => $this->quantidade,
+            // 'quantidade' => $this->quantidade,
             'tipo' => $this->tipo,
             'imagem' => $this->imagem,
             // 'pedido_id' => $this->pedido_id,
@@ -131,7 +131,7 @@ class Produto
             $result[$key]['id'] = $value->id;
             $result[$key]['nome'] = $value->nome;
             $result[$key]['descricao'] = $value->descricao;
-            $result[$key]['quantidade'] = $value->quantidade;
+             // $result[$key]['quantidade'] = $value->quantidade;
             $result[$key]['tipo'] = $obCategorias::getCategoria($value->tipo);
             $result[$key]['imagem'] = $value->imagem;
             // $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
@@ -179,7 +179,7 @@ class Produto
         return ($objDatabase)->update('id = ' . $this->id, [
             'nome' => $this->nome,
             'descricao' => $this->descricao,
-            'quantidade' => $this->quantidade,
+            // 'quantidade' => $this->quantidade,
             'tipo' => $this->tipo,
             'imagem' => $this->imagem,
             // 'pedido_id' => $this->pedido_id,
