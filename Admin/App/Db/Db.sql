@@ -7,6 +7,7 @@ CREATE TABLE `produtos` (
     `quantidade` INT DEFAULT NULL,
     `tipo` INT DEFAULT NULL,
     `imagem` BLOB DEFAULT NULL,
+    `preco` INT DEFAULT NULL,
     `pedido_id` INT DEFAULT NULL,
     `promocoes_id` INT DEFAULT NULL,
     PRIMARY KEY (`id`)
