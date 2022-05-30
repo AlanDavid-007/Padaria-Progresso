@@ -57,6 +57,7 @@ CREATE TABLE `pedido`(
     `data` date DEFAULT NULL,
     `descricao` text,
     `valor_tele_entrega` float DEFAULT NULL,
+    `quantidade` INT DEFAULT NULL,
     `pagamento_id` INT DEFAULT NULL,
     `usuario_id` INT DEFAULT NULL,
     `cliente_id` INT DEFAULT NULL,
