@@ -3,8 +3,10 @@ require __DIR__ . '../../Includes/header_pasta.php';
 require __DIR__ . '../../vendor/autoload.php';
 use \App\Entity\Produto;
 use \App\Entity\Feedback;
+use \App\Entity\Pedido;
 $produtos = Produto::getProdutos();
 $feedbacks = Feedback::getFeedbacks();
+$pedidos = Pedido::getPedidos();
 ?>
 
 
@@ -68,10 +70,9 @@ $feedbacks = Feedback::getFeedbacks();
           <?php 
           if(isset($_POST['quantity'])){
               $quantidade = $_POST['quantity'];
-          } else if($quantidade = 1){
-              $valor = 'R$' + 5 + ',' + 00;
-          } else if($quantidade > 1){
-            $valor = $valor + 5; // Incrementar para ser mais 5,00 R$
+          } else if($quantidade >= 1){
+              $valor = 'R$' + $quantidade*5 + ',' + 00;
+          }
           ?>
           <form method="post">
           <div class="flex ml-6 items-center">
