@@ -69,6 +69,12 @@ class Pedido
     public $valor_tele_entrega;
 
      /** 
+     * quantidade
+     * @var int
+     */
+    public $quantidade;
+    
+     /** 
      * pagamento_id
      * @var int
      */
@@ -103,6 +109,7 @@ class Pedido
             'data'=> $this->data,
             'descricao' => $this->descricao,
             'valor_tele_entrega' => $this->valor_tele_entrega,
+            'quantidade' => $this->quantidade,
             'pagamento_id'=> $this->cliente_id,
             'usuario_id' => $this->usuario_id,
             'cliente_id' => $this->cliente_id,
@@ -139,6 +146,7 @@ class Pedido
             $result[$key]['descricao'] = $value->descricao;
             $result[$key]['data'] = $value->data;
             $result[$key]['valor_tele_entrega'] = $value->valor_tele_entrega;
+            $result[$key]['quantidade'] = $value->quantidade;
             $result[$key]['pagamento_id'] = $obPagamentos::getPagamento($value->pagamento_id);
             $result[$key]['usuario_id'] = $obUsuarios::getUsuario($value->usuario_id);
             $result[$key]['cliente_id'] = $obClientes::getCliente($value->cliente_id);
@@ -187,7 +195,8 @@ class Pedido
             'data'=> $this->data,
             'descricao' => $this->descricao,
             'valor_tele_entrega' => $this->valor_tele_entrega,
-            'pagamento_id'=> $this->cliente_id,
+            'quantidade'=> $this->quantidade,
+            'pagamento_id'=> $this->pagamento_id,
             'usuario_id' => $this->usuario_id,
             'cliente_id' => $this->cliente_id,
         ]);
