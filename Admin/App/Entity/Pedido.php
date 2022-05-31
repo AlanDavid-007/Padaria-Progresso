@@ -7,6 +7,7 @@ use \PDO;
 use \App\Entity\Pagamento;
 use \App\Entity\Usuario;
 use \App\Entity\Cliente;
+use \App\Entity\Produto;
 
 
 
@@ -37,6 +38,12 @@ class Pedido
      * @var float
      */
     public $obClientes;
+    
+    /** 
+     * produto
+     * @var float
+     */
+    public $obProdutos;
 
     /** 
      * valor
@@ -107,8 +114,9 @@ class Pedido
             'valor' => $this->valor,
             'aprovapedido' => $this->aprovapedido,
             'data'=> $this->data,
-            'descricao' => $this->descricao,
             'valor_tele_entrega' => $this->valor_tele_entrega,
+            'descricao' => $this->descricao,
+            'nome' => $this->nome,
             'quantidade' => $this->quantidade,
             'pagamento_id'=> $this->cliente_id,
             'usuario_id' => $this->usuario_id,
@@ -134,6 +142,7 @@ class Pedido
         $obClientes = new Cliente;
         $obPagamentos = new Pagamento;
         $obUsuarios = new Usuario;
+        $obProdutos = new Produto;
         $objDatabase = new Database('pedido');
 
         $return = ($objDatabase)->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
@@ -143,10 +152,11 @@ class Pedido
             $result[$key]['id'] = $value->id;
             $result[$key]['valor'] = $value->valor;
             $result[$key]['aprovapedido'] = $value->aprovapedido;
-            $result[$key]['descricao'] = $value->descricao;
             $result[$key]['data'] = $value->data;
             $result[$key]['valor_tele_entrega'] = $value->valor_tele_entrega;
             $result[$key]['quantidade'] = $value->quantidade;
+            $result[$key]['descricao'] = $obProdutos::getProduto($value->descricao);
+            $result[$key]['nome'] = $obProdutos::getProduto($value->nome);
             $result[$key]['pagamento_id'] = $obPagamentos::getPagamento($value->pagamento_id);
             $result[$key]['usuario_id'] = $obUsuarios::getUsuario($value->usuario_id);
             $result[$key]['cliente_id'] = $obClientes::getCliente($value->cliente_id);
@@ -193,10 +203,11 @@ class Pedido
             'valor' => $this->valor,
             'aprovapedido' => $this->aprovapedido,
             'data'=> $this->data,
-            'descricao' => $this->descricao,
             'valor_tele_entrega' => $this->valor_tele_entrega,
-            'quantidade'=> $this->quantidade,
-            'pagamento_id'=> $this->pagamento_id,
+            'descricao' => $this->descricao,
+            'nome' => $this->nome,
+            'quantidade' => $this->quantidade,
+            'pagamento_id'=> $this->cliente_id,
             'usuario_id' => $this->usuario_id,
             'cliente_id' => $this->cliente_id,
         ]);
