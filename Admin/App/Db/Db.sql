@@ -55,9 +55,10 @@ CREATE TABLE `pedido`(
     `valor` float DEFAULT NULL,
     `aprovapedido` boolean DEFAULT NULL,
     `data` date DEFAULT NULL,
-    `descricao` text,
     `valor_tele_entrega` float DEFAULT NULL,
     `quantidade` INT DEFAULT NULL,
+    `descricao` INT DEFAULT NULL,
+    `nome` INT DEFAULT NULL,
     `pagamento_id` INT DEFAULT NULL,
     `usuario_id` INT DEFAULT NULL,
     `cliente_id` INT DEFAULT NULL,
@@ -66,6 +67,8 @@ CREATE TABLE `pedido`(
 ALTER TABLE pedido ADD CONSTRAINT pagamento_id FOREIGN KEY(pagamento_id) REFERENCES pagamento (id);
 ALTER TABLE pedido ADD CONSTRAINT usuario_id FOREIGN KEY(usuario_id) REFERENCES usuario (id);
 ALTER TABLE pedido ADD CONSTRAINT cliente_id FOREIGN KEY(cliente_id) REFERENCES cliente (id);
+ALTER TABLE pedido ADD CONSTRAINT nome FOREIGN KEY(nome) REFERENCES produtos (id);
+ALTER TABLE pedido ADD CONSTRAINT descricao FOREIGN KEY(descricao) REFERENCES produtos (id);
 
 CREATE TABLE `pagamento`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
