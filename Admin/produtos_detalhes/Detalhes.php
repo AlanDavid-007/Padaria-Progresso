@@ -9,14 +9,63 @@ use \App\Entity\Pedido;
 $produtos = Produto::getProdutos();
 $feedbacks = Feedback::getFeedbacks();
 $pedidos = Pedido::getPedidos();
-?>
+//busca
+$busca = filter_input(INPUT_GET, 'nome');
 
-//Trocar posição da tag Form
+//Filtro status
+$FiltroNome = filter_input(INPUT_GET, 'nome');
+
+
+//condiçoes sql 
+$condicoes = [
+    strlen($busca) ? 'nome LIKE "%' . str_replace(' ', '%', $busca) . '%"' : null,
+];
+
+$condicoes = array_filter($condicoes);
+
+//clausula where
+$where = implode(' AND ', $condicoes);
+
+$produtos = Produto::getProdutos($where);
+//  echo "<pre>"; print_r($produtos); echo "</pre>"; exit;
+?>
+<?php
+
+$mensagem = '';
+if (isset($_GET['nome'])) {
+    switch ($_GET['nome']) {
+        case 'Risóles+de+Frango':
+            $mensagem = '<div class="alert alert-success mt-3 ml-5 mr-5">Ação executada com sucesso!</div>';
+            break;
+        case 'error':
+            $mensagem = '<div class="alert alert-danger mt-3 ml-5 mr-5">Ação não executada!</div>';
+            break;
+        default:
+            # code...
+            break;
+    }
+}
+?>
+<section class="mt-5 ml-5">
+    <form method="get" class="d-none">
+        <div class="row alig-items-between">
+            <div class="col text-light">
+                <label>Filtrar Produtos</label>
+                <input type="text" name="nome" class="form-control" value="<?= $busca ?>">
+            </div>
+            <div class="col d-flex align-items-end">
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+
+                <a href="../Cadastro/cadastro_produtos.php" style="text-decoration:none; color:white;" class="btn btn-success ml-3">Cadastrar</a>
+            </div>
+        </div>
+    </form>
+</section>
 <?php foreach ($produtos as $key => $value) { ?>
   <section class="text-gray-700 body-font overflow-hidden bg-white">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex">
-        <a href="../../produtos/categorias.php"><button class="flex mr-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Voltar</button></a>
+        <a href="../produtos/categorias.php"><button class="flex mr-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Voltar</button></a>
         </button>
       </div>
       <div class="lg:w-4/5 mx-auto flex flex-wrap">
@@ -74,6 +123,7 @@ $pedidos = Pedido::getPedidos();
               var quantidade = document.getElementById('quantity');
 
               if (quantidade >= 1) {
+                document.getElementById('valor') = valor;
                 var valor = 'R$' + quantidade * 5 + ',' + 00;
               }
             </script>
@@ -91,7 +141,7 @@ $pedidos = Pedido::getPedidos();
               </div>
           </div>
           <div class="flex">
-            <span class="title-font font-medium text-2xl text-gray-900"><script> print(valor) ;</script></span>
+            <span class="title-font font-medium text-2xl text-gray-900" id="valor"></script></span>
             <button class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded" type="submit">Adicionar ao Carrinho</button>
             <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
               <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">

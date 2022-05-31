@@ -3,9 +3,11 @@
 namespace App\Entity;
 
 use \App\Db\Database;
-use \pDO;
-use \App\Entity\Pedido;
-use \App\Entity\Promocao;
+use \PDO;
+// use \App\Entity\Pedido;
+// use \App\Entity\Promocao;
+use \App\Entity\Categoria;
+use \App\Entity\Feedback;
 
 
 
@@ -19,7 +21,31 @@ class Produto
      */
     public $id;
 
-    
+    /** 
+     * Identificador único 
+     * @var integer
+     */
+    public $obCategorias;
+
+    /** 
+     * Identificador único 
+     * @var integer
+     */
+    // public $obPedidos;
+
+    /** 
+     * Identificador único 
+     * @var integer
+     */
+    // public $obPromocoes;
+
+    /** 
+     * Identificador único 
+     * @var integer
+     */
+    public $obFeedbacks;
+
+
     /** 
      * nome
      * @var varchar
@@ -39,11 +65,28 @@ class Produto
     public $quantidade;
 
     /** 
+     * preco
+     * @var int
+     */
+    public $preco;
+
+    /** 
      * tipo
      * @var varchar
      */
     public $tipo;
 
+    /** 
+     * imagem
+     * @var blob
+     */
+    public $imagem;
+
+    /** 
+     * link
+     * @var varchar
+     */
+    public $link;
     /** 
      * pedido_id
      * @var int
@@ -70,12 +113,15 @@ class Produto
         $this->id = $objDatabase->insert([
             'nome' => $this->nome,
             'descricao' => $this->descricao,
-            'quantidade'=> $this->quantidade,
+            'quantidade' => $this->quantidade,
             'tipo' => $this->tipo,
-            'pedido_id' => $this->pedido_id,
-            'promocoes_id'=> $this->promocoes_id,
+            'preco' => $this->preco,
+            'imagem' => $this->imagem,
+            'link' => $this->link,
+            // 'pedido_id' => $this->pedido_id,
+            // 'promocoes_id' => $this->promocoes_id,
         ]);
-        //echo "<pre>"; print_r($this); echo "</pre>"; exit;
+        // echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
         //Retornar sucesso
         return true;
@@ -92,12 +138,32 @@ class Produto
 
     public static function getProdutos($where = null, $order = null, $limit = null)
     {
-
+        $obCategorias = new Categoria;
+        $obFeedbacks = new Feedback;
+        // $obPedidos = new Pedido;
+        // $obPromocoes = new Promocao;
         $objDatabase = new Database('produtos');
 
-        return ($objDatabase)->select($where, $order, $limit)->fetchAll(pDO::FETCH_CLASS, self::class);
-    }
 
+        $return = ($objDatabase)->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
+        $result = array();
+
+        foreach ($return as $key => $value) {
+            $result[$key]['id'] = $value->id;
+            $result[$key]['nome'] = $value->nome;
+            $result[$key]['descricao'] = $value->descricao;
+            $result[$key]['quantidade'] = $value->quantidade;
+            $result[$key]['link'] = $value->link;
+            $result[$key]['preco'] = $value->preco;
+            // $result[$key]['feedbacks'] = $obFeedbacks::getFeedback($value->feedbacks);
+            $result[$key]['tipo'] = $obCategorias::getCategoria($value->tipo);
+            $result[$key]['imagem'] = $value->imagem;
+            // $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
+            // $result[$key]['promocoes_id'] = $obPromocoes::getPromocao($value->promocoes_id);
+        }
+        // echo "<pre>"; print_r($result); echo "</pre>"; exit;
+        return $result;
+    }
     /**
      * Método responsável por obter as professors do banco de dados
 
@@ -137,10 +203,13 @@ class Produto
         return ($objDatabase)->update('id = ' . $this->id, [
             'nome' => $this->nome,
             'descricao' => $this->descricao,
-            'quantidade'=> $this->quantidade,
+            'quantidade' => $this->quantidade,
             'tipo' => $this->tipo,
-            'pedido_id' => $this->pedido_id,
-            'promocoes_id'=> $this->promocoes_id,
+            'preco' => $this->preco,
+            'imagem' => $this->imagem,
+            'link' => $this->link,
+            // 'pedido_id' => $this->pedido_id,
+            // 'promocoes_id' => $this->promocoes_id,
         ]);
     }
 }

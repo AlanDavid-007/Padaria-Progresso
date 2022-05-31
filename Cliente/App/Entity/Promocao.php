@@ -3,11 +3,11 @@
 namespace App\Entity;
 
 use \App\Db\Database;
-use \pDO;
-use \App\Db\Pedido;
-use \App\Db\Pagamento;
-use \App\Db\Usuario;
-use \App\Db\Cliente;
+use \PDO;
+use \App\Entity\Pedido;
+use \App\Entity\Pagamento;
+use \App\Entity\Usuario;
+use \App\Entity\Cliente;
 
 
 
@@ -20,6 +20,30 @@ class Promocao
      * @var integer
      */
     public $id;
+
+        /** 
+     * Identificador único 
+     * @var integer
+     */
+    public $obPedidos;
+
+    /** 
+     * valor
+     * @var float
+     */
+    public $obPagamentos;
+
+    /** 
+     * valor
+     * @var float
+     */
+    public $obUsuarios;
+
+    /** 
+     * valor
+     * @var float
+     */
+    public $obClientes;
 
     /** 
      * nome
@@ -114,10 +138,28 @@ class Promocao
 
     public static function getPromocoes($where = null, $order = null, $limit = null)
     {
-
+        $obPedidos = new Pedido;
+        $obClientes = new Cliente;
+        $obPagamentos = new Pagamento;
+        $obUsuarios = new Usuario;
         $objDatabase = new Database('promocoes');
 
-        return ($objDatabase)->select($where, $order, $limit)->fetchAll(pDO::FETCH_CLASS, self::class);
+        $return = ($objDatabase)->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
+        $result = array();
+
+        foreach ($return as $key => $value) {
+            $result[$key]['id'] = $value->id;
+            $result[$key]['nome'] = $value->nome;
+            $result[$key]['descricao'] = $value->descricao;
+            $result[$key]['desconto'] = $value->desconto;
+            $result[$key]['dataInicio'] = $value->dataInicio;
+            $result[$key]['dataTermino'] = $value->dataTermino;
+            $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
+            $result[$key]['pedido_pagamento_id'] = $obPagamentos::getPagamento($value->pedido_pagamento_id);
+            $result[$key]['pedido_usuario_id'] = $obUsuarios::getUsuario($value->pedido_usuario_id);
+            $result[$key]['pedido_cliente_id'] = $obClientes::getCliente($value->pedido_cliente_id);
+        }
+        return $result;
     }
 
     /**

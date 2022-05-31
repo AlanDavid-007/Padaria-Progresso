@@ -30,6 +30,7 @@
                 <label>Link para Detalhes</label>
                 <input type="text" required class="form-control " name="link" value="<?php echo isset($obProdutos->link) ? $obProdutos->link : ''; ?>">
             </div>
+            
             <div class="form-group">
                 <label>Tipo</label>
                 <select class="form-control" name="tipo" value="">
@@ -53,7 +54,7 @@
                 <br>
                 <p class="card-text">Obs: Onde está "nomedoproduto"<br> coloque o nome que desejar colocar para produto</p>
                 <br>
-                <p class="card-text">Exemplo: produtos_detalhes/Detalhes?nome=Risóles+de+Frango</p>
+                <p class="card-text">Exemplo: ../produtos_detalhes/Detalhes?nome=Risóles+de+Frango</p>
             </div>
         </div>
     </section>
