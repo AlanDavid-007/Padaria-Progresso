@@ -7,6 +7,8 @@ CREATE TABLE `produtos` (
     `quantidade` INT DEFAULT NULL,
     `tipo` INT DEFAULT NULL,
     `imagem` BLOB DEFAULT NULL,
+    `link` varchar(100) DEFAULT NULL,
+    `feedback` INT DEFAULT NULL,
     `preco` INT DEFAULT NULL,
     `pedido_id` INT DEFAULT NULL,
     `promocoes_id` INT DEFAULT NULL,
@@ -15,6 +17,7 @@ CREATE TABLE `produtos` (
 ALTER TABLE produtos ADD CONSTRAINT pedido_id FOREIGN KEY(pedido_id) REFERENCES pedido (id);
 ALTER TABLE produtos ADD CONSTRAINT promocoes_id FOREIGN KEY(promocoes_id) REFERENCES promocoes (id);
 ALTER TABLE produtos ADD CONSTRAINT tipo FOREIGN KEY(tipo) REFERENCES categorias (id);
+ALTER TABLE produtos ADD CONSTRAINT feedback FOREIGN KEY(feedback) REFERENCES feedback (id);
 
 CREATE TABLE `promocoes`(
     `id` int(11) NOT NULL AUTO_INCREMENT,

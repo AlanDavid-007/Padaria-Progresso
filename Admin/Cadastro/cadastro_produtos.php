@@ -16,17 +16,17 @@ $listaCategoria = $obCategorias::getCategorias();
 // $listaPromocao = $obPromocoes::getPromocoes();
 
     // echo "<pre>"; print_r($obPedidos); echo "</pre>"; exit;
-if (isset($_POST['nome'], $_POST['descricao']
-// , $_POST['quantidade']
-, $_POST['tipo'], $_POST['imagem']
+if (isset($_POST['nome'], $_POST['descricao'], $_POST['quantidade'], $_POST['tipo'], $_POST['imagem'], $_POST['link'], $_POST['preco']
 // , $_POST['pedido_id'], $_POST['promocoes_id']
 )) {
 
     $obProdutos->nome = $_POST['nome'];
     $obProdutos->descricao = $_POST['descricao'];
-   // $obProdutos->quantidade = $_POST['quantidade'];
+    $obProdutos->quantidade = $_POST['quantidade'];
     $obProdutos->tipo = $_POST['tipo'];
     $obProdutos->imagem = $_POST['imagem'];
+    $obProdutos->link = $_POST['link'];
+    $obProdutos->preco = $_POST['preco'];
     // $obProdutos->pedido_id = $_POST['pedido_id'];
     // $obProdutos->promocoes_id = $_POST['promocoes_id'];
     $obProdutos->cadastrar();

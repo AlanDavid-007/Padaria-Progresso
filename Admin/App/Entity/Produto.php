@@ -7,6 +7,7 @@ use \PDO;
 // use \App\Entity\Pedido;
 // use \App\Entity\Promocao;
 use \App\Entity\Categoria;
+use \App\Entity\Feedback;
 
 
 
@@ -38,6 +39,12 @@ class Produto
      */
     // public $obPromocoes;
 
+    /** 
+     * Identificador único 
+     * @var integer
+     */
+    public $obFeedbacks;
+
 
     /** 
      * nome
@@ -58,6 +65,12 @@ class Produto
     public $quantidade;
 
     /** 
+     * preco
+     * @var int
+     */
+    public $preco;
+
+    /** 
      * tipo
      * @var varchar
      */
@@ -69,6 +82,11 @@ class Produto
      */
     public $imagem;
 
+    /** 
+     * link
+     * @var varchar
+     */
+    public $link;
     /** 
      * pedido_id
      * @var int
@@ -95,9 +113,11 @@ class Produto
         $this->id = $objDatabase->insert([
             'nome' => $this->nome,
             'descricao' => $this->descricao,
-            // 'quantidade' => $this->quantidade,
+            'quantidade' => $this->quantidade,
             'tipo' => $this->tipo,
+            'preco' => $this->preco,
             'imagem' => $this->imagem,
+            'link' => $this->link,
             // 'pedido_id' => $this->pedido_id,
             // 'promocoes_id' => $this->promocoes_id,
         ]);
@@ -119,8 +139,9 @@ class Produto
     public static function getProdutos($where = null, $order = null, $limit = null)
     {
         $obCategorias = new Categoria;
-        $obPedidos = new Pedido;
-        $obPromocoes = new Promocao;
+        $obFeedbacks = new Feedback;
+        // $obPedidos = new Pedido;
+        // $obPromocoes = new Promocao;
         $objDatabase = new Database('produtos');
 
 
@@ -131,7 +152,10 @@ class Produto
             $result[$key]['id'] = $value->id;
             $result[$key]['nome'] = $value->nome;
             $result[$key]['descricao'] = $value->descricao;
-             // $result[$key]['quantidade'] = $value->quantidade;
+            $result[$key]['quantidade'] = $value->quantidade;
+            $result[$key]['link'] = $value->link;
+            $result[$key]['preco'] = $value->preco;
+            // $result[$key]['feedbacks'] = $obFeedbacks::getFeedback($value->feedbacks);
             $result[$key]['tipo'] = $obCategorias::getCategoria($value->tipo);
             $result[$key]['imagem'] = $value->imagem;
             // $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
@@ -179,9 +203,11 @@ class Produto
         return ($objDatabase)->update('id = ' . $this->id, [
             'nome' => $this->nome,
             'descricao' => $this->descricao,
-            // 'quantidade' => $this->quantidade,
+            'quantidade' => $this->quantidade,
             'tipo' => $this->tipo,
+            'preco' => $this->preco,
             'imagem' => $this->imagem,
+            'link' => $this->link,
             // 'pedido_id' => $this->pedido_id,
             // 'promocoes_id' => $this->promocoes_id,
         ]);

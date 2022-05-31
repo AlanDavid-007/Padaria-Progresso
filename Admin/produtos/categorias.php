@@ -65,7 +65,7 @@ if (isset($_GET['status'])) {
 <?php } ?>
 <section>
     <div class="mx-auto container px-6 xl:px-0 py-12 ">
-        <p class="uppercase text-center font-serif text-xl text-light">Confira os nossos bolos!</p>
+        <p class="uppercase text-center font-serif text-xl text-light">Confira os nossos Produtos!</p>
     </div>
     <hr>
     <?php if (count($produtos) == 0) {  ?>
@@ -76,7 +76,7 @@ if (isset($_GET['status'])) {
                 <?php foreach ($produtos as $key => $value) { ?>
 
                     <div class="mt-2 items-center">
-                        <a href="../produtos_detalhes/bolos_detalhe.php">
+                        <a href="<?php echo $value['link']; ?>">
                             <div class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center col-span-2 mr-5">
                                 <img class="group-hover:opacity-60 transition duration-500" src="<?php echo $value['imagem']; ?>" alt="bolos" />
                                 <div class="absolute sm:top-8 top-4 left-4 sm:left-8 flex justify-start items-start flex-col space-y-2">
@@ -123,7 +123,7 @@ if (isset($_GET['status'])) {
                         </a>
                     </div>
 
-                    
+
 
 
                 <?php } ?>

@@ -2,7 +2,7 @@
 require __DIR__ . './Includes/header.php';
 require __DIR__ . '../vendor/autoload.php'; 
 use \App\Entity\Pedido;
-$pedidos = Pedido::getPedido();
+$pedidos = Pedido::getPedidos();
 $Count = 'SQL COUNT(id) FROM pedido ORDER BY DESC LIMIT 1';
 ?>
 
