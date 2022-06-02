@@ -29,23 +29,6 @@ $where = implode(' AND ', $condicoes);
 $produtos = Produto::getProdutos($where);
 //  echo "<pre>"; print_r($produtos); echo "</pre>"; exit;
 ?>
-<?php
-
-$mensagem = '';
-if (isset($_GET['nome'])) {
-    switch ($_GET['nome']) {
-        case 'Risóles+de+Frango':
-            $mensagem = '<div class="alert alert-success mt-3 ml-5 mr-5">Ação executada com sucesso!</div>';
-            break;
-        case 'error':
-            $mensagem = '<div class="alert alert-danger mt-3 ml-5 mr-5">Ação não executada!</div>';
-            break;
-        default:
-            # code...
-            break;
-    }
-}
-?>
 <section class="mt-5 ml-5">
     <form method="get" class="d-none">
         <div class="row alig-items-between">
@@ -119,19 +102,21 @@ if (isset($_GET['nome'])) {
             <button class="border-2 border-gray-300 ml-1 bg-red-500 rounded-full w-6 h-6 focus:outline-none"></button>
           </div> -->
 
-            <script>
-              var quantidade = document.getElementById('quantity');
-
-              if (quantidade >= 1) {
-                document.getElementById('valor') = valor;
-                var valor = 'R$' + quantidade * 5 + ',' + 00;
-              }
-            </script>
+             <?php 
+             $quantidade = $_POST['quantity'];
+             $valor = '';
+             $preco = $value['valor']->valor;
+          if($quantidade >= 1)){
+              $valor = 'R$' + $quantidade*$preco + ',' + 00;
+          } else {
+              $valor = 'Produto temporariamente indisponível';   
+          }
+          ?>
             <form method="post">
               <div class="flex ml-6 items-center">
                 <span class="mr-3">Quantidade</span>
                 <div class="relative">
-                  <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantity" name="quantity">
+                  <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantity" name="quantity" value="<?php echo $quantidade?>">
                   <span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4" viewBox="0 0 24 24">
                       <path d="M6 9l6 6 6-6"></path>
