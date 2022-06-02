@@ -37,7 +37,7 @@ $Counter = 'SQL COUNT(id) FROM pedido ORDER BY DESC LIMIT 1';
              $quantidade = $_POST['quantity'];
              $valor = '';
              $preco = $value['valor']->valor;
-          if($quantidade >= 1)){
+          if($quantidade >= 1){
               $valor = 'R$' + $quantidade*$preco + ',' + 00;
           } else {
               $valor = 'Produto temporariamente indisponível';   

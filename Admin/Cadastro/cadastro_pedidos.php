@@ -21,24 +21,22 @@ $listaProdutos = $obProdutos::getProdutos();
 // $listaUsuario = $obUsuarios::getUsuarios();
 
     // echo "<pre>"; print_r($obPedidos); echo "</pre>"; exit;
-if (isset($_POST['valor']
-// ,$_POST['aprovapedido']
-, $_POST['data'], $_POST['nome'], $_POST['descricao'], $_POST['valor_tele_entrega'], $_POST['quantidade']
+if (isset($_POST['quantidade']
 // , $_POST['pagamento_id'], $_POST['usuario_id'], $_POST['Cliente_id']
 )) {
 
-    $obProdutos->valor = $_POST['valor'];
-   // $obProdutos->aprovapedido = $_POST['aprovapedido'];
-    $obProdutos->data = $_POST['data'];
-    $obProdutos->nome = $_POST['nome'];
-    $obProdutos->descricao = $_POST['descricao'];
-    $obProdutos->valor_tele_entrega = $_POST['valor_tele_entrega'];
-    $obProdutos->quantidade = $_POST['quantidade'];
-   // $obProdutos->pagamento_id = $_POST['pagamento_id'];]
-   // $obProdutos->usuario_id = $_POST['usuario_id'];
-   // $obProdutos->cliente_id = $_POST['cliente_id'];
+//     $obPedidos->valor = $_POST['valor'];
+//    // $obPedidos->aprovapedido = $_POST['aprovapedido'];
+    // $obPedidos->data = $_POST['data'];
+    // $obPedidos->nome = $_POST['nome'];
+    // $obPedidos->descricao = $_POST['descricao'];
+    // $obPedidos->valor_tele_entrega = $_POST['valor_tele_entrega'];
+    $obPedidos->quantidade = $_POST['quantidade'];
+   // $obPedidos->pagamento_id = $_POST['pagamento_id'];]
+   // $obPedidos->usuario_id = $_POST['usuario_id'];
+   // $obPedidos->cliente_id = $_POST['cliente_id'];
     
-    $obProdutos->cadastrar();
+    $obPedidos->cadastrar();
     //  echo "<pre>"; print_r($obProdutos); echo "</pre>"; exit; 
 
     header('location: ../carrinho.php?status=success');
