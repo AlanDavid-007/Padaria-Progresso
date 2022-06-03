@@ -33,23 +33,13 @@ $Counter = 'SQL COUNT(id) FROM pedido ORDER BY DESC LIMIT 1';
             </div>
           </div>
             
-            <?php 
-             $quantidade = $_POST['quantity'];
-             $valor = '';
-             $preco = $value['valor']->valor;
-          if($quantidade >= 1){
-              $valor = 'R$' + $quantidade*$preco + ',' + 00;
-          } else {
-              $valor = 'Produto temporariamente indisponível';   
-          }
-          ?>
+        
             
           <div class="flex justify-center w-1/5">
             <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
             </svg>
 
-            <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantity" name="quantity" value="<?php echo $value['quantidade'];?>">
-              </input>
+            <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantity" name="quantity" value="<?php echo $value['quantidade']->quantidade?>">
 
             <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
               <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>

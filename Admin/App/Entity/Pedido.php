@@ -154,7 +154,7 @@ class Pedido
             $result[$key]['aprovapedido'] = $value->aprovapedido;
             $result[$key]['data'] = $value->data;
             $result[$key]['valor_tele_entrega'] = $value->valor_tele_entrega;
-            $result[$key]['quantidade'] = $value->quantidade;
+            $result[$key]['quantidade'] = $obProdutos::getProduto($value->quantidade);
             $result[$key]['descricao'] = $obProdutos::getProduto($value->descricao);
             $result[$key]['nome'] = $obProdutos::getProduto($value->nome);
             $result[$key]['pagamento_id'] = $obPagamentos::getPagamento($value->pagamento_id);

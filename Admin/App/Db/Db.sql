@@ -72,6 +72,7 @@ ALTER TABLE pedido ADD CONSTRAINT usuario_id FOREIGN KEY(usuario_id) REFERENCES 
 ALTER TABLE pedido ADD CONSTRAINT cliente_id FOREIGN KEY(cliente_id) REFERENCES cliente (id);
 ALTER TABLE pedido ADD CONSTRAINT nome FOREIGN KEY(nome) REFERENCES produtos (id);
 ALTER TABLE pedido ADD CONSTRAINT descricao FOREIGN KEY(descricao) REFERENCES produtos (id);
+ALTER TABLE pedido ADD CONSTRAINT quantidade FOREIGN KEY(quantidade) REFERENCES produtos (id);
 
 CREATE TABLE `pagamento`(
     `id` int(11) NOT NULL AUTO_INCREMENT,

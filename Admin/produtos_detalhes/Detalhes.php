@@ -104,16 +104,12 @@ $produtos = Produto::getProdutos($where);
           </div> -->
 
              <?php 
-             $doc = new DomDocument;
-             $obPedidos->quantidade = $doc->getElementById('quantidade');
+             $obPedidos->quantidade = $_POST['quantity'];
              $quantidade = $obPedidos->quantidade;
-          if(isset($_POST['quantidade'])) {
-             $quantidade = $obPedidos->quantidade;
-             $valor = '';
-             $preco = $value['valor']->valor;
-          }
-          else if($quantidade >= 1){
-              $valor = 'R$' + $quantidade*$preco + ',' + 00;
+             $preco = $value['preco'];
+             $valor = $preco ;
+               if($quantidade >= 1){
+              $valor = $quantidade*$preco;
           } else {
               $valor = 'Produto temporariamente indisponível';   
           }
@@ -122,7 +118,7 @@ $produtos = Produto::getProdutos($where);
               <div class="flex ml-6 items-center">
                 <span class="mr-3">Quantidade</span>
                 <div class="relative">
-                  <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantity" name="quantidade" value="<?php echo $quantidade?>">
+                  <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantity" name="quantity" value="<?php echo $quantidade?>">
                   <span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4" viewBox="0 0 24 24">
                       <path d="M6 9l6 6 6-6"></path>
@@ -132,7 +128,7 @@ $produtos = Produto::getProdutos($where);
               </div>
           </div>
           <div class="flex">
-            <span class="title-font font-medium text-2xl text-gray-900" id="valor"><?php echo $valor?></span>
+            <span class="title-font font-medium text-2xl text-gray-900" id="valor">R$<?php echo $valor?>,00</span>
             <button class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded" type="submit">Adicionar ao Carrinho</button>
             <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
               <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
