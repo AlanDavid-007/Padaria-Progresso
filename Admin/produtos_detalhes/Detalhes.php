@@ -110,6 +110,7 @@ $produtos = Produto::getProdutos($where);
              $valor = $preco ;
                if($quantidade >= 1){
               $valor = $quantidade*$preco;
+              $obPedidos->valor = $valor;
           } else {
               $valor = 'Produto temporariamente indisponível';   
           }
