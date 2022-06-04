@@ -18,25 +18,23 @@ $listaProdutos = $obProdutos::getProdutos();
 // $listaCliente = $obClientes::getClientes();
 // $listaPagamento = $obPagamentos::getPagamentos();
 // $listaUsuario = $obUsuarios::getUsuarios();
-
-   $hoje = date('d/m/Y'); 
-   $obPedidos->quantidade = $_POST['quantity'];
-   $quantidade = $obPedidos->quantidade;
-   $preco = $obProdutos->preco;
-   $valor = $preco;
-   if($quantidade >= 1){
-   $valor = $quantidade*$preco;
-   $obPedidos->valor = $valor;
-   }
-                 
-    // echo "<pre>"; print_r($obPedidos); echo "</pre>"; exit;
+$obPedidos->quantidade = $_POST['quantity'];
+$quantidade = $obPedidos->quantidade;
+$preco = $obProdutos->preco;
+$valor = $quantidade*$preco;
+$obPedidos->valor = $valor;
 if (isset($_POST['quantity']
 // , $_POST['pagamento_id'], $_POST['usuario_id'], $_POST['Cliente_id']
-)) {
-
+) && $quantidade >= 1) {
+    $time = strtotime(date('d-m-Y'));
+    $newformat = date('Y-m-d',$time);
+    $obPedidos->quantidade = $_POST['quantity'];
+    $quantidade = $obPedidos->quantidade;
+    $preco = $obProdutos->preco;
+    $valor = $quantidade*$preco;
     $obPedidos->valor = $valor;
    // $obPedidos->aprovapedido = $_POST['aprovapedido'];
-    $obPedidos->data = $hoje;
+    $obPedidos->data = $newformat;
     $obPedidos->nome = $obProdutos->nome;
     $obPedidos->descricao = $obProdutos->descricao;
    // $obPedidos->valor_tele_entrega = $_POST['valor_tele_entrega'];
@@ -44,7 +42,7 @@ if (isset($_POST['quantity']
    // $obPedidos->pagamento_id = $_POST['pagamento_id'];]
    // $obPedidos->usuario_id = $_POST['usuario_id'];
    // $obPedidos->cliente_id = $_POST['cliente_id'];
-    
+//    echo "<pre>"; print_r($valor); echo "</pre>"; exit;
     $obPedidos->cadastrar();
     //  echo "<pre>"; print_r($obProdutos); echo "</pre>"; exit; 
 
@@ -53,7 +51,5 @@ if (isset($_POST['quantity']
 }
     
 
-require __DIR__ . '../../Includes/header_pasta.php';
 require __DIR__ . '../../produtos_detalhes/Detalhes.php';
-require __DIR__ . '../../Includes/footer_pasta.php';
 ?>

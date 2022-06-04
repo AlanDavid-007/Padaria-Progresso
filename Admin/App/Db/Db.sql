@@ -59,7 +59,7 @@ CREATE TABLE `pedido`(
     `aprovapedido` boolean DEFAULT NULL,
     `data` date DEFAULT NULL,
     `valor_tele_entrega` float DEFAULT NULL,
-    `quantidade` INT DEFAULT NULL,
+    `quantidade` INT DEFAULT 1,
     `descricao` INT DEFAULT NULL,
     `nome` INT DEFAULT NULL,
     `pagamento_id` INT DEFAULT NULL,
