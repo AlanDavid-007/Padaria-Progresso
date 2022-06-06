@@ -5,6 +5,7 @@ require __DIR__ . '../../vendor/autoload.php';
 // use \App\Entity\Cliente;
 // use \App\Entity\Pagamento;
 // use \App\Entity\Usuario;
+
 use \App\Entity\Pedido;
 use \App\Entity\Produto;
 
@@ -18,23 +19,24 @@ $listaProdutos = $obProdutos::getProdutos();
 // $listaCliente = $obClientes::getClientes();
 // $listaPagamento = $obPagamentos::getPagamentos();
 // $listaUsuario = $obUsuarios::getUsuarios();
+
 $obPedidos->quantidade = $_POST['quantity'];
 $quantidade = $obPedidos->quantidade;
 $preco = $obProdutos->preco;
 $valor = $quantidade*$preco;
 $obPedidos->valor = $valor;
+
 if (isset($_POST['quantity']
 // , $_POST['pagamento_id'], $_POST['usuario_id'], $_POST['Cliente_id']
 ) && $quantidade >= 1) {
-    $time = strtotime(date('d-m-Y'));
-    $newformat = date('Y-m-d',$time);
+  
     $obPedidos->quantidade = $_POST['quantity'];
     $quantidade = $obPedidos->quantidade;
     $preco = $obProdutos->preco;
     $valor = $quantidade*$preco;
     $obPedidos->valor = $valor;
    // $obPedidos->aprovapedido = $_POST['aprovapedido'];
-    $obPedidos->data = $newformat;
+    $obPedidos->data = isset($obPedidos->data) ? date('Y-m-d', strtotime($obPedidos->data)) : '';
     $obPedidos->nome = $obProdutos->nome;
     $obPedidos->descricao = $obProdutos->descricao;
    // $obPedidos->valor_tele_entrega = $_POST['valor_tele_entrega'];
