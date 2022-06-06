@@ -104,7 +104,7 @@ $produtos = Produto::getProdutos($where);
           </div> -->
 
              <?php 
-             $obPedidos->quantidade = $_POST['quantity'];
+             $obPedidos->quantidade = $_POST['quantity'] >= 1;
              $quantidade = $obPedidos->quantidade;
              $preco = $value['preco'];
              $valor = $preco ;
