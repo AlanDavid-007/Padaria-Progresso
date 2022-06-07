@@ -12,14 +12,16 @@ $feedbacks = Feedback::getFeedbacks();
 $pedidos = Pedido::getPedidos();
 //busca
 $busca = filter_input(INPUT_GET, 'nome');
-
+$quantidade = filter_input(INPUT_GET, 'quantity');
 //Filtro status
 $FiltroNome = filter_input(INPUT_GET, 'nome');
+$FiltroQuantidade = filter_input(INPUT_GET, 'quantity');
 
 
 //condiçoes sql 
 $condicoes = [
     strlen($busca) ? 'nome LIKE "%' . str_replace(' ', '%', $busca) . '%"' : null,
+    strlen($quantidade) ? 'quantidade LIKE "%' . str_replace(' ', '%', $quantidade) . '%"' : null,
 ];
 
 $condicoes = array_filter($condicoes);
@@ -31,16 +33,18 @@ $produtos = Produto::getProdutos($where);
 //  echo "<pre>"; print_r($produtos); echo "</pre>"; exit;
 ?>
 <section class="mt-5 ml-5">
-    <form method="get" class="d-none">
+    <form method="get" class="">
         <div class="row alig-items-between">
             <div class="col text-light">
                 <label>Filtrar Produtos</label>
                 <input type="text" name="nome" class="form-control" value="<?= $busca ?>">
             </div>
+            <div class="col text-light">
+                <label>Filtrar Quantidade</label>
+                <input type="text" name="quantity" class="form-control" value="<?= $quantidade ?>">
+            </div>
             <div class="col d-flex align-items-end">
                 <button type="submit" class="btn btn-primary">Filtrar</button>
-
-                <a href="../Cadastro/cadastro_produtos.php" style="text-decoration:none; color:white;" class="btn btn-success ml-3">Cadastrar</a>
             </div>
         </div>
     </form>
@@ -104,12 +108,12 @@ $produtos = Produto::getProdutos($where);
           </div> -->
 
              <?php 
-             $obPedidos->quantidade = $_POST['quantity'] >= 1;
-             $quantidade = $obPedidos->quantidade;
+             $obPedidos->quantidade = $_GET['quantity'];
+             $quantidades = $obPedidos->quantidade;
              $preco = $value['preco'];
              $valor = $preco ;
-               if($quantidade >= 1){
-              $valor = $quantidade*$preco;
+               if($quantidades >= 1){
+              $valor = $quantidades*$preco;
               $obPedidos->valor = $valor;
           } else {
               $valor = 'Produto temporariamente indisponível';   
@@ -119,7 +123,7 @@ $produtos = Produto::getProdutos($where);
               <div class="flex ml-6 items-center">
                 <span class="mr-3">Quantidade</span>
                 <div class="relative">
-                  <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantity" name="quantity" min="1" max="<?php echo $value['quantidade'];?>" value="<?php echo $quantidade?>">
+                  <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantitys" name="quantitys" min="1" max="<?php echo $value['quantidade'];?>" value="<?php echo $quantidade;?>">
                   <span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4" viewBox="0 0 24 24">
                       <path d="M6 9l6 6 6-6"></path>
@@ -128,6 +132,7 @@ $produtos = Produto::getProdutos($where);
                 </div>
               </div>
           </div>
+          
           <div class="flex">
             <span class="title-font font-medium text-2xl text-gray-900" id="valor">R$<?php echo $valor?>,00</span>
             <button class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded" type="submit">Adicionar ao Carrinho</button>

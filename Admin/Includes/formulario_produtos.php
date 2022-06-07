@@ -46,15 +46,15 @@
                 <button type="submit" class="btn btn-header btn-success btn-lg">Enviar</button>
             </div>
         </form>
-        <div class="card mt-4 bg-secondary opacity-60 text-white" style="width: 28rem; height:15rem;">
+        <div class="card mt-4 bg-secondary opacity-60 text-white" style="width: 28rem; height:20rem;">
             <div class="card-body">
                 <h5 class="card-title">Nota:</h5>
                 <h6 class="card-subtitle mb-2 ">Observação sobre campo link, Nele Coloque: </h6>
-                <p class="card-text">"produtos_detalhes/Detalhes?nome=nomedoproduto"</p>
+                <p class="card-text">"produtos_detalhes/Detalhes?nome=nomedoproduto&quantity=1"</p>
                 <br>
                 <p class="card-text">Obs: Onde está "nomedoproduto"<br> coloque o nome que desejar colocar para produto</p>
                 <br>
-                <p class="card-text">Exemplo: ../produtos_detalhes/Detalhes?nome=Risóles+de+Frango</p>
+                <p class="card-text">Exemplo: ../produtos_detalhes/Detalhes?nome=Risóles+de+Frango&quantity=1</p>
             </div>
         </div>
     </section>
