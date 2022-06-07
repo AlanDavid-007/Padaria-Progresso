@@ -20,18 +20,17 @@ $listaProdutos = $obProdutos::getProdutos();
 // $listaPagamento = $obPagamentos::getPagamentos();
 // $listaUsuario = $obUsuarios::getUsuarios();
 
-$obPedidos->quantidade = $_POST['quantity'];
-$quantidade = $obPedidos->quantidade;
+$quantidade = filter_input(INPUT_GET, 'quantity');
+$obPedidos->quantidade = $quantidade;
 $preco = $obProdutos->preco;
 $valor = $quantidade*$preco;
 $obPedidos->valor = $valor;
 
-if (isset($_POST['quantity']
+if (isset($_GET['quantity']
 // , $_POST['pagamento_id'], $_POST['usuario_id'], $_POST['Cliente_id']
-) && $quantidade >= 1) {
+)) {
   
-    $obPedidos->quantidade = $_POST['quantity'];
-    $quantidade = $obPedidos->quantidade;
+    $obPedidos->quantidade = $quantidade;
     $preco = $obProdutos->preco;
     $valor = $quantidade*$preco;
     $obPedidos->valor = $valor;
