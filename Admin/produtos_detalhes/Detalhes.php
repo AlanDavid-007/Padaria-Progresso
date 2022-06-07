@@ -108,22 +108,40 @@ $produtos = Produto::getProdutos($where);
           </div> -->
 
              <?php 
-             $obPedidos->quantidade = $_GET['quantity'];
-             $quantidades = $obPedidos->quantidade;
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+             $obPedidos->quantidade = $quantidade;
              $preco = $value['preco'];
              $valor = $preco ;
-               if($quantidades >= 1){
-              $valor = $quantidades*$preco;
+               if($quantidade > 0){
+              $valor = $quantidade*$preco;
               $obPedidos->valor = $valor;
           } else {
               $valor = 'Produto temporariamente indisponível';   
           }
           ?>
-            <form method="post">
+    <form method="get" class="">
               <div class="flex ml-6 items-center">
+                   <div class="row alig-items-between">
+            <div class="col text-light">
+                <label>Filtrar Produtos</label>
+                <input type="text" name="nome" class="form-control" value="<?= $busca ?>">
+            </div>
+           <!-- <div class="col text-light">
+                <label>Filtrar Quantidade</label>
+                <input type="text" name="quantity" class="form-control" value="<?= $quantidade ?>">
+            </div>
+            <div class="col d-flex align-items-end">
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+            </div>
+        </div> -->
                 <span class="mr-3">Quantidade</span>
                 <div class="relative">
-                  <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantitys" name="quantitys" min="1" max="<?php echo $value['quantidade'];?>" value="<?php echo $quantidade;?>">
+                  <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantity" name="quantity" min="1" max="<?php echo $value['quantidade'];?>" value="<?= $quantidade;?>">
                   <span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4" viewBox="0 0 24 24">
                       <path d="M6 9l6 6 6-6"></path>
@@ -132,7 +150,7 @@ $produtos = Produto::getProdutos($where);
                 </div>
               </div>
           </div>
-          
+          <!-- talvez tenha de colocar form get ate os valores e no botao colocar post -->
           <div class="flex">
             <span class="title-font font-medium text-2xl text-gray-900" id="valor">R$<?php echo $valor?>,00</span>
             <button class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded" type="submit">Adicionar ao Carrinho</button>
