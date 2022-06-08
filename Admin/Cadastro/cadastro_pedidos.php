@@ -20,30 +20,36 @@ $listaProdutos = $obProdutos::getProdutos();
 // $listaPagamento = $obPagamentos::getPagamentos();
 // $listaUsuario = $obUsuarios::getUsuarios();
 
-$quantidade = filter_input(INPUT_GET, 'quantity');
-$obPedidos->quantidade = $quantidade;
-$preco = $obProdutos->preco;
-$valor = $quantidade*$preco;
-$obPedidos->valor = $valor;
+$obPedidos->quantidade = isset($_POST['quantity']) ? $_POST['quantity'] : 1;
+            $quantidade = $obPedidos->quantidade;
+            $preco = $value['preco'];
+            $valor = '';
+            // $quantidade = 0;
+            if ($quantidade > 0) {
+              $preco = $quantidade * $preco;
+              // echo "<pre>"; print_r($preco); echo "</pre>"; exit;
+              $obPedidos->valor = $preco;
+            } else {
+              $valor = 'Produto temporariamente indisponível';
+            }
 
-if (isset($_GET['quantity']
+if (isset($_POST['quantity']
 // , $_POST['pagamento_id'], $_POST['usuario_id'], $_POST['Cliente_id']
 )) {
   
     $obPedidos->quantidade = $quantidade;
-    $preco = $obProdutos->preco;
-    $valor = $quantidade*$preco;
-    $obPedidos->valor = $valor;
+    $preco = $quantidade * $preco;
+    $obPedidos->valor = $preco;
    // $obPedidos->aprovapedido = $_POST['aprovapedido'];
     $obPedidos->data = isset($obPedidos->data) ? date('Y-m-d', strtotime('$obPedidos->data')) : '';
     $obPedidos->nome = $obProdutos->nome;
     $obPedidos->descricao = $obProdutos->descricao;
    // $obPedidos->valor_tele_entrega = $_POST['valor_tele_entrega'];
-    $obPedidos->quantidade = $_POST['quantity'];
+   // $obPedidos->quantidade = $_POST['quantity'];
    // $obPedidos->pagamento_id = $_POST['pagamento_id'];]
    // $obPedidos->usuario_id = $_POST['usuario_id'];
    // $obPedidos->cliente_id = $_POST['cliente_id'];
-//    echo "<pre>"; print_r($valor); echo "</pre>"; exit;
+   // echo "<pre>"; print_r($valor); echo "</pre>"; exit;
     $obPedidos->cadastrar();
     //  echo "<pre>"; print_r($obProdutos); echo "</pre>"; exit; 
 
