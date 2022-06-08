@@ -9,7 +9,7 @@ CREATE TABLE `produtos` (
     `imagem` BLOB DEFAULT NULL,
     `link` varchar(100) DEFAULT NULL,
     `feedback` INT DEFAULT NULL,
-    `preco` INT DEFAULT NULL,
+    `preco` FLOAT DEFAULT NULL,
     `pedido_id` INT DEFAULT NULL,
     `promocoes_id` INT DEFAULT NULL,
     PRIMARY KEY (`id`)
