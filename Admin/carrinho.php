@@ -2,6 +2,8 @@
 require __DIR__ . './Includes/header.php';
 require __DIR__ . '../vendor/autoload.php'; 
 use \App\Entity\Pedido;
+use \App\Entity\Produto;
+$obProdutos = new Produto;
 $pedidos = Pedido::getPedidos();
 $titulo = 'SELECT COUNT(\*) FROM pedido ORDER BY DESC LIMIT 1';
 $result = mysql_query($titulo);
@@ -35,28 +37,17 @@ $registro = mysql_fetch_assoc($result);
             </div>
           </div>
             
-        <?php 
-             $obPedidos->quantidade = $_POST['quantity'];
-             $quantidade = $obPedidos->quantidade;
-             $preco = $obProdutos->preco;
-             $valor = $preco;
-               if($quantidade >= 1){
-              $valor = $quantidade*$preco;
-              $value['valor'] = $valor;
-          }
-          ?>
             
           <div class="flex justify-center w-1/5">
             <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
             </svg>
-          <form method="post">
-            <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantity" name="quantity" min="1" max="<?php echo $value['quantidade'];?>" value="<?php echo $value['quantidade'];?>">
+            <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantity" name="quantity" min="1" max="<?php echo $obProdutos->quantidade;?>" value="<?php echo $value['quantidade'];?>">
               </form>
             <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
               <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
             </svg>
           </div>
-          <span class="text-center w-1/5 font-semibold text-sm"><?php echo $preco;?></span>
+          <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['preco'];?></span>
           <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['valor'];?></span>
         </div>
     </div>
