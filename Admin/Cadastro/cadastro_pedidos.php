@@ -35,7 +35,7 @@ if (isset($_GET['quantity']
     $valor = $quantidade*$preco;
     $obPedidos->valor = $valor;
    // $obPedidos->aprovapedido = $_POST['aprovapedido'];
-    $obPedidos->data = isset($obPedidos->data) ? date('Y-m-d', strtotime($obPedidos->data)) : '';
+    $obPedidos->data = isset($obPedidos->data) ? date('Y-m-d', strtotime('$obPedidos->data')) : '';
     $obPedidos->nome = $obProdutos->nome;
     $obPedidos->descricao = $obProdutos->descricao;
    // $obPedidos->valor_tele_entrega = $_POST['valor_tele_entrega'];

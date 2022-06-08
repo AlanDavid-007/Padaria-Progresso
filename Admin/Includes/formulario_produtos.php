@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label>Preço</label>
-                <textarea class="form-control" required name="preco" rows="1"><?php echo isset($obProdutos->preco) ? $obProdutos->preco : ''; ?></textarea>
+                <input class="form-control money-mask" required name="preco" value="<?php echo isset($obProdutos->preco) ? $obProdutos->preco : ''; ?>">
             </div>
             <div class="form-group">
                 <label for="formFile">Imagem</label>
@@ -50,11 +50,11 @@
             <div class="card-body">
                 <h5 class="card-title">Nota:</h5>
                 <h6 class="card-subtitle mb-2 ">Observação sobre campo link, Nele Coloque: </h6>
-                <p class="card-text">"produtos_detalhes/Detalhes?nome=nomedoproduto&quantity=1"</p>
+                <p class="card-text">"produtos_detalhes/Detalhes?nome=nomedoproduto"</p>
                 <br>
                 <p class="card-text">Obs: Onde está "nomedoproduto"<br> coloque o nome que desejar colocar para produto</p>
                 <br>
-                <p class="card-text">Exemplo: ../produtos_detalhes/Detalhes?nome=Risóles+de+Frango&quantity=1</p>
+                <p class="card-text">Exemplo: ../produtos_detalhes/Detalhes?nome=Risóles+de+Frango</p>
             </div>
         </div>
     </section>
