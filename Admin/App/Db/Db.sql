@@ -6,7 +6,7 @@ CREATE TABLE `produtos` (
     `descricao` text,
     `quantidade` INT DEFAULT NULL,
     `tipo` INT DEFAULT NULL,
-    `imagem` BLOB DEFAULT NULL,
+    `imagem` varchar(200) DEFAULT NULL,
     `link` varchar(100) DEFAULT NULL,
     `feedback` INT DEFAULT NULL,
     `preco` FLOAT DEFAULT NULL,
