@@ -40,7 +40,15 @@ if (isset($_GET['status'])) {
     <section>
         <?php echo $mensagem; ?>
     </section>
+if((!empty($foto_usuario)) and (file_exists("imagens/$id/$foto_usuario"))){
+            echo "<img src='../Assets/$imagem' width='150'><br>";
+            echo "<a href='../Assets/$imagem' download>Download</a><br><br>";
+        }else{
+            echo "<img src='../Assets/$imagem' width='150'><br>";
+            //echo "<a href='../Assets/$imagem'>Download</a>";
+        }
 <?php } ?>
+
 <section>
     <div class="mx-auto container px-6 xl:px-0 py-12 ">
         <p class="uppercase text-center font-serif text-xl text-light">Confira os nossos produtos!</p>
