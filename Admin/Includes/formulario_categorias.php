@@ -1,3 +1,22 @@
+<?php
+    // Receber os dados do formulario
+    $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+    // Verificar se o usuario clicou no botao
+    if (!empty($dados['formbutton'])) {
+        $arquivo = $_FILES['imagem'];
+        var_dump($dados);
+            var_dump($arquivo);
+                // Upload do arquivo
+        // Diretorio onde o arquivo sera salvo
+                $diretorio = "../Assets/";
+                $nome_arquivo = $arquivo['name'];
+                move_uploaded_file($arquivo['tmp_name'], $diretorio . $nome_arquivo);
+            }
+    ?>
+
+
+
 <section class="formulario bg-white d-flex justify-content-around">
     <a href="../index.php">
         <button class="btn btn-header btn-lg">Voltar</button>
@@ -16,7 +35,7 @@
             <input type="text" required class="form-control " name="link" value="<?php echo isset($obCategoria->link) ? $obCategoria->link : ''; ?>">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-header btn-lg">Enviar</button>
+            <button type="submit" name="formbutton" class="btn btn-header btn-lg">Enviar</button>
         </div>
     </form>
     <div class="card mt-4 bg-secondary opacity-60 text-white" style="width: 26rem; height:15rem;" >
