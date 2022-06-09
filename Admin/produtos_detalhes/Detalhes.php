@@ -116,6 +116,7 @@ $produtos = Produto::getProdutos($where);
             } else {
               $valor = 'Produto temporariamente indisponível';
             }
+            
             ?>
       
             <form method="post" class="">
@@ -131,7 +132,7 @@ $produtos = Produto::getProdutos($where);
                 </div>
               </div>
           </div>
-          <!-- colocar post e enviar e cadastrar pedido e mandar pro carrinho -->
+          <!-- colocar preço de frete em span e colocar outro span com a quantidade maxima -->
           <div class="flex">
             <span id="price-total" class="title-font font-medium text-2xl text-gray-900" price="<?php echo $preco; ?>"><?php echo $quantidade > 0 ? 'R$ <span id="get-price">' . $preco . '</span>' : $valor; ?></span>
             <button class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded" type="submit">Adicionar ao Carrinho</button>

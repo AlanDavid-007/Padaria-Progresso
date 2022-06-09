@@ -118,9 +118,9 @@ class Pedido
             'descricao' => $this->descricao,
             'nome' => $this->nome,
             'quantidade' => $this->quantidade,
-            // 'pagamento_id'=> $this->cliente_id,
-            // 'usuario_id' => $this->usuario_id,
-            // 'cliente_id' => $this->cliente_id,
+            'pagamento_id'=> $this->cliente_id,
+            'usuario_id' => $this->usuario_id,
+            'cliente_id' => $this->cliente_id,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 

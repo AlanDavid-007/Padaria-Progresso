@@ -10,12 +10,13 @@ $( document ).ready(function() {
         let valor_final;
 
         valor_final = valor * qtd;
-        objPrice.find('#get-price').text(valor_final.toFixed(3))
+        objPrice.find('#get-price').text(valor_final.toFixed(2))
 
         console.log('qtd', qtd)
         console.log('valor', valor)
         console.log('valor_final', valor_final)
     });
+    
 });
 
 
