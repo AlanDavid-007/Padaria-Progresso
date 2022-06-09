@@ -33,7 +33,7 @@ if (isset($_POST['quantity']
     $obPedidos->nome = 1;
     $obPedidos->descricao = 1;
     // echo "<pre>"; print_r($obPedidos->data); echo "</pre>"; exit; 
-    $obPedidos->valor_tele_entrega = 10;
+    $obPedidos->valor_tele_entrega = 10.00;
     $obPedidos->pagamento_id = 1;
     $obPedidos->usuario_id = 1;
     $obPedidos->cliente_id = 1;
