@@ -23,20 +23,25 @@ foreach ($produtos as $key => $value) {
 if (isset($_POST['quantity']
 // , $_POST['pagamento_id'], $_POST['usuario_id'], $_POST['Cliente_id']
 )) {
-  $today = getdate();
+//   $today = getdate();
 // print_r($today);
     $obPedidos->quantidade = isset($_POST['quantity']) ? $_POST['quantity'] : 1;
     $preco = $obPedidos->quantidade * $value['preco'] ;
     $obPedidos->valor = $preco;
     $obPedidos->aprovapedido = 1;
-    $obPedidos->data = isset($today) ? date('Y-m-d H:i:s', strtotime('$today')) : '';
-    $obPedidos->nome = 1;
-    $obPedidos->descricao = 1;
+    $obPedidos->data = 
+//       isset($today) ? 
+      date('Y-m-d H:i:s'
+//            , strtotime('$today')
+          ) : '';
+  
+//     $obPedidos->nome = 1;
+//     $obPedidos->descricao = 1;
     // echo "<pre>"; print_r($obPedidos->data); echo "</pre>"; exit; 
-    $obPedidos->valor_tele_entrega = 10.00;
-    $obPedidos->pagamento_id = 1;
-    $obPedidos->usuario_id = 1;
-    $obPedidos->cliente_id = 1;
+    $obPedidos->valor_tele_entrega = 10;
+//     $obPedidos->pagamento_id = 1;
+//     $obPedidos->usuario_id = 1;
+//     $obPedidos->cliente_id = 1;
    // echo "<pre>"; print_r($valor); echo "</pre>"; exit;
     $obPedidos->cadastrar();
     //  echo "<pre>"; print_r($obPedidos); echo "</pre>"; exit; 
