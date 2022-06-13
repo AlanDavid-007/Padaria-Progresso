@@ -115,12 +115,12 @@ class Pedido
             'aprovapedido' => $this->aprovapedido,
             'data'=> $this->data,
             'valor_tele_entrega' => $this->valor_tele_entrega,
-            'descricao' => $this->descricao,
-            'nome' => $this->nome,
+            // 'descricao' => $this->descricao,
+            // 'nome' => $this->nome,
             'quantidade' => $this->quantidade,
-            'pagamento_id'=> $this->cliente_id,
-            'usuario_id' => $this->usuario_id,
-            'cliente_id' => $this->cliente_id,
+            // 'pagamento_id'=> $this->cliente_id,
+            // 'usuario_id' => $this->usuario_id,
+            // 'cliente_id' => $this->cliente_id,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -155,11 +155,11 @@ class Pedido
             $result[$key]['data'] = $value->data;
             $result[$key]['valor_tele_entrega'] = $value->valor_tele_entrega;
             $result[$key]['quantidade'] = $obProdutos::getProduto($value->quantidade);
-            $result[$key]['descricao'] = $obProdutos::getProduto($value->descricao);
-            $result[$key]['nome'] = $obProdutos::getProduto($value->nome);
-            $result[$key]['pagamento_id'] = $obPagamentos::getPagamento($value->pagamento_id);
-            $result[$key]['usuario_id'] = $obUsuarios::getUsuario($value->usuario_id);
-            $result[$key]['cliente_id'] = $obClientes::getCliente($value->cliente_id);
+            // $result[$key]['descricao'] = $obProdutos::getProduto($value->descricao);
+            // $result[$key]['nome'] = $obProdutos::getProduto($value->nome);
+            // $result[$key]['pagamento_id'] = $obPagamentos::getPagamento($value->pagamento_id);
+            // $result[$key]['usuario_id'] = $obUsuarios::getUsuario($value->usuario_id);
+            // $result[$key]['cliente_id'] = $obClientes::getCliente($value->cliente_id);
         }
         return $result;
     }
@@ -204,8 +204,8 @@ class Pedido
             'aprovapedido' => $this->aprovapedido,
             'data'=> $this->data,
             'valor_tele_entrega' => $this->valor_tele_entrega,
-            'descricao' => $this->descricao,
-            'nome' => $this->nome,
+            // 'descricao' => $this->descricao,
+            // 'nome' => $this->nome,
             'quantidade' => $this->quantidade,
             // 'pagamento_id'=> $this->cliente_id,
             // 'usuario_id' => $this->usuario_id,

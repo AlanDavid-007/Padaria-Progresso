@@ -33,18 +33,18 @@ if (isset($_POST['quantity']
 //       isset($today) ? 
       date('Y-m-d H:i:s'
 //            , strtotime('$today')
-          ) : '';
+          );
   
 //     $obPedidos->nome = 1;
-//     $obPedidos->descricao = 1;
-    // echo "<pre>"; print_r($obPedidos->data); echo "</pre>"; exit; 
+    // $obPedidos->descricao = 1;
     $obPedidos->valor_tele_entrega = 10;
 //     $obPedidos->pagamento_id = 1;
 //     $obPedidos->usuario_id = 1;
 //     $obPedidos->cliente_id = 1;
    // echo "<pre>"; print_r($valor); echo "</pre>"; exit;
+//    echo "<pre>"; print_r($obPedidos->valor_tele_entrega); echo "</pre>"; exit; 
     $obPedidos->cadastrar();
-    //  echo "<pre>"; print_r($obPedidos); echo "</pre>"; exit; 
+     echo "<pre>"; print_r($produtos); echo "</pre>"; exit; 
 
     header('location: ../carrinho.php');
     exit;
