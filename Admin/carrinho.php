@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . './Includes/header.php';
 require __DIR__ . '../vendor/autoload.php';
+require __DIR__ . '../Cadastro/cadastro_pedidos.php';
 
 use \App\Entity\Pedido;
 use \App\Entity\Produto;
