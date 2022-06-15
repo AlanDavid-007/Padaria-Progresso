@@ -8,6 +8,7 @@ use \App\Entity\Pagamento;
 use \App\Entity\Usuario;
 use \App\Entity\Cliente;
 use \App\Entity\Produto;
+use \App\Entity\Categoria;
 
 
 
@@ -44,6 +45,12 @@ class Pedido
      * @var float
      */
     public $obProdutos;
+    
+        /** 
+     * categoria
+     * @var float
+     */
+    public $obCategorias;
 
     /** 
      * valor
@@ -118,6 +125,7 @@ class Pedido
             // 'descricao' => $this->descricao,
             // 'nome' => $this->nome,
             'quantidade' => $this->quantidade,
+            'categoria' => $this->categoria,
             // 'pagamento_id'=> $this->cliente_id,
             // 'usuario_id' => $this->usuario_id,
             // 'cliente_id' => $this->cliente_id,
@@ -139,10 +147,11 @@ class Pedido
 
     public static function getPedidos($where = null, $order = null, $limit = null)
     {
-        $obClientes = new Cliente;
-        $obPagamentos = new Pagamento;
-        $obUsuarios = new Usuario;
+        // $obClientes = new Cliente;
+        // $obPagamentos = new Pagamento;
+        // $obUsuarios = new Usuario;
         $obProdutos = new Produto;
+        $obCategorias = new Categoria;
         $objDatabase = new Database('pedido');
 
         $return = ($objDatabase)->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
@@ -155,6 +164,7 @@ class Pedido
             $result[$key]['data'] = $value->data;
             $result[$key]['valor_tele_entrega'] = $value->valor_tele_entrega;
             $result[$key]['quantidade'] = $obProdutos::getProduto($value->quantidade);
+            $result[$key]['categoria'] = $obCategorias::getCategoria($value->categoria);
             // $result[$key]['descricao'] = $obProdutos::getProduto($value->descricao);
             // $result[$key]['nome'] = $obProdutos::getProduto($value->nome);
             // $result[$key]['pagamento_id'] = $obPagamentos::getPagamento($value->pagamento_id);
@@ -207,9 +217,11 @@ class Pedido
             // 'descricao' => $this->descricao,
             // 'nome' => $this->nome,
             'quantidade' => $this->quantidade,
+            'categoria' => $this->categoria,
             // 'pagamento_id'=> $this->cliente_id,
             // 'usuario_id' => $this->usuario_id,
             // 'cliente_id' => $this->cliente_id,
         ]);
+        
     }
 }

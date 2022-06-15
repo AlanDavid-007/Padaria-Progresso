@@ -62,6 +62,7 @@ CREATE TABLE `pedido`(
     `quantidade` INT NOT NULL DEFAULT 1,
     `descricao` INT DEFAULT NULL,
     `nome` INT DEFAULT NULL,
+    `categoria` INT DEFAULT NULL,
     `pagamento_id` INT DEFAULT NULL,
     `usuario_id` INT DEFAULT NULL,
     `cliente_id` INT DEFAULT NULL,
@@ -73,6 +74,7 @@ ALTER TABLE pedido ADD CONSTRAINT cliente_id FOREIGN KEY(cliente_id) REFERENCES 
 ALTER TABLE pedido ADD CONSTRAINT nome FOREIGN KEY(nome) REFERENCES produtos (id);
 ALTER TABLE pedido ADD CONSTRAINT descricao FOREIGN KEY(descricao) REFERENCES produtos (id);
 ALTER TABLE pedido ADD CONSTRAINT quantidade FOREIGN KEY(quantidade) REFERENCES produtos (id);
+ALTER TABLE pedido ADD CONSTRAINT categoria FOREIGN KEY(categoria) REFERENCES categorias (id);
 
 CREATE TABLE `pagamento`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
