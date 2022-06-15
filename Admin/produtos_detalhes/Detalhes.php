@@ -130,6 +130,7 @@ $produtos = Produto::getProdutos($where);
                     </svg>
                   </span>
                 </div>
+                <span class=" pl-3 text-gray-700"> Disponível: <?php echo $value['quantidade']; ?></span>
               </div>
           </div>
           <!-- colocar preço de frete em span e colocar outro span com a quantidade maxima -->

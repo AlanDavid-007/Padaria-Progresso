@@ -4,9 +4,6 @@ namespace App\Entity;
 
 use \App\Db\Database;
 use \PDO;
-use \App\Entity\Pagamento;
-use \App\Entity\Usuario;
-use \App\Entity\Cliente;
 use \App\Entity\Produto;
 use \App\Entity\Categoria;
 
@@ -22,24 +19,6 @@ class Pedido
      */
     public $id;
 
-    /** 
-     * valor
-     * @var float
-     */
-    public $obPagamentos;
-
-    /** 
-     * valor
-     * @var float
-     */
-    public $obUsuarios;
-
-    /** 
-     * valor
-     * @var float
-     */
-    public $obClientes;
-    
     /** 
      * produto
      * @var float
@@ -70,12 +49,6 @@ class Pedido
      */
     public $data;
 
-     /** 
-     * nota do feedback
-     * @var text
-     */
-    public $descricao;
-
     /** 
      * valor_tele_entrega
      * @var float
@@ -88,24 +61,6 @@ class Pedido
      */
     public $quantidade;
     
-     /** 
-     * pagamento_id
-     * @var int
-     */
-    public $pagamento_id;
-
-     /** 
-     *usuario_id
-     * @var int
-     */
-    public $usuario_id;
-
-    /** 
-     * cliente_id
-     * @var int
-     */
-    public $cliente_id;
-
     /** 
      * Função para cadastrar a professor no banco
      * @var boolean
@@ -122,13 +77,10 @@ class Pedido
             'aprovapedido' => $this->aprovapedido,
             'data'=> $this->data,
             'valor_tele_entrega' => $this->valor_tele_entrega,
-            // 'descricao' => $this->descricao,
-            // 'nome' => $this->nome,
             'quantidade' => $this->quantidade,
             'categoria' => $this->categoria,
-            // 'pagamento_id'=> $this->cliente_id,
-            // 'usuario_id' => $this->usuario_id,
-            // 'cliente_id' => $this->cliente_id,
+            'nome' => $this->nome,
+            'preco' => $this->preco,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -147,9 +99,6 @@ class Pedido
 
     public static function getPedidos($where = null, $order = null, $limit = null)
     {
-        // $obClientes = new Cliente;
-        // $obPagamentos = new Pagamento;
-        // $obUsuarios = new Usuario;
         $obProdutos = new Produto;
         $obCategorias = new Categoria;
         $objDatabase = new Database('pedido');
@@ -163,13 +112,10 @@ class Pedido
             $result[$key]['aprovapedido'] = $value->aprovapedido;
             $result[$key]['data'] = $value->data;
             $result[$key]['valor_tele_entrega'] = $value->valor_tele_entrega;
-            $result[$key]['quantidade'] = $obProdutos::getProduto($value->quantidade);
-            $result[$key]['categoria'] = $obCategorias::getCategoria($value->categoria);
-            // $result[$key]['descricao'] = $obProdutos::getProduto($value->descricao);
-            // $result[$key]['nome'] = $obProdutos::getProduto($value->nome);
-            // $result[$key]['pagamento_id'] = $obPagamentos::getPagamento($value->pagamento_id);
-            // $result[$key]['usuario_id'] = $obUsuarios::getUsuario($value->usuario_id);
-            // $result[$key]['cliente_id'] = $obClientes::getCliente($value->cliente_id);
+            $result[$key]['quantidade'] = $value->quantidade;
+            $result[$key]['categoria'] = $value->categoria;
+            $result[$key]['nome'] = $value->nome;
+            $result[$key]['preco'] = $value->preco;
         }
         return $result;
     }
@@ -214,13 +160,10 @@ class Pedido
             'aprovapedido' => $this->aprovapedido,
             'data'=> $this->data,
             'valor_tele_entrega' => $this->valor_tele_entrega,
-            // 'descricao' => $this->descricao,
-            // 'nome' => $this->nome,
             'quantidade' => $this->quantidade,
             'categoria' => $this->categoria,
-            // 'pagamento_id'=> $this->cliente_id,
-            // 'usuario_id' => $this->usuario_id,
-            // 'cliente_id' => $this->cliente_id,
+            'nome' => $this->nome,
+            'preco' => $this->preco,
         ]);
         
     }

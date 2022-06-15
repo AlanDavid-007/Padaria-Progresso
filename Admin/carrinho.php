@@ -10,10 +10,7 @@ $obProdutos = new Produto;
 $obPedidos = new Pedido;
 $obCategorias = new Categoria;
 $pedidos = Pedido::getPedidos();
-// $titulo = 'SELECT COUNT(\*) FROM pedido ORDER BY DESC LIMIT 1';
-// $result = mysql_query($titulo);
-// $registro = mysql_fetch_assoc($result);
-// este array foi obtido a partir seleção feita no banco de dados
+
 $saldo = array($obPedidos->valor);
 
 // vamos usar o array_sum para fazer a soma
@@ -45,20 +42,20 @@ $total = $subtotal + $frete + $taxa;
               <img class="h-24" src="./Assets/risoles.png" alt="">
             </div>
             <div class="flex flex-col justify-between ml-4 flex-grow">
-              <span class="font-bold text-sm"><?php echo $value['nome']->nome ?></span>
-              <span class="text-red-500 text-xs"><?php echo $value['categoria']->nome; ?></span>
+              <span class="font-bold text-sm"><?php echo $value['nome']?></span>
+              <span class="text-red-500 text-xs"><?php echo $value['categoria']?></span>
               <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remover</a>
             </div>
           </div>
           <div class="flex justify-center w-1/5">
-            <input class="mx-2 border text-center w-8" type="number" id="quantity" name="quantity" min="1" max="<?php echo $obProdutos->quantidade; ?>" value="<?php echo $value['quantidade']; ?>">
+          <span class="text-red-500 text-xs"><?php echo $value['quantidade']?></span>
           </div>
-          <span class="text-center w-1/5 font-semibold text-sm"><?php echo $obProdutos->preco; ?></span>
+          <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['preco']; ?></span>
           <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['valor']; ?></span>
         </div>
 
       <?php } ?>
-      <a href="#" class="flex font-semibold text-indigo-600 text-sm mt-10">
+      <a href="../Admin/produtos/categorias.php" class="flex font-semibold text-indigo-600 text-sm mt-10">
 
         <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
           <path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
