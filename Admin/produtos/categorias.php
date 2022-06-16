@@ -22,7 +22,6 @@ $where = implode(' AND ', $condicoes);
 
 $produtos = Produto::getProdutos($where);
 //  echo "<pre>"; print_r($produtos); echo "</pre>"; exit;
-
 require __DIR__ . '../../Includes/header_pasta.php';
 ?>
 <section class="mt-5 ml-5">

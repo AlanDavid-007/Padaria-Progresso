@@ -50,11 +50,11 @@
             <div class="card-body">
                 <h5 class="card-title">Nota:</h5>
                 <h6 class="card-subtitle mb-2 ">Observação sobre campo link, Nele Coloque: </h6>
-                <p class="card-text">"produtos_detalhes/Detalhes?nome=nomedoproduto"</p>
+                <p class="card-text">"Cadastro/cadastro_pedidos?nome=nomedoproduto"</p>
                 <br>
                 <p class="card-text">Obs: Onde está "nomedoproduto"<br> coloque o nome que desejar colocar para produto</p>
                 <br>
-                <p class="card-text">Exemplo: ../produtos_detalhes/Detalhes?nome=Risóles+de+Frango</p>
+                <p class="card-text">Exemplo: ../Cadastro/cadastro_pedidos?nome=Risóles+de+Frango</p>
             </div>
         </div>
     </section>
