@@ -81,6 +81,8 @@ class Pedido
             'categoria' => $this->categoria,
             'nome' => $this->nome,
             'preco' => $this->preco,
+            'produto_id' => $this->produto_id,
+            'categoria_id' => $this->categoria_id,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -116,6 +118,8 @@ class Pedido
             $result[$key]['categoria'] = $value->categoria;
             $result[$key]['nome'] = $value->nome;
             $result[$key]['preco'] = $value->preco;
+            $result[$key]['produto_id'] = $obProdutos::getProduto($value->produto_id);
+            $result[$key]['categoria_id'] = $obCategorias::getCategoria($value->categoria_id);
         }
         return $result;
     }
@@ -164,6 +168,8 @@ class Pedido
             'categoria' => $this->categoria,
             'nome' => $this->nome,
             'preco' => $this->preco,
+            'produto_id' => $this->produto_id,
+            'categoria_id' => $this->categoria_id,
         ]);
         
     }

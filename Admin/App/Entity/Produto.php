@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use \App\Db\Database;
 use \PDO;
-// use \App\Entity\Pedido;
+use \App\Entity\Pedido;
 // use \App\Entity\Promocao;
 use \App\Entity\Categoria;
 use \App\Entity\Feedback;
@@ -31,7 +31,7 @@ class Produto
      * Identificador único 
      * @var integer
      */
-    // public $obPedidos;
+     public $obPedidos;
 
     /** 
      * Identificador único 
@@ -91,7 +91,7 @@ class Produto
      * pedido_id
      * @var int
      */
-    public $pedido_id;
+    // public $pedido_id;
 
     /** 
      * promocoes_id
@@ -118,7 +118,7 @@ class Produto
             'preco' => $this->preco,
             'imagem' => $this->imagem,
             'link' => $this->link,
-            // 'pedido_id' => $this->pedido_id,
+            'pedido_id' => $this->pedido_id,
             // 'promocoes_id' => $this->promocoes_id,
         ]);
         // echo "<pre>"; print_r($this); echo "</pre>"; exit;
@@ -140,7 +140,7 @@ class Produto
     {
         $obCategorias = new Categoria;
         $obFeedbacks = new Feedback;
-        // $obPedidos = new Pedido;
+        $obPedidos = new Pedido;
         // $obPromocoes = new Promocao;
         $objDatabase = new Database('produtos');
 
@@ -158,7 +158,7 @@ class Produto
             // $result[$key]['feedbacks'] = $obFeedbacks::getFeedback($value->feedbacks);
             $result[$key]['tipo'] = $obCategorias::getCategoria($value->tipo);
             $result[$key]['imagem'] = $value->imagem;
-            // $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
+             $result[$key]['pedido_id'] = $obPedidos::getPedido($value->pedido_id);
             // $result[$key]['promocoes_id'] = $obPromocoes::getPromocao($value->promocoes_id);
         }
         // echo "<pre>"; print_r($result); echo "</pre>"; exit;
@@ -208,7 +208,7 @@ class Produto
             'preco' => $this->preco,
             'imagem' => $this->imagem,
             'link' => $this->link,
-            // 'pedido_id' => $this->pedido_id,
+            'pedido_id' => $this->pedido_id,
             // 'promocoes_id' => $this->promocoes_id,
         ]);
     }

@@ -8,18 +8,20 @@ require __DIR__ . '../../vendor/autoload.php';
 
 use \App\Entity\Pedido;
 use \App\Entity\Produto;
+use \App\Entity\Categoria;
+
 $obPedidos = new Pedido;
 $obProdutos = new Produto;
+$obCategorias = new Categoria;
 
 $produtos = Produto::getProdutos();
-// $listaProdutos = $obProdutos::getProdutos();
+ $listaProdutos = $obProdutos::getProdutos();
 // $obPagamentos = new Pagamento;
 // $obUsuarios = new Usuario;
 // $obClientes = new Cliente;
-// $listaCliente = $obClientes::getClientes();
+ $listaCategorias = $obCategorias::getCategorias();
 // $listaPagamento = $obPagamentos::getPagamentos();
 // $listaUsuario = $obUsuarios::getUsuarios();
- foreach ($produtos as $key => $value) { 
 if (isset($_POST['quantity']
 // , $_POST['pagamento_id'], $_POST['usuario_id'], $_POST['Cliente_id']
 )) { 
@@ -38,14 +40,16 @@ if (isset($_POST['quantity']
     $obPedidos->categoria = $value['tipo']->nome;
     $obPedidos->nome = $value['nome'];
     $obPedidos->preco = $value['preco'];
+    $obPedidos->produto_id = $value['id'];
+    $obPedidos->categoria_id = $value['tipo']->id;
     $obPedidos->cadastrar();
     //   echo "<pre>"; print_r($value['preco']); echo "</pre>"; exit; 
-    // echo "<pre>"; print_r($value['tipo']); echo "</pre>"; exit; 
+    // echo "<pre>"; print_r($value['nome']); echo "</pre>"; exit; 
 
     header('location: ../carrinho.php');
     exit;
 } 
- } 
+ 
 
 require __DIR__ . '../../produtos_detalhes/Detalhes.php';
 ?>

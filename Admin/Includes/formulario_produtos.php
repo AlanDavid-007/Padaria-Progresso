@@ -3,7 +3,7 @@
             <button class="btn btn-header btn-lg btn-success">Voltar</button>
         </a>
 
-        <form method="post" class="form-send ">
+        <form method="post" class="form-send " enctype="multipart/form-data">
             <div class="form-group">
                 <label>Nome</label>
                 <input type="text" required class="form-control " name="nome" value="<?php echo isset($obProdutos->nome) ? $obProdutos->nome : ''; ?>">
@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="formFile">Imagem</label>
-                <input class="form-control" type="file" name="imagem" value="<?php echo isset($obProdutos->imagem) ? $obProdutos->imagem : ''; ?>">
+                <input class="form-control" type="file" name="pic" accept="image/*">
             </div>
             <div class="form-group">
                 <label>Link para Detalhes</label>
