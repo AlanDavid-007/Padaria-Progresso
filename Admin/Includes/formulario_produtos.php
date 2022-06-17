@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="formFile">Imagem</label>
-                <input class="form-control" type="file" name="pic" accept="image/*">
+                <input class="form-control" type="file" name="arquivo" accept="image/*">
             </div>
             <div class="form-group">
                 <label>Link para Detalhes</label>
