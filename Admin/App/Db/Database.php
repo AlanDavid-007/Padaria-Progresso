@@ -63,7 +63,7 @@ class Database
      * Método responsável por criar uma conexão com o banco de dados
      * @param string $table
      */
-     function setConnection()
+    private function setConnection()
     {
         try {
             //PDO é a classe que recebe os parametros para devolver um objeto de conexão com o banco de dados

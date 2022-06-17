@@ -1,11 +1,9 @@
 <?php
 require __DIR__ . './Includes/header.php';
 require __DIR__ . '../vendor/autoload.php';
-include_once  '../Admin/App/Db/Database.php';
 use \App\Entity\Pedido;
 use \App\Entity\Produto;
 use \App\Entity\Categoria;
-
 $obProdutos = new Produto;
 $obPedidos = new Pedido;
 $obCategorias = new Categoria;
@@ -47,19 +45,14 @@ $pedidos = Pedido::getPedidos();
         </div>
 
       <?php } ?>
-      <?php
-        $query_valor = "SELECT SUM(valor) AS total FROM pedido";
-        $result_valor = $connection->prepare($query_valor);
-        $result_valor->execute();
-
-        $row_valor = $result_valor->fetch(PDO::FETCH_ASSOC);
-        echo "Valor: " . $row_valor['total'] . "<br><br>";
+      <?php  
       // vamos usar o array_sum para fazer a soma
-      $subtotal = 'select sum(valor) from pedido;';
+      $saldo = array($value['valor']);
+      $subtotal = array_sum($saldo);
       $frete = $value['valor_tele_entrega'];
       $taxa = 5;
       $total = $subtotal + $frete + $taxa;
-      //  echo "<pre>"; print_r($subtotal); echo "</pre>"; exit; 
+        // echo "<pre>"; print_r($total); echo "</pre>"; exit; 
       ?>
 
       <a href="../Admin/produtos/categorias.php" class="flex font-semibold text-indigo-600 text-sm mt-10">
