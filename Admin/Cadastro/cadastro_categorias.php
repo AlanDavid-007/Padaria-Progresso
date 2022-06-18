@@ -6,10 +6,10 @@ use \App\Entity\Categoria;
 $obCategoria = new Categoria;
 
 //   echo "<pre>"; print_r($arrayProfessor); echo "</pre>"; exit;
-if (isset($_POST['nome'], $_POST['imagem'], $_POST['link'])) {
+if (isset($_POST['nome'], $_POST['link'])) {
 
     $obCategoria->nome = $_POST['nome'];
-    $obCategoria->imagem = $_POST['imagem'];
+    // $obCategoria->imagem = $_POST['imagem'];
     $obCategoria->link = $_POST['link'];
 
     $obCategoria->cadastrar();

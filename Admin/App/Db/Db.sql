@@ -63,8 +63,12 @@ CREATE TABLE `pedido`(
     `nome` varchar(45) DEFAULT NULL,
     `categoria` varchar(45) DEFAULT NULL,
     `preco` int(11) DEFAULT NULL,
+    `produto_id` int DEFAULT NULL,
+    `categoria_id` int DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
+ALTER TABLE pedido ADD CONSTRAINT produto_id FOREIGN KEY( produto_id) REFERENCES produtos (id);
+ALTER TABLE pedido ADD CONSTRAINT categoria_id FOREIGN KEY( categoria_id) REFERENCES categorias (id);
 
 CREATE TABLE `pagamento`(
     `id` int(11) NOT NULL AUTO_INCREMENT,

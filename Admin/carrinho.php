@@ -1,23 +1,15 @@
 <?php
 require __DIR__ . './Includes/header.php';
 require __DIR__ . '../vendor/autoload.php';
-
 use \App\Entity\Pedido;
 use \App\Entity\Produto;
 use \App\Entity\Categoria;
-
 $obProdutos = new Produto;
 $obPedidos = new Pedido;
 $obCategorias = new Categoria;
 $pedidos = Pedido::getPedidos();
-
-$saldo = array($obPedidos->valor);
-
-// vamos usar o array_sum para fazer a soma
-$subtotal = array_sum($saldo);
-$frete = $obPedidos->valor_tele_entrega;
-$taxa = 'R$' + 5.00;
-$total = $subtotal + $frete + $taxa;
+$produtos = Produto::getProdutos();
+$listaPedido = $obPedidos::getPedidos();
 ?>
 
 <!-- products cart -->
@@ -34,7 +26,7 @@ $total = $subtotal + $frete + $taxa;
         <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Price</h3>
         <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
       </div>
-      <?php foreach ($pedidos as $key => $value) { ?>
+      <?php foreach ($produtos as $key => $value) { ?>
         <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
           <div class="flex w-2/5">
             <!-- product -->
@@ -42,19 +34,32 @@ $total = $subtotal + $frete + $taxa;
               <img class="h-24" src="./Assets/risoles.png" alt="">
             </div>
             <div class="flex flex-col justify-between ml-4 flex-grow">
-              <span class="font-bold text-sm"><?php echo $value['nome']?></span>
-              <span class="text-red-500 text-xs"><?php echo $value['categoria']?></span>
+              <span class="font-bold text-sm"><?php echo $value['nome']; ?></span>
+              <span class="text-red-500 text-xs"><?php echo $value['tipo']->nome; ?></span>
               <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remover</a>
             </div>
           </div>
           <div class="flex justify-center w-1/5">
-          <span class="text-red-500 text-xs"><?php echo $value['quantidade']?></span>
+            <span class="text-red-500 text-xs">
+            <?php $quantidade = isset($_POST['quantity']) ? $_POST['quantity'] : 1;?>
+            <?php echo $quantidade ;?>
+            </span>
           </div>
           <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['preco']; ?></span>
-          <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['valor']; ?></span>
+          <span class="text-center w-1/5 font-semibold text-sm"><?php $valor = $value['quantidade'] * $value['preco'];?>
+          <?php echo $valor; ?></span>
         </div>
+        <?php } ?>
+      <?php  
+      // vamos usar o array_sum para fazer a soma
+      $saldo = array($value['valor']);
+      $subtotal = array_sum($saldo);
+      $frete = $obPedidos->valor_tele_entrega;
+      $taxa = 5;
+      $total = $subtotal + $frete + $taxa;
+        //  echo "<pre>"; print_r($value['valor']); echo "</pre>"; exit; 
+      ?>
 
-      <?php } ?>
       <a href="../Admin/produtos/categorias.php" class="flex font-semibold text-indigo-600 text-sm mt-10">
 
         <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
@@ -63,7 +68,7 @@ $total = $subtotal + $frete + $taxa;
         Continue comprando
       </a>
     </div>
-    <div id="summary" class="w-1/4 px-8 py-10">
+    <div id="summary" class="w-1/4 px-8 py-10 bg-white">
       <h1 class="font-semibold text-2xl border-b pb-8">Resumo</h1>
       <div class="flex justify-between mt-10 mb-5">
         <span class="font-semibold text-sm uppercase">Subtotal</span>
