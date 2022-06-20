@@ -123,6 +123,7 @@ $produtos = Produto::getProdutos($where);
                 <div class="flex ml-6 items-center">
                   <span class="mr-3">Quantidade</span>
                   <div class="relative">
+                    <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10 d-none" type="number" id="referencial" name="referencial" value="<?php echo $value['id']; ?>">
                     <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantity" name="quantity" min="1" max="<?php echo $value['quantidade']; ?>" value="<?php echo $quantidade; ?>">
                     <span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4" viewBox="0 0 24 24">
