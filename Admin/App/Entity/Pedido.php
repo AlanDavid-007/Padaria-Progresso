@@ -78,11 +78,11 @@ class Pedido
             'data'=> $this->data,
             'valor_tele_entrega' => $this->valor_tele_entrega,
             'quantidade' => $this->quantidade,
-            'categoria' => $this->categoria,
-            'nome' => $this->nome,
-            'preco' => $this->preco,
+//             'categoria' => $this->categoria,
+//             'nome' => $this->nome,
+//             'preco' => $this->preco,
             'produto_id' => $this->produto_id,
-            'categoria_id' => $this->categoria_id,
+//             'categoria_id' => $this->categoria_id,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -115,11 +115,11 @@ class Pedido
             $result[$key]['data'] = $value->data;
             $result[$key]['valor_tele_entrega'] = $value->valor_tele_entrega;
             $result[$key]['quantidade'] = $value->quantidade;
-            $result[$key]['categoria'] = $value->categoria;
-            $result[$key]['nome'] = $value->nome;
-            $result[$key]['preco'] = $value->preco;
+//             $result[$key]['categoria'] = $value->categoria;
+//             $result[$key]['nome'] = $value->nome;
+//             $result[$key]['preco'] = $value->preco;
             $result[$key]['produto_id'] = $obProdutos::getProduto($value->produto_id);
-            $result[$key]['categoria_id'] = $obCategorias::getCategoria($value->categoria_id);
+//             $result[$key]['categoria_id'] = $obCategorias::getCategoria($value->categoria_id);
         }
         return $result;
     }
@@ -165,11 +165,11 @@ class Pedido
             'data'=> $this->data,
             'valor_tele_entrega' => $this->valor_tele_entrega,
             'quantidade' => $this->quantidade,
-            'categoria' => $this->categoria,
-            'nome' => $this->nome,
-            'preco' => $this->preco,
+//             'categoria' => $this->categoria,
+//             'nome' => $this->nome,
+//             'preco' => $this->preco,
             'produto_id' => $this->produto_id,
-            'categoria_id' => $this->categoria_id,
+//             'categoria_id' => $this->categoria_id,
         ]);
         
     }
