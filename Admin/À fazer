@@ -1,0 +1,42 @@
+<!--
+
+Revisar mudanças de código -Entitys, dbsql, categorias.php, cadastro_produtos.php e formulario_produtos.php
+
+Trocar nomes dos arquivos de editar e excluir
+
+Colocar pasta e arquivos de Confirmar Exclusão
+
+Criar arquivo de header e footer, para deixar dinamico a visualização
+
+Colocar Pasta Css - puxar css do Cursos para este para usar estilo de botões
+
+Tirar arquivos db e entity do cliente e se precisar usar os do Admin - Tirar código desnecessário
+
+Colocar visualização de listagens para o cliente sem as opções de exclusão e edição
+
+Fazer listagem de categorias - método de cadastro... - tanto cliente quanto admin 
+
+Colocar link get dinâmico nas categorias para ter acesso as listagens de produtos de acordo com a url deixada pelo filtro
+
+Ver com o sor como fazer visualização dinâmica de categoria e produto - Ver se pode fazer atributo para pegar get
+
+Fazer listagem de produtos detalhes - puxar os mesmos detalhes da de produtos, mas colocar mais informações 
+
+--------------Finalizado listagens de produtos e categorias------------------
+Passos futuros:
+
+Carrinho - listagens dos produtos trazidas através de click em botão
+
+login e cadastro - Usar $SESSION 
+
+Configurações - Deixar salvo as mudanças de acordo com ação do formulário
+
+Index - deixar a primeira vista só as informações básicas - home, login/cadastro e sobre, 
+se tiver tentativa de colocar produto no carrinho levar a página de login
+
+Pagamento - Transferir para Whats
+
+----------------------------------------------------------------------------
+
+Mudanças Finais de Layout e Revisamento do Projeto
+
