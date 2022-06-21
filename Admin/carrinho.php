@@ -48,7 +48,9 @@ $listaPedido = $obPedidos::getPedidos();
           <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['valor'];?></span>
         </div>
         <?php 
-        //  $saldo = $pedidos[1];
+        // link de resolução do arreio: https://www.php.net/manual/pt_BR/function.array-column.php
+        //  $saldo = $pedidos[][1];
+        //  $saldo = array_column($pedidos, 'valor');
         //  $subtotal = array_sum($saldo);
          $frete = 10;
          $taxa = 5;
