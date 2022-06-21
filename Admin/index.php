@@ -146,4 +146,5 @@ if (isset($_GET['status'])) {
 </section>
 <?php
 require __DIR__ . './Includes/footer.php';
+
 ?>

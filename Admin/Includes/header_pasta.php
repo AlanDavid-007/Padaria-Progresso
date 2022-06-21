@@ -1,3 +1,6 @@
+<?php
+include('../protect.php');
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -15,7 +18,7 @@
     <title>Padaria Progresso</title>
 </head>
 
-<body class="bg-black">
+<body style="background-color: #7B7782;">
     <!-- navbar -->
     <div class="dark:bg-gray-900">
         <div>
@@ -70,9 +73,11 @@
                                     style="text-decoration: none; font-size: 20px;">Sobre Nós</a>
                             </li>
                             <li>
-                                <a href="../login.php"
+                                <a href="../configuracoes.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
-                                    style="text-decoration: none; font-size: 20px;">Entrar</a>
+                                    style="text-decoration: none; font-size: 20px;">
+Configurações
+                                </a>
                             </li>
                         </ul>
 

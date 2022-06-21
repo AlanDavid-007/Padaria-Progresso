@@ -11,14 +11,24 @@ $pedidos = Pedido::getPedidos();
 $produtos = Produto::getProdutos();
 $listaPedido = $obPedidos::getPedidos();
 ?>
-
+<!-- <script>
+  document.getElementById('sweetButton'),addEventListener('click', exibeMensagem) ;
+function exibeMensagem() {
+  Swal.fire({ title: 'Are you sure?', text: "You won't be able to revert this!", 
+    icon: 'warning',
+     showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+       cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!' }).then((result) => { if (result.isConfirmed) { 
+          Swal.fire( 'Deleted!', 'Your file has been deleted.', 'success' ) } })
+                  }          </script> -->
 <!-- products cart -->
 <div class="container mx-auto mt-10">
   <div class="flex shadow-md my-10">
     <div class="w-3/4 bg-white px-10 py-10">
       <div class="flex justify-between border-b pb-8">
         <h1 class="font-semibold text-2xl">Carrinho</h1>
-        <h2 class="font-semibold text-2xl"><?php echo count($pedidos); ?> Items</h2>
+        <h2 class="font-semibold text-2xl"><?php echo count($pedidos); ?> Itens</h2>
       </div>
       <div class="flex mt-10 mb-5">
         <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Detalhes do produto</h3>
@@ -36,7 +46,7 @@ $listaPedido = $obPedidos::getPedidos();
             <div class="flex flex-col justify-between ml-4 flex-grow">
               <span class="font-bold text-sm"><?php echo $value['produto_id']->nome; ?></span>
               <span class="text-red-500 text-xs"><?php echo $value['categoria']; ?></span>
-              <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remover</a>
+              <a id="excluir" href="./Excluir/excluir_pedidos.php?id=<?php echo $value['id']; ?>" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remover</a>
             </div>
           </div>
           <div class="flex justify-center w-1/5">
@@ -44,18 +54,18 @@ $listaPedido = $obPedidos::getPedidos();
             <?php echo $value['quantidade'] ;?>
             </span>
           </div>
-          <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['produto_id']->preco; ?></span>
-          <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['valor'];?></span>
+          <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['produto_id']->preco . ',' . 0 . 0; ?></span>
+          <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['valor'] . ',' . 0 . 0;?></span>
         </div>
         <?php 
         // link de resolução do arreio: https://www.php.net/manual/pt_BR/function.array-column.php
         //  $saldo = $pedidos[][1];
-        //  $saldo = array_column($pedidos, 'valor');
-        //  $subtotal = array_sum($saldo);
+          $saldo = array_column($pedidos, 'valor');
+          $subtotal = array_sum($saldo);
          $frete = 10;
          $taxa = 5;
-        //  $total = $subtotal + $frete + $taxa;
-          //  echo "<pre>"; print_r($saldo); echo "</pre>"; exit; 
+         $total = $subtotal + $frete + $taxa;
+            // echo "<pre>"; print_r($saldo); echo "</pre>"; exit; 
         ?>
         <?php } ?>
       
@@ -72,16 +82,16 @@ $listaPedido = $obPedidos::getPedidos();
       <h1 class="font-semibold text-2xl border-b pb-8">Resumo</h1>
       <div class="flex justify-between mt-10 mb-5">
         <span class="font-semibold text-sm uppercase">Subtotal</span>
-        <span class="font-semibold text-sm"><?php echo $subtotal; ?></span>
+        <span class="font-semibold text-sm"><?php echo 'R$' . $subtotal . ',' . 0 . 0 ; ?></span>
       </div>
       <div>
         <div class="flex justify-between mt-10 mb-5">
           <span class="font-semibold text-sm uppercase">Frete</span>
-          <span class="font-semibold text-sm"><?php echo $frete ?></span>
+          <span class="font-semibold text-sm"><?php echo 'R$' . $frete . ',' . 0 . 0; ?></span>
         </div>
         <div class="flex justify-between mt-10 mb-5">
           <span class="font-semibold text-sm uppercase">Taxa</span>
-          <span class="font-semibold text-sm"><?php echo $taxa; ?></span>
+          <span class="font-semibold text-sm"><?php echo 'R$' . $taxa . ',' . 0 . 0; ?></span>
         </div>
         <div class="py-10">
           <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Código de Promoção</label>
@@ -91,7 +101,7 @@ $listaPedido = $obPedidos::getPedidos();
         <div class="border-t mt-8">
           <div class="flex font-semibold justify-between py-6 text-sm uppercase">
             <span>Total</span>
-            <span><?php echo $total; ?></span>
+            <span><?php echo 'R$' . $total . ',' . 0 . 0; ?></span>
           </div>
           <button class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Comprar</button>
         </div>
