@@ -29,7 +29,7 @@ if (isset($_POST['quantity']
 //   $today = getdate();
 // print_r($today);
     $obPedidos->quantidade = isset($_POST['quantity']) ? $_POST['quantity'] : 1;
-    $preco = isset($_POST['price-total']) ? $_POST['price-total'] : 1;
+    $preco = isset($_POST['price']) ? $_POST['price'] : 1;
     $obPedidos->valor = $obPedidos->quantidade * $preco;
     $obPedidos->aprovapedido = 1;
     $obPedidos->data = 
@@ -38,7 +38,7 @@ if (isset($_POST['quantity']
 //            , strtotime('$today')
           );
     $obPedidos->valor_tele_entrega = 10;
-//     $obPedidos->categoria = $value['tipo']->nome;
+    $obPedidos->categoria = isset($_POST['categoria']) ? $_POST['categoria'] : 1;
 //     $obPedidos->nome = $value['nome'];
 //     $obPedidos->preco = $value['preco'];
     $obPedidos->produto_id = isset($_POST['referencial']) ? $_POST['referencial'] : 1;

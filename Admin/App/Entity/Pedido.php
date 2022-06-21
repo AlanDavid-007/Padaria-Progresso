@@ -78,7 +78,7 @@ class Pedido
             'data'=> $this->data,
             'valor_tele_entrega' => $this->valor_tele_entrega,
             'quantidade' => $this->quantidade,
-//             'categoria' => $this->categoria,
+            'categoria' => $this->categoria,
 //             'nome' => $this->nome,
 //             'preco' => $this->preco,
             'produto_id' => $this->produto_id,
@@ -115,7 +115,7 @@ class Pedido
             $result[$key]['data'] = $value->data;
             $result[$key]['valor_tele_entrega'] = $value->valor_tele_entrega;
             $result[$key]['quantidade'] = $value->quantidade;
-//             $result[$key]['categoria'] = $value->categoria;
+            $result[$key]['categoria'] = $value->categoria;
 //             $result[$key]['nome'] = $value->nome;
 //             $result[$key]['preco'] = $value->preco;
             $result[$key]['produto_id'] = $obProdutos::getProduto($value->produto_id);
@@ -165,7 +165,7 @@ class Pedido
             'data'=> $this->data,
             'valor_tele_entrega' => $this->valor_tele_entrega,
             'quantidade' => $this->quantidade,
-//             'categoria' => $this->categoria,
+            'categoria' => $this->categoria,
 //             'nome' => $this->nome,
 //             'preco' => $this->preco,
             'produto_id' => $this->produto_id,

@@ -18,7 +18,7 @@ $listaPedido = $obPedidos::getPedidos();
     <div class="w-3/4 bg-white px-10 py-10">
       <div class="flex justify-between border-b pb-8">
         <h1 class="font-semibold text-2xl">Carrinho</h1>
-        <h2 class="font-semibold text-2xl"><?php echo $obPedidos->id; ?>Items</h2>
+        <h2 class="font-semibold text-2xl"><?php echo count($pedidos); ?> Items</h2>
       </div>
       <div class="flex mt-10 mb-5">
         <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Detalhes do produto</h3>
@@ -35,30 +35,28 @@ $listaPedido = $obPedidos::getPedidos();
             </div>
             <div class="flex flex-col justify-between ml-4 flex-grow">
               <span class="font-bold text-sm"><?php echo $value['produto_id']->nome; ?></span>
-              <span class="text-red-500 text-xs"><?php echo $value['produto_id']->tipo->nome; ?></span>
+              <span class="text-red-500 text-xs"><?php echo $value['categoria']; ?></span>
               <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remover</a>
             </div>
           </div>
           <div class="flex justify-center w-1/5">
             <span class="text-red-500 text-xs">
-<!--             <?php $quantidade = isset($_POST['quantity']) ? $_POST['quantity'] : 1;?> -->
             <?php echo $value['quantidade'] ;?>
             </span>
           </div>
           <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['produto_id']->preco; ?></span>
-          <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['valor'];?>
-          <?php echo $valor; ?></span>
+          <span class="text-center w-1/5 font-semibold text-sm"><?php echo $value['valor'];?></span>
         </div>
+        <?php 
+        //  $saldo = $pedidos[1];
+        //  $subtotal = array_sum($saldo);
+         $frete = 10;
+         $taxa = 5;
+        //  $total = $subtotal + $frete + $taxa;
+          //  echo "<pre>"; print_r($saldo); echo "</pre>"; exit; 
+        ?>
         <?php } ?>
-      <?php  
-      // vamos usar o array_sum para fazer a soma
-      $saldo = array($value['valor']);
-      $subtotal = array_sum($saldo);
-      $frete = 10;
-      $taxa = 5;
-      $total = $subtotal + $frete + $taxa;
-        //  echo "<pre>"; print_r($value['valor']); echo "</pre>"; exit; 
-      ?>
+      
 
       <a href="../Admin/produtos/categorias.php" class="flex font-semibold text-indigo-600 text-sm mt-10">
 

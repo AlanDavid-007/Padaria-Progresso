@@ -61,7 +61,7 @@ CREATE TABLE `pedido`(
     `valor_tele_entrega` float DEFAULT NULL,
     `quantidade` INT DEFAULT NULL,
 --     `nome` varchar(45) DEFAULT NULL,
---     `categoria` varchar(45) DEFAULT NULL,
+    `categoria` varchar(45) DEFAULT NULL,
 --     `preco` int(11) DEFAULT NULL,
     `produto_id` int DEFAULT NULL,
 --     `categoria_id` int DEFAULT NULL,

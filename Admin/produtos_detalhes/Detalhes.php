@@ -124,6 +124,7 @@ $produtos = Produto::getProdutos($where);
                   <span class="mr-3">Quantidade</span>
                   <div class="relative">
                     <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10 d-none" type="number" id="referencial" name="referencial" value="<?php echo $value['id']; ?>">
+                    <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10 d-none" type="text" id="categoria" name="categoria" value="<?php echo $value['tipo']->nome; ?>">
                     <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" type="number" id="quantity" name="quantity" min="1" max="<?php echo $value['quantidade']; ?>" value="<?php echo $quantidade; ?>">
                     <span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4" viewBox="0 0 24 24">
@@ -136,6 +137,7 @@ $produtos = Produto::getProdutos($where);
             </div>
             <!-- colocar preço de frete em span e colocar outro span com a quantidade maxima -->
             <div class="flex">
+            <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10 d-none" type="number" id="price" name="price" value="<?php echo $preco; ?>">
               <span id="price-total" class="title-font font-medium text-2xl text-gray-900" price="<?php echo $preco; ?>"><?php echo $quantidade > 0 ? 'R$ <span id="get-price">' . $preco . '</span>' : $valor; ?></span>
               <button class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded" type="submit">Adicionar ao Carrinho</button>
               <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
