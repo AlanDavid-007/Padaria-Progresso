@@ -2,12 +2,23 @@
 require __DIR__ . '../../Includes/header_pasta.php';
 require __DIR__ . '../../vendor/autoload.php';
 
-use \App\Entity\Produto;
-use \App\Entity\Feedback;
 use \App\Entity\Pedido;
+use \App\Entity\Produto;
+use \App\Entity\Categoria;
 
 $obPedidos = new Pedido;
+$obProdutos = new Produto;
+$obCategorias = new Categoria;
 
+$produtos = Produto::getProdutos();
+ $listaProdutos = $obProdutos::getProdutos();
+// $obPagamentos = new Pagamento;
+// $obUsuarios = new Usuario;
+// $obClientes = new Cliente;
+ $listaCategorias = $obCategorias::getCategorias();
+// $listaPagamento = $obPagamentos::getPagamentos();
+// $listaUsuario = $obUsuarios::getUsuarios();
+foreach ($produtos as $key => $value) { 
 if (isset($_POST['quantity']
 // , $_POST['pagamento_id'], $_POST['usuario_id'], $_POST['Cliente_id']
 )) { 
@@ -35,6 +46,7 @@ if (isset($_POST['quantity']
     header('location: ../carrinho.php');
     exit;
 } 
+}
 $pedidos = Pedido::getPedidos();
 //busca
 $busca = filter_input(INPUT_GET, 'nome');

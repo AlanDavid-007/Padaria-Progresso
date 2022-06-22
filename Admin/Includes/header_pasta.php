@@ -1,9 +1,6 @@
-<?php
-include('../protect.php');
-?>
+<?php ob_start(); ?>
 <!doctype html>
 <html lang="pt-br">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
