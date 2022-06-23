@@ -1,7 +1,8 @@
-<?php
+<?php echo $_SESSION['nome'];
 require __DIR__ . '../vendor/autoload.php';
 
 require __DIR__ . './Includes/header.php';
+
 
 use \App\Entity\Categoria;
 
@@ -40,13 +41,6 @@ if (isset($_GET['status'])) {
     <section>
         <?php echo $mensagem; ?>
     </section>
-    if((!empty($foto_usuario)) and (file_exists("imagens/$id/$foto_usuario"))){
-    echo "<img src='../Assets/$imagem' width='150'><br>";
-    echo "<a href='../Assets/$imagem' download>Download</a><br><br>";
-    }else{
-    echo "<img src='../Assets/$imagem' width='150'><br>";
-    //echo "<a href='../Assets/$imagem'>Download</a>";
-    }
 <?php } ?>
 
 <section>

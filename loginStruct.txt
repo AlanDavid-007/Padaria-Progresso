@@ -1,31 +1,30 @@
 login:
     <?php
-    if (isset($_POST['email']) || isset($_POST['senha'])) {
+if (isset($_POST['email']) || isset($_POST['pass'])) {
 
-        if (strlen($_POST['email']) == 0) {
-            echo "Preencha seu e-mail";
-        } else if (strlen($_POST['senha']) == 0) {
-            echo "Preencha sua senha";
-        } else {
+    if (strlen($_POST['email']) == 0) {
+        echo "Preencha seu e-mail";
+    } else if (strlen($_POST['pass']) == 0) {
+        echo "Preencha sua senha";
+    } else {
 
-            $email = $this->connection->real_escape_string($_POST['email']);
-            $senha = $this->connection->real_escape_string($_POST['senha']);
+        $email = ($_POST['email']);
+        $senha = ($_POST['pass']);
+        $validae = array_column($usuarios, 'email');
+        $validas = array_column($usuarios, 'senha');
 
-            $sql_code = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
-            $sql_query = $this->connection->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+        if ($validae == $email && $validas == $senha) {
 
-            $quantidade = $sql_query->num_rows;
+            $quantidade = count($usuarios, 'id');;
 
             if ($quantidade == 1) {
-
-                $usuario = $sql_query->fetch_assoc();
 
                 if (!isset($_SESSION)) {
                     session_start();
                 }
 
-                $_SESSION['id'] = $usuario['id'];
-                $_SESSION['nome'] = $usuario['nome'];
+                $_SESSION['id'] = array_column($usuarios, 'id');
+                $_SESSION['nome'] = array_column($usuarios, 'nome');
 
                 header("Location: ../Admin/index.php");
             } else {
@@ -33,6 +32,7 @@ login:
             }
         }
     }
+}
     ?>
 index:
 <?php echo $_SESSION['nome']; ?>
