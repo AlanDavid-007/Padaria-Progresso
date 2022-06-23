@@ -1,48 +1,12 @@
 <?php
-
+require __DIR__ . '../Admin/vendor/autoload.php';
+ob_start();
 use \App\Db\Database;
 use \App\Entity\Usuario;
 
 $obUsuarios = new Usuario;
-$usuarios = $Usuario::getUsuarios();
+$usuarios = $obUsuarios::getUsuarios();
 
-?>
-<?php
-/* Declaração de Variáveis */
-$email = @$_REQUEST['email'];
-$pass = @$_REQUEST['pass'];
-$submit = @$_REQUEST['submit'];
-
-/* Declaração das variáveis que possuem os usuarios e as senhas */
-$email1 = 'alan@gmail.com';
-$pass1 = 'alan';
-
-$email2 = 'alan@gmail.com';
-$pass2 = 'alan';
-
-/* Testa se o botão submit foi ativado */
-if($submit){
-    
-    /* Se o campo usuário ou senha estiverem vazios geramos um alerta */
-    if($email == "" || $pass == ""){
-        echo "<script:alert('Por favor, preencha todos os campos!');</script>";
-    }
-    /* Caso o campo usuario e senha não 
-        *estejam vazios vamos testar se o usuário e a senha batem 
-    *iniciamos uma sessão e redirecionamos o usuário para o painel */
-    else{
-        if(($email == $email1 && $pass == $pass1) || ($email == $email2 && $pass == $pass2)){
-            session_start();
-            $_SESSION['email']=$email;
-            $_SESSION['senha']=$pass;
-            header("Location: Admin/index.php");
-        }
-        /* Se o usuario ou a senha não batem alertamos o usuario */
-        else{
-            echo "<script>alert('email e/ou senha inválido(s), Tente novamente!');</script>";
-        }
-    }
-}
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -222,7 +186,7 @@ if($submit){
         <div class="flex flex-col items-center justify-center">
 
             <div class="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
-                <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Entre na sua conta</p>
+                <!-- <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Entre na sua conta</p>
                 <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Você não tem uma conta? <a href="javascript:void(0)" class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Clique aqui.</a></p>
                 <button aria-label="Continue com google" role="button" class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">
                     <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg2.svg" alt="google">
@@ -240,33 +204,73 @@ if($submit){
                     <hr class="w-full bg-gray-400">
                     <p class="text-base font-medium leading-4 px-2.5 text-gray-400">OU</p>
                     <hr class="w-full bg-gray-400  ">
-                </div>
-                <form method="post">
+                </div> -->
+                <!-- <form name="" method="post" action="">
+        <label>Usuário: <input type="text" name="email" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" /></label><br /><br />
+        <label>Senha: <input type="password" name="pass" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"/></label><br /><br />
+        <input type="submit" name="submit" value="Logar!" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full"/>
+    </form> -->
+    <form method="post">
                     <div>
                         <label class="text-sm font-medium leading-none text-gray-800">
                             Email
                         </label>
-                        <input aria-labelledby="email" type="email" id="email" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                        <input type="text" name="email" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
                     </div>
                     <div class="mt-6  w-full">
-                        <label for="pass" class="text-sm font-medium leading-none text-gray-800">
+                        <label class="text-sm font-medium leading-none text-gray-800">
                             Senha
                         </label>
                         <div class="relative flex items-center justify-center">
-                            <input id="pass" type="password" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                            <input name="pass" type="password" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
                             <div class="absolute right-0 mt-2 mr-3 cursor-pointer">
                                 <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg5.svg" alt="viewport">
                             </div>
                         </div>
                     </div>
                     <div class="mt-8">
-                        <button role="button" type="submit" id="submit" name="submit" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">Crie sua conta</button>
+                        <input type="submit" id="submit" name="submit" value="Crie sua conta" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full"/>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <!-- login -->
+   <!-- login -->
+   <?php
+    /* Declaração de Variáveis */
+    $email = @$_REQUEST['email'];
+    $pass = @$_REQUEST['pass'];
+    $submit = @$_REQUEST['submit'];
+
+    /* Declaração das variáveis que possuem os usuarios e as senhas */
+    $email1 = 'alan';
+    $pass1 = 'alan';
+
+    $email2 = 'alan@gmail.com';
+    $pass2 = 'alan';
+
+    /* Testa se o botão submit foi ativado */
+    if ($submit) {
+
+        /* Se o campo usuário ou senha estiverem vazios geramos um alerta */
+        if ($email == "" || $pass == "") {
+            echo "<script:alert('Por favor, preencha todos os campos!');</script>";
+        }
+        /* Caso o campo usuario e senha não 
+        *estejam vazios vamos testar se o usuário e a senha batem 
+    *iniciamos uma sessão e redirecionamos o usuário para o painel */ else {
+            if (($email == $email1 && $pass == $pass1) || ($email == $email2 && $pass == $pass2)) {
+                session_start();
+                $_SESSION['email'] = $email;
+                $_SESSION['senha'] = $pass;
+                header("Location: ../Padaria-Progresso/Admin/index.php");
+            }
+            /* Se o usuario ou a senha não batem alertamos o usuario */ else {
+                echo "<script>alert('email e/ou senha inválido(s), Tente novamente!');</script>";
+            }
+        }
+    }
+    ?>
 
 
 
@@ -441,5 +445,5 @@ if($submit){
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
-
 </html>
+<?php ob_end_flush(); ?>
