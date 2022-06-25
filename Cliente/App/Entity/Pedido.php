@@ -4,10 +4,8 @@ namespace App\Entity;
 
 use \App\Db\Database;
 use \PDO;
-use \App\Entity\Pagamento;
-use \App\Entity\Usuario;
-use \App\Entity\Cliente;
 use \App\Entity\Produto;
+use \App\Entity\Categoria;
 
 
 
@@ -22,28 +20,16 @@ class Pedido
     public $id;
 
     /** 
-     * valor
-     * @var float
-     */
-    public $obPagamentos;
-
-    /** 
-     * valor
-     * @var float
-     */
-    public $obUsuarios;
-
-    /** 
-     * valor
-     * @var float
-     */
-    public $obClientes;
-    
-    /** 
      * produto
      * @var float
      */
     public $obProdutos;
+    
+        /** 
+     * categoria
+     * @var float
+     */
+    public $obCategorias;
 
     /** 
      * valor
@@ -63,12 +49,6 @@ class Pedido
      */
     public $data;
 
-     /** 
-     * nota do feedback
-     * @var text
-     */
-    public $descricao;
-
     /** 
      * valor_tele_entrega
      * @var float
@@ -81,24 +61,6 @@ class Pedido
      */
     public $quantidade;
     
-     /** 
-     * pagamento_id
-     * @var int
-     */
-    public $pagamento_id;
-
-     /** 
-     *usuario_id
-     * @var int
-     */
-    public $usuario_id;
-
-    /** 
-     * cliente_id
-     * @var int
-     */
-    public $cliente_id;
-
     /** 
      * Função para cadastrar a professor no banco
      * @var boolean
@@ -115,12 +77,12 @@ class Pedido
             'aprovapedido' => $this->aprovapedido,
             'data'=> $this->data,
             'valor_tele_entrega' => $this->valor_tele_entrega,
-            'descricao' => $this->descricao,
-            'nome' => $this->nome,
             'quantidade' => $this->quantidade,
-            'pagamento_id'=> $this->cliente_id,
-            'usuario_id' => $this->usuario_id,
-            'cliente_id' => $this->cliente_id,
+            'categoria' => $this->categoria,
+//             'nome' => $this->nome,
+//             'preco' => $this->preco,
+            'produto_id' => $this->produto_id,
+//             'categoria_id' => $this->categoria_id,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -139,10 +101,8 @@ class Pedido
 
     public static function getPedidos($where = null, $order = null, $limit = null)
     {
-        $obClientes = new Cliente;
-        $obPagamentos = new Pagamento;
-        $obUsuarios = new Usuario;
         $obProdutos = new Produto;
+        $obCategorias = new Categoria;
         $objDatabase = new Database('pedido');
 
         $return = ($objDatabase)->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
@@ -155,11 +115,11 @@ class Pedido
             $result[$key]['data'] = $value->data;
             $result[$key]['valor_tele_entrega'] = $value->valor_tele_entrega;
             $result[$key]['quantidade'] = $value->quantidade;
-            $result[$key]['descricao'] = $obProdutos::getProduto($value->descricao);
-            $result[$key]['nome'] = $obProdutos::getProduto($value->nome);
-            $result[$key]['pagamento_id'] = $obPagamentos::getPagamento($value->pagamento_id);
-            $result[$key]['usuario_id'] = $obUsuarios::getUsuario($value->usuario_id);
-            $result[$key]['cliente_id'] = $obClientes::getCliente($value->cliente_id);
+            $result[$key]['categoria'] = $value->categoria;
+//             $result[$key]['nome'] = $value->nome;
+//             $result[$key]['preco'] = $value->preco;
+            $result[$key]['produto_id'] = $obProdutos::getProduto($value->produto_id);
+//             $result[$key]['categoria_id'] = $obCategorias::getCategoria($value->categoria_id);
         }
         return $result;
     }
@@ -204,12 +164,13 @@ class Pedido
             'aprovapedido' => $this->aprovapedido,
             'data'=> $this->data,
             'valor_tele_entrega' => $this->valor_tele_entrega,
-            'descricao' => $this->descricao,
-            'nome' => $this->nome,
             'quantidade' => $this->quantidade,
-            'pagamento_id'=> $this->cliente_id,
-            'usuario_id' => $this->usuario_id,
-            'cliente_id' => $this->cliente_id,
+            'categoria' => $this->categoria,
+//             'nome' => $this->nome,
+//             'preco' => $this->preco,
+            'produto_id' => $this->produto_id,
+//             'categoria_id' => $this->categoria_id,
         ]);
+        
     }
 }

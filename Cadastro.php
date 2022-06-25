@@ -186,20 +186,75 @@ $usuarios = $obUsuarios::getUsuarios();
         <div class="flex flex-col items-center justify-center">
 
             <div class="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
-                <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Escolha o tipo de Conta</p>
-                <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Você não tem uma conta? <a href="./Cadastro.php" class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Clique aqui.</a></p>
-                <button aria-label="Continue com google" role="button" class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M23.995 24h-1.995c0-3.104.119-3.55-1.761-3.986-2.877-.664-5.594-1.291-6.584-3.458-.361-.791-.601-2.095.31-3.814 2.042-3.857 2.554-7.165 1.403-9.076-1.341-2.229-5.413-2.241-6.766.034-1.154 1.937-.635 5.227 1.424 9.025.93 1.712.697 3.02.338 3.815-.982 2.178-3.675 2.799-6.525 3.456-1.964.454-1.839.87-1.839 4.004h-1.995l-.005-1.241c0-2.52.199-3.975 3.178-4.663 3.365-.777 6.688-1.473 5.09-4.418-4.733-8.729-1.35-13.678 3.732-13.678 4.983 0 8.451 4.766 3.732 13.678-1.551 2.928 1.65 3.624 5.09 4.418 2.979.688 3.178 2.143 3.178 4.663l-.005 1.241zm-5.995-3h-5v2h5v-2z"/></svg>    
-                <a href="./loginAdmin.php" class="text-base font-medium ml-4 text-gray-700">Continue como Admin</a>
-                </button>
-                <button aria-label="Continue com github" role="button" class="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4">
-                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M20.628 23h-6.59l-.352-1-13.682-.014c-.005-.005-.002-2.925-.004-3.165-.006-1.898-.012-3.538 2.784-4.182l.474-.108c1.504-.34 3.374-.762 3.724-1.533.041-.092.168-.371-.152-.961-1.926-3.548-2.293-6.665-1.035-8.777.856-1.436 2.42-2.26 4.289-2.26 1.854 0 3.407.812 4.26 2.226 1.258 2.086.901 5.214-1.004 8.807-.314.594-.186.873-.144.966.151.329.571.591 1.125.812l1.96-3.548c.106-.172.286-.263.469-.263.428 0 .694.471.469.837l-1.753 3.173h4.03l-1.752-3.173c-.225-.366.041-.837.469-.837.183 0 .363.091.469.263l2.069 3.747h3.249v2.983h-.828c-.083 0-.156.046-.192.119l-2.352 5.888zm2.371-7.99h-10.999v.996c.396.056.716.302.895.67l1.855 5.325h5.199l2.117-5.291c.188-.391.539-.645.933-.703v-.997zm-10.273-1c-.186-.175-.336-.371-.439-.595-.25-.544-.193-1.166.168-1.849 1.734-3.272 2.101-6.05 1.032-7.824-.677-1.124-1.885-1.742-3.403-1.742-1.53 0-2.748.629-3.429 1.772-1.071 1.797-.697 4.563 1.054 7.789.371.681.432 1.303.184 1.849-.555 1.223-2.517 1.667-4.414 2.096l-.471.107c-1.94.447-2.014 1.256-2.007 3.204l-.002 2.183h12.347l-1.35-3.942c-.013-.019-.086-.065-.168-.065h-.829v-2.983h1.727zm3.273 3.029c0-.276-.224-.5-.5-.5s-.5.224-.5.5v3c0 .276.224.5.5.5s.5-.224.5-.5v-3zm2-.074c0-.276-.224-.5-.5-.5s-.5.224-.5.5v3c0 .276.224.5.5.5s.5-.224.5-.5v-3zm1.997 0c0-.276-.224-.5-.5-.5-.275 0-.5.224-.5.5v3c0 .276.225.5.5.5.276 0 .5-.224.5-.5v-3z"/></svg>    
-                <a href="./loginCliente.php" class="text-base font-medium ml-4 text-gray-700">Continue como Cliente</a>
-                </button>
+                <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Cadastre-se</p>
+                <form method="post" class="mt-2">
+                <div>
+                        <label class="text-sm font-medium leading-none text-gray-800">
+                            Nome
+                        </label>
+                        <input type="text" name="nome" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium leading-none text-gray-800">
+                            Email
+                        </label>
+                        <input type="text" name="email" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                    </div>
+                    <div class="mt-6  w-full">
+                        <label class="text-sm font-medium leading-none text-gray-800">
+                            Senha
+                        </label>
+                        <div class="relative flex items-center justify-center">
+                            <input name="pass" type="password" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                            <div class="absolute right-0 mt-2 mr-3 cursor-pointer">
+                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg5.svg" alt="viewport">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <input type="submit" id="submit" name="submit" value="Crie sua conta" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full" />
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+    <!-- login -->
+    <?php
+    /* Declaração de Variáveis */
+    $nome = @$_REQUEST['nome'];
+    $email = @$_REQUEST['email'];
+    $pass = @$_REQUEST['pass'];
+    $submit = @$_REQUEST['submit'];
+    /* Testa se o botão submit foi ativado */
+    if ($submit) {
 
+        /* Se o campo usuário ou senha estiverem vazios geramos um alerta */
+        if ($email == "" || $pass == "" || $nome == "") {
+            echo "<script:alert('Por favor, preencha todos os campos!');</script>";
+        }
+        /* Caso o campo usuario e senha não 
+        *estejam vazios vamos testar se o usuário e a senha batem 
+    *iniciamos uma sessão e redirecionamos o usuário para o painel */ else {
+            if (isset($_POST['email'], $_POST['pass'], $_POST['nome'])) {
+                session_start();
+                $_SESSION['email'] = $email;
+                $_SESSION['senha'] = $pass;
+                $_SESSION['cargo'] = 'cliente';
+                $_SESSION['nome'] = $nome;
+                $_SESSION['id'] = $obUsuarios->id;
+                $obUsuarios->email = $_SESSION['email'];
+                $obUsuarios->senha = $_SESSION['senha'];
+                $obUsuarios->cargo = $_SESSION['cargo'];
+                $obUsuarios->nome = $_SESSION['nome'];
+                $obUsuarios->cadastrar();
+                header("Location: ../Padaria-Progresso/Cliente/index.php");
+            }
+            /* Se o usuario ou a senha não batem alertamos o usuario */ else {
+                echo "<script>alert('email e/ou senha inválido(s), Tente novamente!');</script>";
+            }
+        }
+    }
+    ?>
 
 
 

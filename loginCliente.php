@@ -1,3 +1,13 @@
+<?php
+require __DIR__ . '../Admin/vendor/autoload.php';
+ob_start();
+
+use \App\Db\Database;
+use \App\Entity\Usuario;
+
+$obUsuarios = new Usuario;
+$usuarios = $obUsuarios::getUsuarios();
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -11,11 +21,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://use.fontawesome.com/ea21c98100.js"></script>
     <script src="https://kit.fontawesome.com/c1e1266368.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Padaria Progresso</title>
 </head>
 
-<body class="dark:bg-gray-900">
-
+<body style="background-color: #7B7782;">
     <!-- navbar -->
     <div class="dark:bg-gray-900">
         <div>
@@ -56,7 +66,16 @@
                                 <a href="sobre.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Sobre Nós</a>
                             </li>
                             <li>
-                                <a href="login.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Entrar</a>
+                                <a href="configuracoes.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Configurações</a>
+                            </li>
+                            <li>
+                                <a href="Cadastro.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Cadastro</a>
+                            </li>
+                            <li>
+                                <a href="./produtos/categorias.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Categoria</a>
+                            </li>
+                            <li>
+                                <a href="logout.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Logout</a>
                             </li>
                         </ul>
 
@@ -162,27 +181,100 @@
             </div>
         </div>
     </div>
+    <!-- login -->
+    <div class="h-full bg-gradient-to-tl from-black-400 to-gray-900 w-full py-16 px-4">
+        <div class="flex flex-col items-center justify-center">
 
-
-
+            <div class="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
+                <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Entre na sua conta</p>
+                <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Você não tem uma conta? <a href="javascript:void(0)" class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Clique aqui.</a></p>
+                <button aria-label="Continue com google" role="button" class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg2.svg" alt="google" class="ml-0.5">
+                    <p class="text-base font-medium ml-4 text-gray-700">Continue com Google</p>
+                </button>
+                <button aria-label="Continue com github" role="button" class="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 10h-2v2h2v6h3v-6h1.82l.18-2h-2v-.833c0-.478.096-.667.558-.667h1.442v-2.5h-2.404c-1.798 0-2.596.792-2.596 2.308v1.692z"/></svg>
+                    <p class="text-base font-medium ml-4 text-gray-700">Continue com Facebook</p>
+                </button>
+                <button aria-label="Continue com twitter" role="button" class="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <p class="text-base font-medium ml-4 text-gray-700">Continue com instagram</p>
+                </button>
+                <div class="w-full flex items-center justify-between py-5">
+                    <hr class="w-full bg-gray-400">
+                    <p class="text-base font-medium leading-4 px-2.5 text-gray-400">OU</p>
+                    <hr class="w-full bg-gray-400  ">
+                </div>
+                <!-- <form name="" method="post" action="">
+        <label>Usuário: <input type="text" name="email" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" /></label><br /><br />
+        <label>Senha: <input type="password" name="pass" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"/></label><br /><br />
+        <input type="submit" name="submit" value="Logar!" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full"/>
+    </form> -->
+                <form method="post">
+                    <div>
+                        <label class="text-sm font-medium leading-none text-gray-800">
+                            Email
+                        </label>
+                        <input type="text" name="email" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                    </div>
+                    <div class="mt-6  w-full">
+                        <label class="text-sm font-medium leading-none text-gray-800">
+                            Senha
+                        </label>
+                        <div class="relative flex items-center justify-center">
+                            <input name="pass" type="password" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                            <div class="absolute right-0 mt-2 mr-3 cursor-pointer">
+                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg5.svg" alt="viewport">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <input type="submit" id="submit" name="submit" value="Crie sua conta" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- login -->
     <?php
-    $Produtos = 'Alan';
+    /* Declaração de Variáveis */
+    $email = @$_REQUEST['email'];
+    $pass = @$_REQUEST['pass'];
+    $submit = @$_REQUEST['submit'];
+foreach ($usuarios as $key => $value) {
+    /* Declaração das variáveis que possuem os usuarios e as senhas */
+    $email1 = array_column($usuarios, 'email');
+    $pass1 = array_column($usuarios, 'senha');
+//     if (in_array($email, $email1)) { 
+//    echo 'uhullll';
+//     }
+    /* Testa se o botão submit foi ativado */
+    if ($submit) {
 
-
-    echo($_GET['categoria']);
-    echo "<br>";
-    echo($_GET['categoria_nome']);
-
-
-    if($link = 'produtos/categorias.php?Produtos=risoles') {
-        
+        /* Se o campo usuário ou senha estiverem vazios geramos um alerta */
+        if ($email == "" || $pass == "") {
+            echo "<script:alert('Por favor, preencha todos os campos!');</script>";
+        }
+        /* Caso o campo usuario e senha não 
+        *estejam vazios vamos testar se o usuário e a senha batem 
+    *iniciamos uma sessão e redirecionamos o usuário para o painel */ else {
+            if (in_array($email, $email1) && in_array($pass, $pass1)) {
+                session_start();
+                $_SESSION['email'] = $email;
+                $_SESSION['senha'] = $pass;
+                $_SESSION['id'] = $obUsuarios->id;
+                // $obUsuarios->email = $_SESSION['email'];
+                // $obUsuarios->senha = $_SESSION['senha'];
+                // $obUsuarios->cadastrar();
+                header("Location: ../Padaria-Progresso/Cliente/index.php");
+            }
+            /* Se o usuario ou a senha não batem alertamos o usuario */ else {
+                echo "<script>alert('email e/ou senha inválido(s), Tente novamente!');</script>";
+            }
+        }
     }
-    
+}
     ?>
-
-
-
-
 
 
 
@@ -359,3 +451,4 @@
 </body>
 
 </html>
+<?php ob_end_flush(); ?>

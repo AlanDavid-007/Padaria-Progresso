@@ -1,4 +1,6 @@
-<?php echo $_SESSION['nome'];
+<?php 
+session_start();
+// echo $_SESSION['email'];
 require __DIR__ . '../vendor/autoload.php';
 
 require __DIR__ . './Includes/header.php';
