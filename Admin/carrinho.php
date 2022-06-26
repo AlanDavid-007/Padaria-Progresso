@@ -13,7 +13,7 @@ $listaPedido = $obPedidos::getPedidos();
 ?>
 
 <!-- products cart -->
-<div class="container mx-auto mt-10">
+<div class="container mx-auto mt-10" style="padding:0;">
   <div class="flex shadow-md my-10">
     <div class="w-3/4 bg-white px-10 py-10">
       <div class="flex justify-between border-b pb-8">
@@ -68,7 +68,7 @@ $listaPedido = $obPedidos::getPedidos();
         Continue comprando
       </a>
     </div>
-    <div id="summary" class="w-1/4 px-8 py-10 bg-white">
+    <div id="summary" class="w-1/4 px-2 py-10 bg-white">
       <h1 class="font-semibold text-2xl border-b pb-8">Resumo</h1>
       <div class="flex justify-between mt-10 mb-5">
         <span class="font-semibold text-sm uppercase">Subtotal</span>
@@ -87,13 +87,13 @@ $listaPedido = $obPedidos::getPedidos();
           <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Código de Promoção</label>
           <input type="text" id="promo" placeholder="Enter your code" class="p-2 text-sm w-full">
         </div>
-        <button class="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Aplicar</button>
+        <button class="btn btn-danger btn btn-primary btn-lg btn-block text-sm text-white uppercase">Aplicar</button>
         <div class="border-t mt-8">
           <div class="flex font-semibold justify-between py-6 text-sm uppercase">
             <span>Total</span>
             <span><?php echo $total; ?></span>
           </div>
-          <button class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Comprar</button>
+          <button class="btn btn-danger btn btn-primary btn-lg btn-block text-xs text-white uppercase ">Comprar</button>
         </div>
       </div>
     </div>

@@ -153,7 +153,7 @@
                                 alt="cross">
                         </button>
                     </div>
-                    <div class="mt-6 p-4 ">
+                    <div class="mt-0 p-4 ">
                         <ul class="flex flex-col space-y-6">
                             <li>
                                 <a href="index.php"

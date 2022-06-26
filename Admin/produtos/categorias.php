@@ -26,7 +26,7 @@ require __DIR__ . '../../Includes/header_pasta.php';
 ?>
 <section class="mt-5 ml-5">
     <form method="get">
-        <div class="row alig-items-between">
+        <div class="row align-items-between" style=" margin-right: 0px;">
             <div class="col text-light">
                 <label>Filtrar Produtos</label>
                 <input type="text" name="busca" class="form-control" value="<?= $busca ?>">

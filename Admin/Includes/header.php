@@ -141,7 +141,7 @@
                 <div id="mobile-menu"
                     class="hidden absolute dark:bg-gray-900 z-10 inset-0 md:hidden flex flex-col h-screen w-full">
                     <div
-                        class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 p-4">
+                        class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 p-4" style="background-color:aliceblue;">
                         <div class="flex items-center space-x-3">
                             <div>
                                 <img class="dark:hidden"
@@ -164,7 +164,7 @@
                                 alt="cross">
                         </button>
                     </div>
-                    <div class="mt-6 p-4 ">
+                    <div class="mt-0 p-4" style="background-color:aliceblue;">
                         <ul class="flex flex-col space-y-6">
                             <li>
                                 <a href="index.php"
