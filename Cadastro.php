@@ -190,7 +190,7 @@ $usuarios = $obUsuarios::getUsuarios();
                 <form method="post" class="mt-2">
                 <div>
                         <label class="text-sm font-medium leading-none text-gray-800">
-                            Nome
+                            Primeiro Nome
                         </label>
                         <input type="text" name="nome" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
                     </div>
@@ -240,12 +240,12 @@ $usuarios = $obUsuarios::getUsuarios();
                 $_SESSION['email'] = $email;
                 $_SESSION['senha'] = $pass;
                 $_SESSION['cargo'] = 'cliente';
-                $_SESSION['nome'] = $nome;
+                $_SESSION['primeiro_nome'] = $nome;
                 $_SESSION['id'] = $obUsuarios->id;
                 $obUsuarios->email = $_SESSION['email'];
                 $obUsuarios->senha = $_SESSION['senha'];
                 $obUsuarios->cargo = $_SESSION['cargo'];
-                $obUsuarios->nome = $_SESSION['nome'];
+                $obUsuarios->primeiro_nome = $_SESSION['nome'];
                 $obUsuarios->cadastrar();
                 header("Location: ../Padaria-Progresso/Cliente/index.php");
             }
