@@ -37,15 +37,6 @@ ALTER TABLE promocoes ADD CONSTRAINT pedido_pagamento_id FOREIGN KEY(pedido_paga
 ALTER TABLE promocoes ADD CONSTRAINT pedido_usuario_id FOREIGN KEY(pedido_usuario_id) REFERENCES usuario (id);
 ALTER TABLE promocoes ADD CONSTRAINT pedido_cliente_id FOREIGN KEY(pedido_cliente_id) REFERENCES cliente (id);
 
-CREATE TABLE `usuario`(
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `nome` varchar(45) DEFAULT NULL,
-    `senha` varchar(45) DEFAULT NULL,
-    `cargo` varchar(45) DEFAULT NULL,
-    `email` varchar(45) DEFAULT NULL,
-    PRIMARY KEY (`id`)
-);
-
 CREATE TABLE `categorias`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `nome` varchar(45) DEFAULT NULL,
@@ -80,7 +71,7 @@ CREATE TABLE `pagamento`(
     PRIMARY KEY (`id`)
     );
 
-CREATE TABLE `cliente`(
+CREATE TABLE `usuario`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `primeiro_nome` varchar(45) DEFAULT NULL,
     `ultimo_nome` varchar(45) DEFAULT NULL,
