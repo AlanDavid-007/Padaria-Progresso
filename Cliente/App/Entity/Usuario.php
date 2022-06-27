@@ -55,9 +55,13 @@ class Usuario
         $objDatabase = new Database('usuario');
         $this->id = $objDatabase->insert([
             'nome' => $this->nome,
+            'ultimo_nome'=> $this->ultimo_nome,
             'senha' => $this->senha,
-            'cargo'=> $this->cargo,
             'email'=> $this->email,
+            'cidade'=> $this->cidade,
+            'telefone'=> $this->telefone,
+            'cpf'=> $this->cpf,
+            'endereco'=> $this->endereco,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -120,9 +124,13 @@ class Usuario
 
         return ($objDatabase)->update('id = ' . $this->id, [
             'nome' => $this->nome,
+            'ultimo_nome'=> $this->ultimo_nome,
             'senha' => $this->senha,
-            'cargo'=> $this->cargo,
             'email'=> $this->email,
+            'cidade'=> $this->cidade,
+            'telefone'=> $this->telefone,
+            'cpf'=> $this->cpf,
+            'endereco'=> $this->endereco,
         ]);
     }
 }
