@@ -1,43 +1,43 @@
 <?php
-require __DIR__ . './Includes/header.php';
+require __DIR__ . './Includes/header_pasta.php';
 ?>
           <!-- component -->
         <div class="container mx-auto">
             <div class="inputs w-full max-w-2xl p-6 mx-auto">
                 <h2 class="text-2xl text-gray-900">Configurações de Conta</h2>
-                <form class="mt-6 border-t border-gray-400 pt-4">
+                <form class="mt-6 border-t border-gray-400 pt-4" method="post">
                     <div class='flex flex-wrap -mx-3 mb-6'>
                         <div class='w-full md:w-full px-3 mb-6'>
                             <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>E-mail</label>
-                            <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Enter email'  required
+                            <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Digite seu email'  name="email"
                                    value="<?php echo isset($obUsuarios->email) ? $obUsuarios->email : ''; ?>">
                         </div>
                         <div class='w-full md:w-full px-3 mb-6 '>
                             <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Senha</label>
-                                   <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='password' placeholder='Enter email'  required
+                                   <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='password' placeholder='Digite sua senha'  name="senha"
                                    value="<?php echo isset($obUsuarios->senha) ? $obUsuarios->senha : ''; ?>">
                             <button class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md ">Troque sua senha</button>
                         </div>
                                                       <div class='w-full md:w-full px-3 mb-6'>
                             <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>Telefone</label>
-                            <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='number' placeholder='Enter email'  required
+                            <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='number' placeholder='Digite seu telefone'  name="telefone"
                                    value="<?php echo isset($obUsuarios->telefone) ? $obUsuarios->telefone : ''; ?>">
                         </div>
                                                       <div class='w-full md:w-full px-3 mb-6'>
                             <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>Endereço</label>
-                            <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Enter email'  required
+                            <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Digite seu endereço'  name="endereco"
                                    value="<?php echo isset($obUsuarios->endereco) ? $obUsuarios->endereco : ''; ?>">
                         </div>
                                                       <div class='w-full md:w-full px-3 mb-6'>
                             <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>CPF</label>
-                            <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='number' placeholder='Enter email'  required
+                            <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='number' placeholder='Digite seu cpf'  name="cpf"
                                    value="<?php echo isset($obUsuarios->cpf) ? $obUsuarios->cpf : ''; ?>">
                         </div>
                         <div class='w-full md:w-full px-3 mb-6'>
                             <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Coloque sua Cidade</label>
                             <div class="flex-shrink w-full inline-block relative">
                                 <select name="cidade" class="block appearance-none text-gray-600 w-full bg-white border border-gray-400 shadow-inner px-4 py-2 pr-8 rounded">
-                                    <option>Escolha</option>
+                                    <option>Escolha sua cidade</option>
                                     <option value="Montenegro">Montenegro</option>
                                     <option value="São Sebastião do Sul">São Sebastião do Sul</option>
                                     <option value="Pareci">Pareci</option>
@@ -49,17 +49,17 @@ require __DIR__ . './Includes/header.php';
                             </div>
                         </div>
                         <div class="personal w-full border-t border-gray-400 pt-4">
-                            <h2 class="text-2xl text-gray-900">Personal info:</h2>
+                            <h2 class="text-2xl text-gray-900">Informações pessoais:</h2>
                             <div class="flex items-center justify-between mt-4">
                                 <div class='w-full md:w-1/2 px-3 mb-6'>
                                     <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' >Primeiro nome</label>
-                                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'  required
-                                           value="<?php echo isset($obUsuarios->primeiro_nome) ? $obUsuarios->primeiro_nome : ''; ?>">
+                                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'  name="primeiro_nome"
+                                           value="<?php echo isset($obUsuarios->primeiro_nome) ? $obUsuarios->primeiro_nome : ''; ?>" placeholder="Digite seu primeiro nome">
                                 </div>
                                 <div class='w-full md:w-1/2 px-3 mb-6'>
                                     <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' >Último nome</label>
-                                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'  required
-                                           value="<?php echo isset($obUsuarios->ultimo_nome) ? $obUsuarios->ultimo_nome : ''; ?>">
+                                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'  name="ultimo_nome"
+                                           value="<?php echo isset($obUsuarios->ultimo_nome) ? $obUsuarios->ultimo_nome : ''; ?>" placeholder="Digite seu último nome">
                                 </div>
                             </div>
                             <div class="flex justify-end">
@@ -67,10 +67,9 @@ require __DIR__ . './Includes/header.php';
                             </div>
                         </div>
                     </div>
-                </form>
             </div>
         </div>
-
+        </form>
         <?php
-require __DIR__ . './Includes/footer.php';
+require __DIR__ . './Includes/footer_pasta.php';
 ?>

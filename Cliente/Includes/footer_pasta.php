@@ -32,8 +32,8 @@
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
                     <div class="container mx-auto flex items-center justify-between">
                         <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white " aria-label="the Crib.">
-                        <a href="../index.php"><img class="dark:hidden" src="../Assets/logo.png"style="width: 150px;" alt="logo"></a>
-                            <a href="../index.php"><img class="dark:block hidden" src="../Assets/logo.png"style="width: 150px;" alt="logo"></a>
+                        <a href="../index.php"><img class="dark:hidden" src="../Cliente/Assets/logo.png"style="width: 150px;" alt="logo"></a>
+                            <a href="../index.php"><img class="dark:block hidden" src="../Cliente/Assets/logo.png"style="width: 150px;" alt="logo"></a>
                         </h1>
                         <div class="flex flex-col">
                             <h2 class="text-base font-semibold leading-4 text-gray-800 dark:text-white">Contato</h2>
