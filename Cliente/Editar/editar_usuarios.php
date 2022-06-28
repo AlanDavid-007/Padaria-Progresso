@@ -4,14 +4,17 @@ ob_start();
 use \App\Entity\Usuario;
 
 $obUsuarios = new Usuario;
+$usuarios = $obUsuarios::getUsuarios();
+
+$obUsuarios->id = $_POST['id'];
 //Validação do ID
-if (!isset($_GET['id'])  || !is_numeric($_GET['id'])) {
+if (!isset($_POST['id'])  || !is_numeric($_POST['id'])) {
     header('location: ../configuracoes.php?status=error');
     exit;
 }
 
 //Consulta Vaga
-$obUsuario = $obUsuarios::getUsuario($_GET['id']);
+$obUsuario = $obUsuarios::getUsuario($_POST['id']);
 echo "<pre>"; print_r($obUsuario); echo "<pre>"; exit;
 
 //Validação da Vaga
