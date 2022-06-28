@@ -10,14 +10,7 @@ $categorias = Categoria::getCategorias();
 ?>
 <!-- bg hero -->
 <div class="dark:bg-gray-900">
-    <div class="container mx-auto my-auto pl-5 md:py-12 lg:py-24">
-        <div class="relative mx-40">
-            <img src="./Assets/hero.png" alt="header" role="img" />
-            <div class="absolute z-10 top-0 left-0 ml-60 px-auto   flex flex-col sm:justify-start items-start">
-                <img src="./Assets/logo.png" alt="logo" role="img" />
-            </div>
-        </div>
-    </div>
+ 
 </div>
 <?php
 $mensagem = '';
