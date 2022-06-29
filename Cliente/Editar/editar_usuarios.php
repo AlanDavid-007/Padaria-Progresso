@@ -1,24 +1,23 @@
 <?php
 require __DIR__ . '../../vendor/autoload.php';
+include('../protect.php');
 ob_start();
 use \App\Entity\Usuario;
 
 $obUsuarios = new Usuario;
 $usuarios = $obUsuarios::getUsuarios();
-
-$obUsuarios->id = $_POST['id'];
 //Validação do ID
-if (!isset($_POST['id'])  || !is_numeric($_POST['id'])) {
+if (!isset($_GET['id'])  || !is_numeric($_GET['id'])) {
     header('location: ../configuracoes.php?status=error');
     exit;
 }
 
 //Consulta Vaga
-$obUsuario = $obUsuarios::getUsuario($_POST['id']);
-echo "<pre>"; print_r($obUsuario); echo "<pre>"; exit;
+$obUsuarios = $obUsuarios::getUsuario($_GET['id']);
+// echo "<pre>"; print_r($obUsuario); echo "<pre>"; exit;
 
 //Validação da Vaga
-if (!$obUsuario instanceof $obUsuarios) {
+if (!$obUsuarios instanceof $obUsuarios) {
     header('location: ../configuracoes.php?status=error');
     exit;
 }
@@ -37,7 +36,7 @@ if (isset($_POST['primeiro_nome'], $_POST['ultimo_nome'], $_POST['senha'], $_POS
     //   echo "<pre>"; print_r($value['preco']); echo "</pre>"; exit; 
     // echo "<pre>"; print_r($value['nome']); echo "</pre>"; exit; 
 
-    header('location: ../configuracoes.php?status=success');
+    header('location: ../Editar/editar_usuarios.php');
     exit;
 } 
 

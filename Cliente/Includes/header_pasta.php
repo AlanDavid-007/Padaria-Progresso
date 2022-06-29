@@ -1,16 +1,15 @@
-<?php ob_start(); 
-include('protect.php');
+<?php ob_start();
 ?>
 <!doctype html>
 <html lang="pt-br">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://use.fontawesome.com/ea21c98100.js"></script>
     <script src="https://kit.fontawesome.com/c1e1266368.js" crossorigin="anonymous"></script>
@@ -23,26 +22,18 @@ include('protect.php');
         <div>
             <div class="relative">
                 <!-- For md screen size -->
-                <div id="md-searchbar"
-                    class="bg-white dark:bg-gray-900 hidden lg:hidden py-5 px-6 items-center justify-between">
+                <div id="md-searchbar" class="bg-white dark:bg-gray-900 hidden lg:hidden py-5 px-6 items-center justify-between">
                     <div class="flex items-center space-x-3 text-gray-800 dark:text-white">
                         <div>
-                            <img class="dark:hidden"
-                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
-                            <img class="dark:block hidden"
-                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2dark.svg"
-                                alt="search">
+                            <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
+                            <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2dark.svg" alt="search">
                         </div>
-                        <input type="text" placeholder="Search for products"
-                            class="text-sm leading-none dark:text-gray-300 dark:bg-gray-900 text-gray-600 focus:outline-none" />
+                        <input type="text" placeholder="Search for products" class="text-sm leading-none dark:text-gray-300 dark:bg-gray-900 text-gray-600 focus:outline-none" />
                     </div>
                     <div class="space-x-6">
-                        <button aria-label="go to cart"
-                            class="text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
-                            <img class="w-5 dark:hidden"
-                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg" alt="bag">
-                            <img class="w-5 dark:block hidden"
-                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
+                        <button aria-label="go to cart" class="text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
+                            <img class="w-5 dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg" alt="bag">
+                            <img class="w-5 dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
                         </button>
                     </div>
                 </div>
@@ -52,26 +43,26 @@ include('protect.php');
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
                     <div class="container mx-auto flex items-center justify-between">
                         <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white" aria-label="the Crib.">
-                           <a href="../index.php"><img class="dark:hidden" src="../Cliente/Assets/logo.png" style="width: 150px;" alt="logo"></a>
-                           <a href="../index.php"><img class="dark:block hidden" src="../Cliente/Assets/logo.png"style="width: 150px;" alt="logo"></a>
-                       </h1>
-                       <ul class="hidden w-8/12 md:flex items-center justify-center space-x-6 font-serif">
+                            <a href="../index.php"><img class="dark:hidden" src="../Assets/logo.png" style="width: 150px;" alt="logo"></a>
+                            <a href="../index.php"><img class="dark:block hidden" src="../Assets/logo.png" style="width: 150px;" alt="logo"></a>
+                        </h1>
+                        <ul class="hidden w-8/12 md:flex items-center justify-center space-x-6 font-serif">
                             <li>
-                                <a href="../Cliente/index.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Início</a>
+                                <a href="../index.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Início</a>
                             </li>
                             <li>
-                                <a href="../Cliente/carrinho.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Carrinho</a>
+                                <a href="../carrinho.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Carrinho</a>
                             </li>
                             <li>
-                                <a href="../Cliente/sobre.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Sobre Nós</a>
+                                <a href="../sobre.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Sobre Nós</a>
                             </li>
                             <li>
-                                <a href="../Cliente/Editar/editar_usuarios.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">
-Configurações
-                            </a>
+                                <a href="../acesso_config.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">
+                                    Configurações
+                                </a>
                             </li>
                             <li>
-                                <a href="../Cliente/produtos/categorias.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Categoria</a>
+                                <a href="../produtos/categorias.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Categoria</a>
                             </li>
                             <li>
                                 <a href="../logout.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Logout</a>
@@ -126,7 +117,7 @@ Configurações
                     <div class="mt-6 p-4 ">
                         <ul class="flex flex-col space-y-6">
                             <li>
-                                <a href="../Cliente/index.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
+                                <a href="../index.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
                                     Início
                                     <div>
                                         <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">
@@ -135,7 +126,7 @@ Configurações
                                 </a>
                             </li>
                             <li>
-                                <a href="../Cliente/carrinho.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
+                                <a href="../carrinho.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
                                     Carrinho
                                     <div>
                                         <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">
@@ -144,7 +135,7 @@ Configurações
                                 </a>
                             </li>
                             <li>
-                                <a href="../Cliente/sobre.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
+                                <a href="../sobre.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
                                     Sobre Nós
                                     <div>
                                         <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">
@@ -153,7 +144,7 @@ Configurações
                                 </a>
                             </li>
                             <li>
-                                <a href="../Cliente/Editar/editar_usuarios.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
+                                <a href="../acesso_config.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
                                     Configurações
                                     <div>
                                         <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">
@@ -162,7 +153,7 @@ Configurações
                                 </a>
                             </li>
                             <li>
-                                <a href="../Cliente/produtos/categorias.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
+                                <a href="../produtos/categorias.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
                                     Produtos
                                     <div>
                                         <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">
@@ -184,15 +175,10 @@ Configurações
                     <div class="h-full flex items-end">
                         <ul class="flex flex-col space-y-8 bg-gray-50 w-full py-10 p-4 dark:bg-gray-800">
                             <li>
-                                <a href="javascript:void(0)"
-                                    class="dark:text-white text-gray-800 flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
+                                <a href="javascript:void(0)" class="dark:text-white text-gray-800 flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
                                     <div>
-                                        <img class="w-5 dark:hidden"
-                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg"
-                                            alt="bag">
-                                        <img class="w-5 dark:block hidden"
-                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg"
-                                            alt="bag">
+                                        <img class="w-5 dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg" alt="bag">
+                                        <img class="w-5 dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
                                     </div>
                                     <p class="text-base">Cart</p>
                                 </a>

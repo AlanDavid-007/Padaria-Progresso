@@ -61,11 +61,6 @@ require __DIR__ . './Includes/header_pasta.php';
                                     <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'  name="ultimo_nome"
                                            value="<?php echo isset($obUsuarios->ultimo_nome) ? $obUsuarios->ultimo_nome : ''; ?>" placeholder="Digite seu último nome">
                                 </div>
-                                      <?php foreach ($usuarios as $key => $value)?>
-                                       <input class=' d-none appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text'  name="id"
-                                           value="<?php echo $value['id'];?>">
-                                      <?php }>
-                            </div>
                             <div class="flex justify-end">
                                 <button class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md mr-3" type="submit">Salvar mudanças</button>
                             </div>

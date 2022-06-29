@@ -1,5 +1,6 @@
 <?php
-include('protect.php');
+session_id();
+session_start();
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -59,9 +60,9 @@ include('protect.php');
                                 <a href="sobre.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Sobre Nós</a>
                             </li>
                             <li>
-                                <a href="../Cliente/Editar/editar_usuarios.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">
-Configurações
-                            </a>
+                                <a href="../Cliente/acesso_config.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">
+                                    Configurações
+                                </a>
                             </li>
                             <li>
                                 <a href="./produtos/categorias.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Categoria</a>
@@ -146,7 +147,7 @@ Configurações
                                 </a>
                             </li>
                             <li>
-                                <a href="../Cliente/Editar/editar_usuarios.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
+                                <a href="../Cliente/acesso_config.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">
                                     Configurações
                                     <div>
                                         <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">

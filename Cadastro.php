@@ -188,7 +188,7 @@ $usuarios = $obUsuarios::getUsuarios();
             <div class="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
                 <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Cadastre-se</p>
                 <form method="post" class="mt-2">
-                <div>
+                    <div>
                         <label class="text-sm font-medium leading-none text-gray-800">
                             Primeiro Nome
                         </label>
@@ -236,20 +236,21 @@ $usuarios = $obUsuarios::getUsuarios();
         *estejam vazios vamos testar se o usuário e a senha batem 
     *iniciamos uma sessão e redirecionamos o usuário para o painel */ else {
             if (isset($_POST['email'], $_POST['pass'], $_POST['nome'])) {
+                session_id();
                 session_start();
                 $_SESSION['email'] = $email;
                 $_SESSION['senha'] = $pass;
                 $_SESSION['primeiro_nome'] = $nome;
-                $_SESSION['id'] = $obUsuarios->id;
+                $_SESSION['id'] = session_id();
                 $obUsuarios->primeiro_nome = $_SESSION['primeiro_nome'];
                 $obUsuarios->ultimo_nome = 'mude';
-                $obUsuarios->email = 'mude';
+                $obUsuarios->email = $_SESSION['email'];
                 $obUsuarios->senha = $_SESSION['senha'];
                 $obUsuarios->cidade = 'mude';
                 $obUsuarios->telefone = 404;
                 $obUsuarios->endereco = 'mude';
                 $obUsuarios->email = $_POST['email'];
-                $obUsuarios->cpf =404;
+                $obUsuarios->cpf = 404;
                 $obUsuarios->cadastrar();
                 header("Location: ../Padaria-Progresso/Cliente/index.php");
             }
