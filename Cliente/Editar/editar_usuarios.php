@@ -41,6 +41,6 @@ if (isset($_POST['primeiro_nome'], $_POST['ultimo_nome'], $_POST['senha'], $_POS
 } 
 
 
-require __DIR__ . '../../configuracoes.php';
+require __DIR__ . '../../../login.php';
 ?>
 <?php ob_end_flush(); ?>
