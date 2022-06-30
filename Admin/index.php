@@ -21,7 +21,7 @@ $categorias = Categoria::getCategorias();
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner mx-auto" >
+  <div class="carousel-inner mx-auto" >aaa
     <div class="carousel-item active">
       <img class="d-block w-100 h-80" id="photo1"  src="../Admin/Assets/photo1.jpg"  alt="First slide" >
     </div>
