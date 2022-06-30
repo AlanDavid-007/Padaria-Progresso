@@ -1,6 +1,35 @@
 <?php
 require __DIR__ . './Includes/header_pasta.php';
 ?>
+//busca
+$busca = filter_input(INPUT_GET, 'busca');
+
+//condiçoes sql 
+$condicoes = [
+    strlen($busca) ? 'email LIKE "%' . str_replace(' ', '%', $busca) . '%"' : null,
+];
+
+$condicoes = array_filter($condicoes);
+
+//clausula where
+$where = implode(' AND ', $condicoes);
+//  echo "<pre>"; print_r($produtos); echo "</pre>"; exit;
+?>
+
+<section class="mt-5 ml-5 d-none">
+    <form method="get">
+        <div class="row alig-items-between">
+            <div class="col text-light">
+                <label>Filtrar Produtos</label>
+                <input type="text" name="busca" class="form-control" value="<?= $busca ?>">
+            </div>
+            <div class="col d-flex align-items-end">
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+            </div>
+        </div>
+    </form>
+</section>
+<?php foreach($usuarios as $key => $value) { ?> 
           <!-- component -->
         <div class="container mx-auto">
             <div class="inputs w-full max-w-2xl p-6 mx-auto">
@@ -69,6 +98,7 @@ require __DIR__ . './Includes/header_pasta.php';
             </div>
         </div>
         </form>
+                  <?php } ?>
         <?php
 require __DIR__ . './Includes/footer_pasta.php';
 ?>
