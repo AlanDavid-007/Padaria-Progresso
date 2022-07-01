@@ -24,19 +24,19 @@ class Database
      * Nome do Banco de dados
      * @var string
      */
-    const NAME = 'id17929077_padaria'; //Mesmo nome do banco de dados criado
+    const NAME = 'padaria'; //Mesmo nome do banco de dados criado
 
     /** 
      * Usuário do Banco de dados
      * @var string
      */
-    const USER = 'id17929077_localhost'; //User
+    const USER = 'root'; //User
 
     /** 
      * Senha de acesso do Banco de dados
      * @var string
      */
-    const PASS = '{>1d\[u>sQIZcQS3'; //Password
+    const PASS = ''; //Password
 
     /** 
      * Nome da tabela a ser manipulada
