@@ -22,7 +22,7 @@ class Usuario
      * nome
      * @var varchar
      */
-    public $nome;
+    public $primeiroNome;
 
     /** 
      * senha
@@ -30,17 +30,41 @@ class Usuario
      */
     public $senha;
 
-    /** 
-     * cargo
-     * @var varchar
-     */
-    public $cargo;
-
      /** 
      * email
      * @var varchar
      */
     public $email;
+
+         /** 
+     * ultimoNome
+     * @var varchar
+     */
+    public $ultimoNome;
+
+         /** 
+     * cidade
+     * @var varchar
+     */
+    public $cidade;
+    
+         /** 
+     * telefone
+     * @var varchar
+     */
+    public $telefone;
+
+         /** 
+     * cpf
+     * @var varchar
+     */
+    public $cpf;
+
+         /** 
+     * endereco
+     * @var varchar
+     */
+    public $endereco;
 
     /** 
      * Função para cadastrar a professor no banco
@@ -54,10 +78,14 @@ class Usuario
         //Inserir a professor no banco e retornar o ID
         $objDatabase = new Database('usuario');
         $this->id = $objDatabase->insert([
-            'nome' => $this->nome,
+            'primeiro_nome' => $this->primeiro_nome,
+            'ultimo_nome'=> $this->ultimo_nome,
             'senha' => $this->senha,
-            'cargo'=> $this->cargo,
             'email'=> $this->email,
+            'cidade'=> $this->cidade,
+            'telefone'=> $this->telefone,
+            'cpf'=> $this->cpf,
+            'endereco'=> $this->endereco,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -119,10 +147,14 @@ class Usuario
         $objDatabase = new Database('usuario');
 
         return ($objDatabase)->update('id = ' . $this->id, [
-            'nome' => $this->nome,
+            'primeiro_nome' => $this->primeiro_nome,
+            'ultimo_nome'=> $this->ultimo_nome,
             'senha' => $this->senha,
-            'cargo'=> $this->cargo,
             'email'=> $this->email,
+            'cidade'=> $this->cidade,
+            'telefone'=> $this->telefone,
+            'cpf'=> $this->cpf,
+            'endereco'=> $this->endereco,
         ]);
     }
 }

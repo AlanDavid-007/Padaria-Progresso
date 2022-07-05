@@ -27,7 +27,6 @@
                     </div>
                 </div>
                 <!-- For md screen size -->
-
                 <!-- For large screens -->
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
                  <div class= "container-fluid">
@@ -62,7 +61,6 @@
                                 class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer"> <i class="fa-solid fa-earth-americas"></i>  R. Flores da Cunha, 392 - Centenário,<br>
                                 Montenegro - RS, 95780-000</a>
                         </div>
-
                             </div>
                         
                          <div class="row">
@@ -70,7 +68,6 @@
                             <div class="text sm leading-none text-gray-800 mt-4 dark:text-white text-center">
                                 Padaria Progresso Copyright © 2021 Padaria Progresso All rights reserved
                             </div>
-
                                 <div class="row justify-content-center">
                                 <div class="flex items-center gap-x-10 mt-8 ">
                                 <button aria-label="instagram "
@@ -124,7 +121,6 @@
                         
                     </div>
                 </div>
-
                 <script>
                     const toggleSearch = () => {
                         document.getElementById("searchInput").classList.toggle("hidden");
@@ -140,7 +136,6 @@
                         document.getElementById("mobile-menu").classList.add("hidden");
                     };
                 </script>
-
                 <!-- Optional JavaScript -->
                 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -152,9 +147,9 @@
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
                     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
                     crossorigin="anonymous"></script>
-
+                    <script src="../Assets/jquery.mask.min.js"></script>
+<script src="../Assets/custom.js"></script>
                     
 </body>
-
-
 </html>
+<?php ob_end_flush(); ?>
