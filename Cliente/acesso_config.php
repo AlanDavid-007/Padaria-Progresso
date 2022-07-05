@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . './Includes/header.php';
 require __DIR__ . '../vendor/autoload.php';
+session_start();
 use \App\Entity\Usuario;
 $obUsuarios = new Usuario;
 $usuarios = $obUsuarios::getUsuarios();
