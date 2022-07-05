@@ -23,13 +23,13 @@ $categorias = Categoria::getCategorias();
   </ol>
   <div class="carousel-inner mx-auto" >
     <div class="carousel-item active">
-      <img class="d-block w-100 h-80" id="photo1"  src="../Admin/Assets/photo1.jpg"  alt="First slide" >
+      <img class="d-block w-100 h-80" id="photo1"  src="../Admin/Assets/img3.jpg"  alt="First slide" >
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100 h-80" id="photo2" src="../Admin/Assets/photo2.jpg" alt="Second slide">
+      <img class="d-block w-100 h-80" id="photo2" src="../Admin/Assets/img1.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100 h-80" id="photo3" src="../Admin/Assets/photo3.jpg" alt="Third slide">
+      <img class="d-block w-100 h-80" id="photo3" src="../Admin/Assets/img2.jpg" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -328,7 +328,7 @@ if (isset($_GET['status'])) {
 </a>
 <a href="produtos/kit_festa.php">
                 <div
-                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center">
+                    class="group group-hover:bg-opacity-60 transition duration-500 relative bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 sm:p-28 py-36 px-10 flex justify-center items-center" id="kitfe">
                     <img class="group-hover:opacity-60 transition duration-500" src="./Assets/kit_festa.png"
                         alt="kit_festa" />
                     <div
