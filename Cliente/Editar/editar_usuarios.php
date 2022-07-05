@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '../../vendor/autoload.php';
+require __DIR__ . '../../../Admin/vendor/autoload.php';
 include('../protect.php');
 ob_start();
 use \App\Entity\Usuario;
@@ -36,11 +36,11 @@ if (isset($_POST['primeiro_nome'], $_POST['ultimo_nome'], $_POST['senha'], $_POS
     //   echo "<pre>"; print_r($value['preco']); echo "</pre>"; exit; 
     // echo "<pre>"; print_r($value['nome']); echo "</pre>"; exit; 
 
-    header('location: ../Editar/editar_usuarios.php');
+    header('location: ../../../login.php');
     exit;
 } 
 
 
-require __DIR__ . '../../../login.php';
+require __DIR__ . '../../configuracoes.php';
 ?>
 <?php ob_end_flush(); ?>

@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
     jquery_mask()
 
     var objPrice = $('[price]')
