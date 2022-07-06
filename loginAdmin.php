@@ -293,7 +293,7 @@ $usuarios = $obUsuarios::getUsuarios();
                         </div>
                     </div>
                     <div class="mt-8">
-                        <input type="submit" id="submit" name="submit" value="Crie sua conta" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full" />
+                        <input type="submit" id="submit" name="submit" value="Entrar" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full" />
                     </div>
                 </form>
             </div>

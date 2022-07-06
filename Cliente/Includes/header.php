@@ -25,7 +25,7 @@ session_start();
         <div>
             <div class="relative">
                 <!-- For md screen size -->
-                <div id="md-searchbar" class="bg-white dark:bg-gray-900 hidden lg:hidden py-5 px-6 items-center justify-between">
+             <!--   <div id="md-searchbar" class="bg-white dark:bg-gray-900 hidden lg:hidden py-5 px-6 items-center justify-between">
                     <div class="flex items-center space-x-3 text-gray-800 dark:text-white">
                         <div>
                             <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
@@ -40,6 +40,7 @@ session_start();
                         </button>
                     </div>
                 </div>
+            -->
                 <!-- For md screen size -->
 
                 <!-- For large screens -->
@@ -71,7 +72,7 @@ session_start();
                                 <a href="logout.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Logout</a>
                             </li>
                         </ul>
-
+                     <!--
                         <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
                             <div class="hidden lg:flex items-center">
                                 <button onclick="toggleSearch()" aria-label="search items" class="w-5 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
@@ -101,6 +102,8 @@ session_start();
                         </div>
                     </div>
                 </div>
+                                    -->
+
                 <!-- For small screen -->
                 <div id="mobile-menu" class="hidden absolute dark:bg-gray-900 z-10 inset-0 md:hidden flex flex-col h-screen w-full">
                     <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 p-4">

@@ -26,7 +26,7 @@ include('protect.php');
         <div>
             <div class="relative">
                 <!-- For md screen size -->
-                <div id="md-searchbar" class="bg-white dark:bg-gray-900 hidden lg:hidden py-5 px-6 items-center justify-between">
+             <!-- <div id="md-searchbar" class="bg-white dark:bg-gray-900 hidden lg:hidden py-5 px-6 items-center justify-between">
                     <div class="flex items-center space-x-3 text-gray-800 dark:text-white">
                         <div>
                             <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
@@ -40,7 +40,8 @@ include('protect.php');
                             <img class="w-5 dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
                         </button>
                     </div>
-                </div>
+                </div> 
+             -->
                 <!-- For md screen size -->
 
                 <!-- For large screens -->
