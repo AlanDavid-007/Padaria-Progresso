@@ -28,7 +28,7 @@ $obProdutos = $obProdutos::getProduto($_GET['id']);
 // echo "<pre>"; print_r($obCurso); echo "<pre>"; exit;
 
 //Validação da Vaga
-if (!$obProdutos instanceof $obProdutos) {
+if (!$obProdutos instanceof Produto) {
     header('location: ../produtos/categorias.php?status=error');
     exit;
 }

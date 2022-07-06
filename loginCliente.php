@@ -275,7 +275,13 @@ $usuarios = $obUsuarios::getUsuarios();
         <input type="submit" name="submit" value="Logar!" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full"/>
     </form> -->
                 <form method="post">
-                    <div>
+                <div>
+                        <label class="text-sm font-medium leading-none text-gray-800">
+                            Primeiro Nome
+                        </label>
+                        <input type="text" name="nome" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                    </div>    
+                <div>
                         <label class="text-sm font-medium leading-none text-gray-800">
                             Email
                         </label>
@@ -302,6 +308,7 @@ $usuarios = $obUsuarios::getUsuarios();
     <!-- login -->
     <?php
     /* Declaração de Variáveis */
+    $nome = @$_REQUEST['nome'];
     $email = @$_REQUEST['email'];
     $pass = @$_REQUEST['pass'];
     $submit = @$_REQUEST['submit'];
@@ -325,8 +332,10 @@ foreach ($usuarios as $key => $value) {
             if (in_array($email, $email1) && in_array($pass, $pass1)) {
                 session_id();
                 session_start();
+                $_SESSION['id'] = session_id();
                 $_SESSION['email'] = $email;
                 $_SESSION['senha'] = $pass;
+                $_SESSION['primeiro_nome'] = $nome;
                 // $obUsuarios->email = $_SESSION['email'];
                 // $obUsuarios->senha = $_SESSION['senha'];
                 // $obUsuarios->cadastrar();

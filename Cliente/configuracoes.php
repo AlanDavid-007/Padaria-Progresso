@@ -1,6 +1,5 @@
 <?php
 require __DIR__ . './Includes/header_pasta.php';
-?>
 //busca
 $busca = filter_input(INPUT_GET, 'busca');
 
