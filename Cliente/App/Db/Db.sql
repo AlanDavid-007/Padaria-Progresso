@@ -76,7 +76,7 @@ CREATE TABLE `usuario`(
     `primeiro_nome` varchar(45) DEFAULT NULL,
     `ultimo_nome` varchar(45) DEFAULT NULL,
     `senha` varchar(45) DEFAULT NULL,
-    `cidade` varchar(45) DEFAULT NULL,
+    `cidade` enum('montenegro','sebastiao','viamao','pareci') DEFAULT NULL,
     `telefone` bigint DEFAULT NULL,
     `endereco` varchar(45) DEFAULT NULL,
     `email` varchar(45) DEFAULT NULL,
