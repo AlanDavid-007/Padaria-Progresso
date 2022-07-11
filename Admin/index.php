@@ -45,7 +45,7 @@ $categorias = Categoria::getCategorias();
   </a>
         </div>
 
-    </div>
+    
 
 </div>
 

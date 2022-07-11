@@ -57,7 +57,7 @@ $usuarios = $obUsuarios::getUsuarios();
 
                 <!-- For large screens -->
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
-                    <div class="container mx-auto flex items-center justify-between">
+                    <div class="container mx-auto flex items-center ">
                         <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white" aria-label="the Crib.">
                            <a href="index.php"><img class="dark:hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo"></a>
                            <a href="index.php"><img class="dark:block hidden" src="./Assets/logo.png"style="width: 150px;" alt="logo"></a>
@@ -84,7 +84,7 @@ $usuarios = $obUsuarios::getUsuarios();
                                     style="text-decoration: none; font-size: 20px;">Entrar</a>
                             </li>
                         </ul>
-
+                        <!--
                         <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
                             <div class="hidden lg:flex items-center">
                                 <button onclick="toggleSearch()" aria-label="search items"
@@ -98,7 +98,8 @@ $usuarios = $obUsuarios::getUsuarios();
                                 </button>
                                 <input id="searchInput" type="text" placeholder="search"
                                     class="hidden text-sm dark:bg-gray-900 dark:placeholder-gray-300 text-gray-600 rounded ml-1 border border-transparent focus:outline-none focus:border-gray-400 px-1" />
-                            </div>
+                            </div> 
+
                             <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
                                 <button aria-label="go to cart"
                                     class="w-6 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
@@ -109,7 +110,7 @@ $usuarios = $obUsuarios::getUsuarios();
                                         src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg"
                                         alt="bag">
                                 </button>
-                            </div>
+                            </div>  -->
 
                             <div class="flex lg:hidden">
                                 <button aria-label="show options" onclick="mdOptionsToggle()"
