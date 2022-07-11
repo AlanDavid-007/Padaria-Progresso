@@ -22,7 +22,7 @@ class Usuario
      * nome
      * @var varchar
      */
-    public $nome;
+    public $primeiroNome;
 
     /** 
      * senha
@@ -30,17 +30,41 @@ class Usuario
      */
     public $senha;
 
-    /** 
-     * cargo
-     * @var varchar
-     */
-    public $cargo;
-
      /** 
      * email
      * @var varchar
      */
     public $email;
+
+         /** 
+     * ultimoNome
+     * @var varchar
+     */
+    public $ultimoNome;
+
+         /** 
+     * cidade
+     * @var varchar
+     */
+    public $cidade;
+    
+         /** 
+     * telefone
+     * @var varchar
+     */
+    public $telefone;
+
+         /** 
+     * cpf
+     * @var varchar
+     */
+    public $cpf;
+
+         /** 
+     * endereco
+     * @var varchar
+     */
+    public $endereco;
 
     /** 
      * Função para cadastrar a professor no banco

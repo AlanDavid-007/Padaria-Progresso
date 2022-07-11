@@ -35,8 +35,8 @@
                   <div class="col -sm-4 col -xs-9 ">
                   
                     <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white " aria-label="the Crib." style="width:250px;">
-                        <a href="index.php"><img class="dark:hidden" src="./Assets/logo.png"style="width: 250px;" alt="logo"></a>
-                            <a href="index.php"><img class="dark:block hidden" src="./Assets/logo.png"style="width: 250px;" alt="logo"></a>
+                        <a href="index.php"><img class="dark:hidden" src="../../Assets/logo.png"style="width: 250px;" alt="logo"></a>
+                            <a href="index.php"><img class="dark:block hidden" src="../../Assets/logo.png"style="width: 250px;" alt="logo"></a>
                         </h1>
                      
                     </div>

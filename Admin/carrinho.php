@@ -70,8 +70,15 @@ function exibeMensagem() {
         // echo "<pre>"; print_r($saldo); echo "</pre>"; exit; 
         ?>
       <?php } ?>
-
-
+       
+      <?php
+        if  (count($pedidos) == 0) {
+          $subtotal = 0;
+          $frete = 0;
+          $taxa = 0;
+          $total = $subtotal + $frete + $taxa;
+        }
+      ?>
       <a href="../Admin/produtos/categorias.php" class="flex font-semibold text-indigo-600 text-sm mt-10">
 
         <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
