@@ -122,7 +122,7 @@ class Usuario
 
         $objDatabase = new Database('usuario');
 
-        return ($objDatabase)->select('id = ' . $id)->fetchObject(self::class);
+        return ($objDatabase)->select('id = ' . $id )->fetchObject(self::class);
     }
 
     /**

@@ -72,6 +72,7 @@ class Database
         } catch (PDOException $e) {
             die('ERROR: ' . $e->getMessage());
         }
+        
     }
 
     
@@ -155,7 +156,6 @@ class Database
         //Monta query
         $query = 'SELECT ' . $fields . ' FROM ' . $this->table . ' ' . $where . ' ' . $order . ' ' . ' ' . $limit;
         // echo "<pre>"; print_r($query); echo "</pre>"; exit;
-
         return $this->executar($query);
     }
 
