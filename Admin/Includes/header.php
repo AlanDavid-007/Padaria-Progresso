@@ -10,7 +10,9 @@ include('protect.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../admin/Estilo/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://use.fontawesome.com/ea21c98100.js"></script>
     <script src="https://kit.fontawesome.com/c1e1266368.js" crossorigin="anonymous"></script>
@@ -24,7 +26,7 @@ include('protect.php');
         <div>
             <div class="relative">
                 <!-- For md screen size -->
-                <div id="md-searchbar" class="bg-white dark:bg-gray-900 hidden lg:hidden py-5 px-6 items-center justify-between">
+             <!-- <div id="md-searchbar" class="bg-white dark:bg-gray-900 hidden lg:hidden py-5 px-6 items-center justify-between">
                     <div class="flex items-center space-x-3 text-gray-800 dark:text-white">
                         <div>
                             <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
@@ -38,7 +40,8 @@ include('protect.php');
                             <img class="w-5 dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
                         </button>
                     </div>
-                </div>
+                </div> 
+             -->
                 <!-- For md screen size -->
 
                 <!-- For large screens -->
@@ -75,7 +78,7 @@ Configurações
                         </ul>
 
                         <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
-                            <div class="hidden lg:flex items-center">
+                           <!-- <div class="hidden lg:flex items-center">
                                 <button onclick="toggleSearch()" aria-label="search items" class="w-5 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
                                     <img class="transform rotate-90 dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
                                     <img class="transform rotate-90 dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2dark.svg" alt="search">
@@ -87,7 +90,7 @@ Configurações
                                     <img class=" dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg" alt="bag">
                                     <img class=" dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
                                 </button>
-                            </div>
+                            </div> -->
 
                             <div class="flex lg:hidden">
                                 <button aria-label="show options" onclick="mdOptionsToggle()" class="text-black dark:text-white dark:hover:text-gray-300 hidden md:flex focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
@@ -104,8 +107,10 @@ Configurações
                     </div>
                 </div>
                 <!-- For small screen -->
-                <div id="mobile-menu" class="hidden absolute dark:bg-gray-900 z-10 inset-0 md:hidden flex flex-col h-screen w-full">
-                    <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 p-4">
+                <div id="mobile-menu"
+                    class="hidden absolute dark:bg-gray-900 z-10 inset-0 md:hidden flex flex-col h-screen w-full">
+                    <div
+                        class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 p-4" style="background-color:aliceblue;">
                         <div class="flex items-center space-x-3">
                             <div>
                                 <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
@@ -119,7 +124,7 @@ Configurações
                             <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg6dark.svg" alt="cross">
                         </button>
                     </div>
-                    <div class="mt-6 p-4 ">
+                    <div class="mt-0 p-4" style="background-color:aliceblue;">
                         <ul class="flex flex-col space-y-6">
                             <li>
                                 <a href="index.php" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="font-size: 20px;">

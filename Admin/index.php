@@ -11,17 +11,44 @@ use \App\Entity\Categoria;
 $categorias = Categoria::getCategorias();
 
 ?>
-<!-- bg hero -->
-<div class="dark:bg-gray-900">
-    <div class="container mx-auto my-auto pl-5 md:py-12 lg:py-24">
-        <div class="relative mx-40">
-            <img src="./Assets/hero.png" alt="header" role="img" />
-            <div class="absolute z-10 top-0 left-0 ml-60 px-auto   flex flex-col sm:justify-start items-start">
-                <img src="./Assets/logo.png" alt="logo" role="img" />
-            </div>
-        </div>
+<!-- bg hero  -->
+<div class="carro">
+
+
+   <!-- <div class="dark:bg-gray-900 mx-auto" style="width: 50%;" > -->
+ 
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
+  
+    <ol class="carousel-indicators" >
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner mx-auto" >
+    <div class="carousel-item active">
+      <img class="d-block w-100 h-80" id="photo1"  src="../Admin/Assets/img3.jpg"  alt="First slide" >
     </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 h-80" id="photo2" src="../Admin/Assets/img1.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 h-80" id="photo3" src="../Admin/Assets/img2.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+        </div>
+
+    
+
 </div>
+
 <?php
 $mensagem = '';
 if (isset($_GET['status'])) {

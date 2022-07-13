@@ -14,6 +14,8 @@ $categorias = $obCategorias::getCategorias();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./estilo.css">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -83,8 +85,8 @@ $categorias = $obCategorias::getCategorias();
                             </li>
                         </ul>
 
-                        <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
-                            <div class="hidden lg:flex items-center">
+                       <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
+                           <!-- <div class="hidden lg:flex items-center">
                                 <button onclick="toggleSearch()" aria-label="search items"
                                     class="w-5 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
                                     <img class="transform rotate-90 dark:hidden"
@@ -107,7 +109,7 @@ $categorias = $obCategorias::getCategorias();
                                         src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg"
                                         alt="bag">
                                 </button>
-                            </div>
+                            </div> -->
 
                             <div class="flex lg:hidden">
                                 <button aria-label="show options" onclick="mdOptionsToggle()"
@@ -160,7 +162,7 @@ $categorias = $obCategorias::getCategorias();
                                 alt="cross">
                         </button>
                     </div>
-                    <div class="mt-6 p-4 ">
+                    <div class="mt-0 p-4 ">
                         <ul class="flex flex-col space-y-6">
                             <li>
                                 <a href="index.php"
@@ -244,14 +246,43 @@ $categorias = $obCategorias::getCategorias();
     </div>
     <!-- bg hero -->
     <div class="dark:bg-gray-900">
-        <div class="container mx-auto my-auto pl-5 md:py-12 lg:py-24">
-            <div class="relative mx-40">
-                <img src="./Assets/hero.png" alt="header" role="img" />
-                <div class="absolute z-10 top-0 left-0 ml-60 px-auto   flex flex-col sm:justify-start items-start">
-                    <img src="./Assets/logo.png" alt="logo" role="img" />
-                </div>
-            </div>
-        </div>
+    
+    
+<div class="carro">
+
+
+<!-- <div class="dark:bg-gray-900 mx-auto" style="width: 50%;" > -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
+
+        <ol class="carousel-indicators" >
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+<div class="carousel-inner mx-auto" >
+    <div class="carousel-item active">
+        <img class="d-block w-100 h-80" id="photo1"  src="./cliente/Assets/img3.jpg"  alt="First slide" >
+    </div>
+ <div class="carousel-item">
+        <img class="d-block w-100 h-80" id="photo2" src="./cliente/Assets/img1.jpg" alt="Second slide">
+ </div>
+ <div class="carousel-item">
+        <img class="d-block w-100 h-80" id="photo3" src="./cliente/Assets/img2.jpg" alt="Third slide">
+ </div>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+ <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+ <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+ <span class="carousel-control-next-icon" aria-hidden="true"></span>
+ <span class="sr-only">Next</span>
+</a>
+     </div>
+
+ </div>
+
+</div> 
     </div>
     <!-- products grid -->
 

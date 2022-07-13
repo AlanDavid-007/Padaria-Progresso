@@ -69,8 +69,8 @@
                             </li>
                         </ul>
 
-                        <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
-                            <div class="hidden lg:flex items-center">
+                       <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
+                          <!--  <div class="hidden lg:flex items-center">
                                 <button onclick="toggleSearch()" aria-label="search items" class="w-5 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
                                     <img class="transform rotate-90 dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
                                     <img class="transform rotate-90 dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2dark.svg" alt="search">
@@ -82,7 +82,7 @@
                                     <img class=" dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg" alt="bag">
                                     <img class=" dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
                                 </button>
-                            </div>
+                            </div> -->
 
                             <div class="flex lg:hidden">
                                 <button aria-label="show options" onclick="mdOptionsToggle()" class="text-black dark:text-white dark:hover:text-gray-300 hidden md:flex focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
@@ -95,7 +95,8 @@
                                     <img class=" dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5dark.svg" alt="toggler">
                                 </button>
                             </div>
-                        </div>
+                        </div> 
+                    
                     </div>
                 </div>
                 <!-- For small screen -->

@@ -1,5 +1,5 @@
- <!-- footer -->
- <div class="dark:bg-gray-900">
+  <!-- footer -->
+  <div class="dark:bg-gray-900">
         <div>
             <div class="relative">
                 <!-- For md screen size -->

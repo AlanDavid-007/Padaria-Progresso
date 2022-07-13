@@ -48,7 +48,7 @@
 
                 <!-- For large screens -->
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
-                    <div class="container mx-auto flex items-center justify-between">
+                    <div class="container mx-auto flex items-center ">
                         <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white" aria-label="the Crib.">
                            <a href="index.php"><img class="dark:hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo"></a>
                            <a href="index.php"><img class="dark:block hidden" src="./Assets/logo.png"style="width: 150px;" alt="logo"></a>
@@ -75,7 +75,7 @@
                                     style="text-decoration: none; font-size: 20px;">Entrar</a>
                             </li>
                         </ul>
-
+                        <!--
                         <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
                             <div class="hidden lg:flex items-center">
                                 <button onclick="toggleSearch()" aria-label="search items"
@@ -100,7 +100,7 @@
                                         src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg"
                                         alt="bag">
                                 </button>
-                            </div>
+                            </div> -->
 
                             <div class="flex lg:hidden">
                                 <button aria-label="show options" onclick="mdOptionsToggle()"

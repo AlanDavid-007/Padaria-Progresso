@@ -86,7 +86,7 @@ $usuarios = $obUsuarios::getUsuarios();
                         </ul>
 
                         <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
-                            <div class="hidden lg:flex items-center">
+                           <!-- <div class="hidden lg:flex items-center">
                                 <button onclick="toggleSearch()" aria-label="search items"
                                     class="w-5 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
                                     <img class="transform rotate-90 dark:hidden"
@@ -109,7 +109,7 @@ $usuarios = $obUsuarios::getUsuarios();
                                         src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg"
                                         alt="bag">
                                 </button>
-                            </div>
+                            </div> -->
 
                             <div class="flex lg:hidden">
                                 <button aria-label="show options" onclick="mdOptionsToggle()"
@@ -292,7 +292,7 @@ $usuarios = $obUsuarios::getUsuarios();
                         </div>
                     </div>
                     <div class="mt-8">
-                        <input type="submit" id="submit" name="submit" value="Crie sua conta" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full" />
+                        <input type="submit" id="submit" name="submit" value="Entrar" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full" />
                     </div>
                 </form>
             </div>

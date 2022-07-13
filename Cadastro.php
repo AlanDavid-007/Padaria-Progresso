@@ -50,12 +50,12 @@ $usuarios = $obUsuarios::getUsuarios();
 
                 <!-- For large screens -->
                 <div class="dark:bg-gray-800 bg-gray-50 px-6 py-9">
-                    <div class="container mx-auto flex items-center justify-between">
+                    <div class="container mx-auto flex items-center">
                         <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white" aria-label="the Crib.">
                             <a href="index.php"><img class="dark:hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo"></a>
                             <a href="index.php"><img class="dark:block hidden" src="./Assets/logo.png" style="width: 150px;" alt="logo"></a>
                         </h1>
-                        <ul class="hidden w-8/12 md:flex items-center justify-center space-x-6 font-serif">
+                        <ul class="hidden w-8/12 md:flex items-center  space-x-6 font-serif" style="margin-left: 140px;">
                             <li>
                                 <a href="index.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Início</a>
                             </li>
@@ -65,9 +65,9 @@ $usuarios = $obUsuarios::getUsuarios();
                             <li>
                                 <a href="sobre.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Sobre Nós</a>
                             </li>
-                            <li>
+                           <!-- <li>
                                 <a href="configuracoes.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Configurações</a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="Cadastro.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Cadastro</a>
                             </li>
@@ -78,7 +78,7 @@ $usuarios = $obUsuarios::getUsuarios();
                                 <a href="logout.php" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800" style="text-decoration: none; font-size: 20px;">Logout</a>
                             </li>
                         </ul>
-
+                        <!--
                         <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
                             <div class="hidden lg:flex items-center">
                                 <button onclick="toggleSearch()" aria-label="search items" class="w-5 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
@@ -92,9 +92,9 @@ $usuarios = $obUsuarios::getUsuarios();
                                     <img class=" dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg" alt="bag">
                                     <img class=" dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
                                 </button>
-                            </div>
+                            </div> -->
 
-                            <div class="flex lg:hidden">
+                            <div class="flex lg:hidden" style="margin-left: 160px;">
                                 <button aria-label="show options" onclick="mdOptionsToggle()" class="text-black dark:text-white dark:hover:text-gray-300 hidden md:flex focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
                                     <img class=" dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5.svg" alt="toggler">
                                     <img class=" dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5dark.svg" alt="toggler">
