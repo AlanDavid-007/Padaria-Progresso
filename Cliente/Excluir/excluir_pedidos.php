@@ -1,6 +1,6 @@
 <?php
 //adaptar
-require __DIR__ . '../../vendor/autoload.php';
+require __DIR__ . '../../../Admin/vendor/autoload.php';
 define ('HREF2','../carrinho.php');
 define('TITLE', 'Excluir pedido');
 define('TEXT', 'Pedido');

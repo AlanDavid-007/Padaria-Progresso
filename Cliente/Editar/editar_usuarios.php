@@ -1,6 +1,5 @@
 <?php
 require __DIR__ . '../../../Admin/vendor/autoload.php';
-include('../protect.php');
 ob_start();
 use \App\Entity\Usuario;
 $obUsuarios = new Usuario;
@@ -21,7 +20,7 @@ if (!$obUsuarios instanceof Usuario) {
 if (isset($_POST['primeiro_nome'], $_POST['ultimo_nome'], $_POST['senha'], $_POST['cidade'], 
 $_POST['telefone'], $_POST['endereco'], $_POST['email'],
          $_POST['cpf'])) { 
-    $obUsuarios->primeiro_nome = $_SESSION['primeiro_nome'];
+    $obUsuarios->primeiro_nome = $_POST['primeiro_nome'];
     $obUsuarios->ultimo_nome = $_POST['ultimo_nome'];
     $obUsuarios->senha = $_POST['senha'];
     $obUsuarios->cidade = $_POST['cidade'];

@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '../../vendor/autoload.php';
+require __DIR__ . '../../../Admin/vendor/autoload.php';
 
 // use \App\Entity\Cliente;
 // use \App\Entity\Pagamento;

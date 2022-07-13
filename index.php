@@ -1,9 +1,9 @@
 <?php 
 require __DIR__ . '../Admin/vendor/autoload.php';
 use \App\Entity\Categoria;
-
-$categorias = Categoria::getCategorias();
-
+$obCategorias = new Categoria;
+$categorias = $obCategorias::getCategorias();
+// echo "<pre>"; print_r($categorias); echo "</pre>"; exit; 
 ?>
 <!doctype html>
 <html lang="pt-br">

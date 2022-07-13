@@ -4,7 +4,6 @@ ob_start();
 
 use \App\Db\Database;
 use \App\Entity\Usuario;
-
 $obUsuarios = new Usuario;
 $usuarios = $obUsuarios::getUsuarios();
 ?>

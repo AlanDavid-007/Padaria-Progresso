@@ -1,6 +1,6 @@
 <?php 
 // echo $_SESSION['email'];
-require __DIR__ . '../vendor/autoload.php';
+require __DIR__ . '../../Admin/vendor/autoload.php';
 
 require __DIR__ . './Includes/header.php';
 
