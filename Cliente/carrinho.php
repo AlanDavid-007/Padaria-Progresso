@@ -87,6 +87,7 @@ function exibeMensagem() {
         Continue comprando
       </a>
     </div>
+    <!-- summary -->
     <div id="summary" class="w-1/4 px-8 py-10 bg-white">
       <h1 class="font-semibold text-2xl border-b pb-8">Resumo</h1>
       <div class="flex justify-between mt-10 mb-5">
@@ -122,6 +123,8 @@ function exibeMensagem() {
           </a>
         </div>
       </div>
+      <!-- end summary -->
+      
     </div>
   </div>
 </div>

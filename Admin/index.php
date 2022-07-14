@@ -82,7 +82,7 @@ if (isset($_GET['status'])) {
         <section class="d-flex justify-content-around flex flex-wrap">
             <?php foreach ($categorias as $key => $value) { ?>
                 <div class="card ml-4 mb-5 " style="width: 30rem;">
-                    <img src="Assets/bolos.png" class="card-img-top" alt="...">
+                    <img src="Assets/bolos.png" style="height: 50vh;" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $value->nome; ?></h5>
                         <div class="links d-flex justify-content-end">

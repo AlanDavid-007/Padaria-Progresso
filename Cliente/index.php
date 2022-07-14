@@ -50,7 +50,7 @@ $categorias = Categoria::getCategorias();
     
     </div> 
         </div>
-<section>
+        <section>
     <div class="mx-auto container px-6 xl:px-0 py-12 ">
         <p class="uppercase text-center font-serif text-xl text-light">Confira os nossos produtos!</p>
     </div>
@@ -60,10 +60,10 @@ $categorias = Categoria::getCategorias();
         <section class="d-flex justify-content-around flex flex-wrap">
             <?php foreach ($categorias as $key => $value) { ?>
                 <div class="card ml-4 mb-5 " style="width: 30rem;">
-                    <img src="Assets/bolos.png" class="card-img-top" alt="...">
+                    <img src="Assets/bolos.png" style="height: 50vh;" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $value->nome; ?></h5>
-                        <a href="<?php echo $value->link; ?>" class="btn btn-danger mt-3 d-flex justify-content-center">Ver Produtos</a>
+                        <a href="./login.php" class="btn btn-danger mt-3 d-flex justify-content-center">Ver Produtos</a>
 
                     </div>
                 </div>
