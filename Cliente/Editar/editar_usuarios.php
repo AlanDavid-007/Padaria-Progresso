@@ -5,13 +5,16 @@ use \App\Entity\Usuario;
 $obUsuarios = new Usuario;
 $usuarios = $obUsuarios::getUsuarios();
 //Validação do ID
-if (!isset($_GET['email'])) {
+if (!isset($_GET['id'])) {
     header('location: configuracoes.php?status=error');
     exit;
 }
+//Consulta Vaga
+$obUsuarios = $obUsuarios::getUsuario($_GET['id']);
+// echo "<pre>"; print_r($obCurso); echo "<pre>"; exit;
 
 
-//Valemailação da Vaga
+//Validação da Vaga
 if (!$obUsuarios instanceof Usuario) {
     header('location: configuracoes.php?status=error');
     exit;
@@ -31,7 +34,7 @@ $_POST['telefone'], $_POST['endereco'], $_POST['email'],
     // echo "<pre>"; print_r($obUsuarios->atualizar()['primeiro_nome']); echo "</pre>"; exit; 
     $obUsuarios->atualizar();
 
-    header('location: ../../../login.php');
+    header('location: ../../loginCliente.php');
     exit;
 } 
 

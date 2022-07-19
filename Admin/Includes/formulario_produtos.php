@@ -22,10 +22,10 @@
                 <label>Preço</label>
                 <input class="form-control money-mask" required name="preco" value="<?php echo isset($obProdutos->preco) ? $obProdutos->preco : ''; ?>">
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="formFile">Imagem</label>
                 <input class="form-control" type="file" name="arquivo" accept="image/*">
-            </div>
+            </div> -->
             <div class="form-group">
                 <label>Link para Detalhes</label>
                 <input type="text" required class="form-control " name="link" value="<?php echo isset($obProdutos->link) ? $obProdutos->link : ''; ?>">

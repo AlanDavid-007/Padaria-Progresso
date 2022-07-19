@@ -8,10 +8,10 @@
             <label>Nome</label>
             <input type="text" required class="form-control " name="nome" value="<?php echo isset($obCategoria->nome) ? $obCategoria->nome : ''; ?>">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="formFile">Imagem</label>
             <input class="form-control" type="file" name="arquivo" accept="image/*">
-        </div>
+        </div> -->
         <div class="form-group">
             <label>Link para Produtos</label>
             <input type="text" required class="form-control " name="link" value="<?php echo isset($obCategoria->link) ? $obCategoria->link : ''; ?>">

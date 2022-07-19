@@ -81,11 +81,11 @@ class Usuario
             'primeiro_nome' => $this->primeiro_nome,
             'ultimo_nome'=> $this->ultimo_nome,
             'senha' => $this->senha,
-            'email'=> $this->email,
             'cidade'=> $this->cidade,
             'telefone'=> $this->telefone,
-            'cpf'=> $this->cpf,
             'endereco'=> $this->endereco,
+            'email'=> $this->email,
+            'cpf'=> $this->cpf,
         ]);
         //echo "<pre>"; print_r($this); echo "</pre>"; exit;
 
@@ -150,11 +150,11 @@ class Usuario
             'primeiro_nome' => $this->primeiro_nome,
             'ultimo_nome'=> $this->ultimo_nome,
             'senha' => $this->senha,
-            'email'=> $this->email,
             'cidade'=> $this->cidade,
             'telefone'=> $this->telefone,
-            'cpf'=> $this->cpf,
             'endereco'=> $this->endereco,
+            'email'=> $this->email,
+            'cpf'=> $this->cpf,
         ]);
     }
 }

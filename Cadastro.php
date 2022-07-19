@@ -187,79 +187,77 @@ $usuarios = $obUsuarios::getUsuarios();
 
             <div class="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
                 <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Cadastre-se</p>
-                <form method="post" class="mt-2">
-                    <div>
-                        <label class="text-sm font-medium leading-none text-gray-800">
-                            Primeiro Nome
-                        </label>
-                        <input type="text" name="nome" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                <form class="mt-6 border-t border-gray-400 pt-4" method="post">
+                <div class='flex flex-wrap -mx-3 mb-6'>
+                    <div class='w-full md:w-full px-3 mb-6'>
+                        <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>E-mail</label>
+                        <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Digite seu email' name="email" value="<?php echo isset($obUsuarios->email) ? $obUsuarios->email : ''; ?>">
                     </div>
-                    <div>
-                        <label class="text-sm font-medium leading-none text-gray-800">
-                            Email
-                        </label>
-                        <input type="text" name="email" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                    <div class='w-full md:w-full px-3 mb-6 '>
+                        <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Senha</label>
+                        <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='password' placeholder='Digite sua senha' name="senha" value="<?php echo isset($obUsuarios->senha) ? $obUsuarios->senha : ''; ?>">
+                        <button class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md ">Troque sua senha</button>
                     </div>
-                    <div class="mt-6  w-full">
-                        <label class="text-sm font-medium leading-none text-gray-800">
-                            Senha
-                        </label>
-                        <div class="relative flex items-center justify-center">
-                            <input name="pass" type="password" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
-                            <div class="absolute right-0 mt-2 mr-3 cursor-pointer">
-                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg5.svg" alt="viewport">
+                    <div class='w-full md:w-full px-3 mb-6'>
+                        <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>Telefone</label>
+                        <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='number' placeholder='Digite seu telefone' name="telefone" value="<?php echo isset($obUsuarios->telefone) ? $obUsuarios->telefone : ''; ?>">
+                    </div>
+                    <div class='w-full md:w-full px-3 mb-6'>
+                        <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>Endereço</label>
+                        <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Digite seu endereço' name="endereco" value="<?php echo isset($obUsuarios->endereco) ? $obUsuarios->endereco : ''; ?>">
+                    </div>
+                    <div class='w-full md:w-full px-3 mb-6'>
+                        <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>CPF</label>
+                        <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='number' placeholder='Digite seu cpf' name="cpf" value="<?php echo isset($obUsuarios->cpf) ? $obUsuarios->cpf : ''; ?>">
+                    </div>
+                    <div class='w-full md:w-full px-3 mb-6'>
+                        <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Coloque sua Cidade</label>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <label>
+                                    <input type="radio" name="cidade" value="montenegro" <?php echo isset($obUsuarios->cidade) && $obUsuarios->cidade == 'montenegro' ? 'checked' : ''; ?>>
+                                    Montenegro
+                                </label>
+
+                                <label class="ml-3">
+                                    <input type="radio" name="cidade" value="sebastiao" <?php echo isset($obUsuarios->cidade) && $obUsuarios->cidade == 'sebastiao' ? 'checked' : ''; ?>>
+                                    São Sebastião do Sul
+                                </label>
+                                
+                                <label class="ml-3">
+                                    <input type="radio" name="cidade" value="viamao" <?php echo isset($obUsuarios->cidade) && $obUsuarios->cidade == 'viamao' ? 'checked' : ''; ?>>
+                                    Viamão
+                                </label>
+
+                                <label class="ml-3">
+                                    <input type="radio" name="cidade" value="pareci" <?php echo isset($obUsuarios->cidade) && $obUsuarios->cidade == 'pareci' ? 'checked' : ''; ?>>
+                                    Pareci
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="personal w-full border-t border-gray-400 pt-4 mt-3">
+                            <h2 class="text-2xl text-gray-900">Informações pessoais:</h2>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class='w-full md:w-1/2 px-3 mb-6'>
+                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Primeiro nome</label>
+                                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text' name="primeiro_nome" value="<?php echo isset($obUsuarios->primeiro_nome) ? $obUsuarios->primeiro_nome : ''; ?>" placeholder="Digite seu primeiro nome">
+                                </div>
+                                <div class='w-full md:w-1/2 px-3 mb-6'>
+                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Último nome</label>
+                                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text' name="ultimo_nome" value="<?php echo isset($obUsuarios->ultimo_nome) ? $obUsuarios->ultimo_nome : ''; ?>" placeholder="Digite seu último nome">
+                                </div>
+                                <div class="flex justify-end">
+                                    <button class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md mr-3" type="submit">Cadastrar-se</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-8">
-                        <input type="submit" id="submit" name="submit" value="Crie sua conta" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full" />
-                    </div>
-                </form>
+                </div>
+            </form>
             </div>
         </div>
     </div>
-    <!-- login -->
-    <?php
-    /* Declaração de Variáveis */
-    $nome = @$_REQUEST['nome'];
-    $email = @$_REQUEST['email'];
-    $pass = @$_REQUEST['pass'];
-    $submit = @$_REQUEST['submit'];
-    /* Testa se o botão submit foi ativado */
-    if ($submit) {
-
-        /* Se o campo usuário ou senha estiverem vazios geramos um alerta */
-        if ($email == "" || $pass == "" || $nome == "") {
-            echo "<script:alert('Por favor, preencha todos os campos!');</script>";
-        }
-        /* Caso o campo usuario e senha não 
-        *estejam vazios vamos testar se o usuário e a senha batem 
-    *iniciamos uma sessão e redirecionamos o usuário para o painel */ else {
-            if (isset($_POST['email'], $_POST['pass'], $_POST['nome'])) {
-                session_id();
-                session_start();
-                $_SESSION['email'] = $email;
-                $_SESSION['senha'] = $pass;
-                $_SESSION['primeiro_nome'] = $nome;
-                $_SESSION['id'] = session_id();
-                $obUsuarios->primeiro_nome = $_SESSION['primeiro_nome'];
-                $obUsuarios->ultimo_nome = 'mude';
-                $obUsuarios->email = $_SESSION['email'];
-                $obUsuarios->senha = $_SESSION['senha'];
-                $obUsuarios->cidade = 'montenegro';
-                $obUsuarios->telefone = 404;
-                $obUsuarios->endereco = 'mude';
-                $obUsuarios->email = $_POST['email'];
-                $obUsuarios->cpf = 404;
-                $obUsuarios->cadastrar();
-                header("Location: ../Padaria-Progresso/Cliente/index.php");
-            }
-            /* Se o usuario ou a senha não batem alertamos o usuario */ else {
-                echo "<script>alert('email e/ou senha inválido(s), Tente novamente!');</script>";
-            }
-        }
-    }
-    ?>
 
 
 

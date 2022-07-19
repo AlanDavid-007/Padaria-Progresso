@@ -14,7 +14,7 @@ use PDOStatement; //Classe de comunicação com métodos do banco de dados//
 
 class Database
 {
-    /** 
+ /** 
      * Host de conexão com o banco de dados
      * @var string
      */

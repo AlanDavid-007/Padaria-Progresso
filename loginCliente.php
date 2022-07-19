@@ -316,6 +316,7 @@ foreach ($usuarios as $key => $value) {
     /* Declaração das variáveis que possuem os usuarios e as senhas */
     $email1 = array_column($usuarios, 'email');
     $pass1 = array_column($usuarios, 'senha');
+    $nome1 = array_column($usuarios, 'primeiro_nome');
 //     if (in_array($email, $email1)) { 
 //    echo 'uhullll';
 //     }
@@ -329,8 +330,7 @@ foreach ($usuarios as $key => $value) {
         /* Caso o campo usuario e senha não 
         *estejam vazios vamos testar se o usuário e a senha batem 
     *iniciamos uma sessão e redirecionamos o usuário para o painel */ else {
-            if (in_array($email, $email1) && in_array($pass, $pass1)) {
-                session_id();
+            if (in_array($email, $email1) && in_array($pass, $pass1) && in_array($nome, $nome1)) {
                 session_start();
                 $_SESSION['id'] = session_id();
                 $_SESSION['email'] = $email;
