@@ -2,14 +2,30 @@
 require __DIR__ . '../../../Admin/vendor/autoload.php';
 use \App\Entity\Usuario;
 session_start();
-
- echo "<pre>"; print_r($_SESSION['email']); echo "<pre>"; exit;
-
 $obUsuarios = new Usuario;
-if(isset($_POST['submit_password']) && $_POST['key'] && $_POST['reset'])
-{
-  $email=$_POST['email'];
-  $pass=$_POST['password'];
-  $obUsuarios->
+//Validação do ID
+if (!isset($_GET['id'])) {
+    header('location: configuracoes.php?status=error');
+    exit;
 }
+//Consulta Vaga
+$obUsuarios = $obUsuarios::getUsuario($_GET['id']);
+// echo "<pre>"; print_r($obCurso); echo "<pre>"; exit;
+
+
+//Validação da Vaga
+if (!$obUsuarios instanceof Usuario) {
+    header('location: configuracoes.php?status=error');
+    exit;
+}
+//  echo "<pre>"; print_r($_SESSION['email']); echo "<pre>"; exit;
+
+if(isset($_POST['senha'])
+{
+  $obUsuarios->senha = $_POST['senha'];
+  $obUsuarios->atualizar();
+  header('location: ../../loginCliente.php');
+    exit;
+}
+ require __DIR__ . '../sendLink.php';
 ?>
