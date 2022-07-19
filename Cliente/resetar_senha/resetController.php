@@ -1,21 +1,33 @@
 <?php
-if($_GET['key'] && $_GET['reset'])
-{
-  $email=$_GET['key'];
-  $pass=$_GET['reset'];
-  mysql_connect('localhost','root','');
-  mysql_select_db('sample');
-  $select=mysql_query("select email,password from user where md5(email)='$email' and md5(password)='$pass'");
-  if(mysql_num_rows($select)==1)
-  {
-    ?>
-    <form method="post" action="submit_new.php">
-    <input type="hidden" name="email" value="<?php echo $email;?>">
-    <p>Enter New password</p>
-    <input type="password" name='password'>
-    <input type="submit" name="submit_password">
-    </form>
-    <?php
-  }
+require __DIR__ . '../../../Admin/vendor/autoload.php';
+use \App\Entity\Usuario;
+session_start();
+$obUsuarios = new Usuario;
+$usuarios = $obUsuarios::getUsuarios();
+$senha1 = array_column($usuarios, 'senha');
+
+//Validação do ID
+if (!isset($_GET['id'])) {
+    header('location: configuracoes.php?status=error');
+    exit;
 }
+//Consulta Vaga
+$obUsuarios = $obUsuarios::getUsuario($_GET['id']);
+// echo "<pre>"; print_r($obCurso); echo "<pre>"; exit;
+
+
+//Validação da Vaga
+if (!$obUsuarios instanceof Usuario) {
+    header('location: configuracoes.php?status=error');
+    exit;
+}
+$id = $_GET['id'];
+//  echo "<pre>"; print_r($_SESSION['email']); echo "<pre>"; exit;
+
+if(isset($_POST['senha'] && in_array($_POST['senha'], $senha1))
+{
+  header('location: ../../updatePass.php?id=<?php echo $id;?>');
+    exit;
+}
+ require __DIR__ . '../reset_pass.php';
 ?>
