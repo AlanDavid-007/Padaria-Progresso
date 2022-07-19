@@ -15,7 +15,7 @@ require __DIR__ . './Includes/header_pasta.php';
                     <div class='w-full md:w-full px-3 mb-6 '>
                         <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Senha</label>
                         <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500 mb-3' id='grid-text-1' type='password' placeholder='Digite sua senha' name="senha" value="<?php echo isset($obUsuarios->senha) ? $obUsuarios->senha : ''; ?>">
-                        <a type="button" href="../resetar_senha/reset_pass.php" class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md ">Troque sua senha</a>
+                        <a type="button" href="../resetar_senha/resetController.php?id=<?php echo $obUsuarios->id;?>" class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md ">Troque sua senha</a>
                     </div>
                     <div class='w-full md:w-full px-3 mb-6'>
                         <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>Telefone</label>
