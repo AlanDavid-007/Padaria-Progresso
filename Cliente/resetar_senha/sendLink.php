@@ -1,46 +1,27 @@
 <?php
-if(isset($_POST['submit_email']) && $_POST['email'])
-{
-  mysql_connect('localhost','root','');
-  mysql_select_db('sample');
-  $select=mysql_query("select email,password from user where email='$email'");
-  if(mysql_num_rows($select)==1)
-  {
-    while($row=mysql_fetch_array($select))
-    {
-      $email=md5($row['email']);
-      $pass=md5($row['password']);
-    }
-    $link="<a href='www.samplewebsite.com/reset.php?key=".$email."&reset=".$pass."'>Click To Reset password</a>";
-    require_once('phpmail/PHPMailerAutoload.php');
-    $mail = new PHPMailer();
-    $mail->CharSet =  "utf-8";
-    $mail->IsSMTP();
-    // enable SMTP authentication
-    $mail->SMTPAuth = true;                  
-    // GMAIL username
-    $mail->Username = "your_email_id@gmail.com";
-    // GMAIL password
-    $mail->Password = "your_gmail_password";
-    $mail->SMTPSecure = "ssl";  
-    // sets GMAIL as the SMTP server
-    $mail->Host = "smtp.gmail.com";
-    // set the SMTP port for the GMAIL server
-    $mail->Port = "465";
-    $mail->From='your_gmail_id@gmail.com';
-    $mail->FromName='your_name';
-    $mail->AddAddress('reciever_email_id', 'reciever_name');
-    $mail->Subject  =  'Reset Password';
-    $mail->IsHTML(true);
-    $mail->Body    = 'Click On This Link to Reset Password '.$pass.'';
-    if($mail->Send())
-    {
-      echo "Check Your Email and Click on the link sent to your email";
-    }
-    else
-    {
-      echo "Mail Error - >".$mail->ErrorInfo;
-    }
-  }	
-}
+require __DIR__ . '../../Includes/header_pasta.php';
+//  echo "<pre>"; print_r($produtos); echo "</pre>"; exit;
+?>
+
+    <div class="h-full bg-gradient-to-tl from-black-400 to-gray-900 w-full py-16 px-4">
+        <div class="flex flex-col items-center justify-center">
+
+            <div class="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
+                <form method="post">
+                <p tabindex="0" class="focus:outline-none text-2xl font-bold leading-6 text-gray-800">Digite sua nova senha abaixo</p>
+                <div class="mt-3">
+                        <label class="text-sm font-medium leading-none text-gray-800">
+                            Senha
+                        </label>
+                        <input type="text" name="senha" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                    </div>
+                    <div class="mt-8">
+                        <input type="submit" id="submit" name="submit_email" value="Entrar" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php
+require __DIR__ . '../../Includes/footer_pasta.php';
 ?>
