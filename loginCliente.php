@@ -292,11 +292,12 @@ $usuarios = $obUsuarios::getUsuarios();
                             Senha
                         </label>
                         <div class="relative flex items-center justify-center">
-                            <input name="pass" type="password" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
-                            <div class="absolute right-0 mt-2 mr-3 cursor-pointer">
+                            <input name="pass" id="pass" type="password" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                            <button class="absolute right-0 mt-2 mr-3 cursor-pointer"  onclick="viewPass()" type="button">
                                 <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg5.svg" alt="viewport">
-                            </div>
+                            </button>
                         </div>
+                        <a type="button" href="../resetar_senha/resetController.php?id=<?php echo $obUsuarios->id;?>" class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md mt-3">Troque sua senha</a>
                     </div>
                     <div class="mt-8">
                         <input type="submit" id="submit" name="submit" value="Entrar" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full" />
@@ -306,6 +307,16 @@ $usuarios = $obUsuarios::getUsuarios();
         </div>
     </div>
     <!-- login -->
+    <script> 
+    function viewPass() {
+        var pass = document.getElementById('pass');
+  if (pass.type === "password") {
+    pass.type = "text";
+  } else {
+    pass.type = "password";
+  }
+    }
+    </script>
     <?php
     /* Declaração de Variáveis */
     $nome = @$_REQUEST['nome'];
