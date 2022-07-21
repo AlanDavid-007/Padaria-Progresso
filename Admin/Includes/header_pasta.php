@@ -59,11 +59,7 @@
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
                                     style="text-decoration: none; font-size: 20px;">Início</a>
                             </li>
-                            <li>
-                                <a href="../carrinho.php"
-                                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
-                                    style="text-decoration: none; font-size: 20px;">Carrinho</a>
-                            </li>
+
                             <li>
                                 <a href="../sobre.php"
                                     class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800"
@@ -91,18 +87,13 @@ Configurações
                                 </button>
                                 <input id="searchInput" type="text" placeholder="search"
                                     class="hidden text-sm dark:bg-gray-900 dark:placeholder-gray-300 text-gray-600 rounded ml-1 border border-transparent focus:outline-none focus:border-gray-400 px-1" />
-                            </div>
+                            </div>-->
                             <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
-                                <button aria-label="go to cart"
-                                    class="w-6 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
-                                    <img class=" dark:hidden"
-                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg"
-                                        alt="bag">
-                                    <img class=" dark:block hidden"
-                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg"
-                                        alt="bag">
-                                </button>
-                            </div> -->
+                                <a href="../carrinho.php" aria-label="go to cart" class="w-6 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                    <img class=" dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg" alt="bag">
+                                    <img class=" dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
+                                </a>
+                            </div> 
 
                             <div class="flex lg:hidden">
                                 <button aria-label="show options" onclick="mdOptionsToggle()"

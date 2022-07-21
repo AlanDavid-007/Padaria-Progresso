@@ -46,7 +46,7 @@ require __DIR__ . '../../Includes/header_pasta.php';
     <?php } else { ?>
         <section class="d-flex justify-content-start flex flex-wrap">
             <?php foreach ($produtos as $key => $value) { ?>
-                <div class="card ml-4 mb-5" style="width: 28rem;">
+                <div class="card ml-4 mb-5" style="width: 25rem;">
                     <img src="../Assets/bolos.png" style="height: 50vh;" class="card-img-top" alt="...">
                     <div class="card-body ">
                         <h5 class="card-title"><?php echo $value['nome']; ?></h5>

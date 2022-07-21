@@ -7,8 +7,21 @@ require __DIR__ . './Includes/header.php';
 
 use \App\Entity\Categoria;
 
-$categorias = Categoria::getCategorias();
+//busca
+$busca = filter_input(INPUT_GET, 'nome');
 
+
+//condiçoes sql 
+$condicoes = [
+    strlen($busca) ? 'nome LIKE "%' . str_replace(' ', '%', $busca) . '%"' : null,
+];
+
+$condicoes = array_filter($condicoes);
+
+//clausula where
+$where = implode(' AND ', $condicoes);
+//  echo "<pre>"; print_r($_SESSION['nome']); echo "</pre>"; exit;
+$categorias = Categoria::getCategorias($where);
 ?>
 <!-- bg hero -->
 <div class="dark:bg-gray-900">
@@ -50,6 +63,19 @@ $categorias = Categoria::getCategorias();
     
     </div> 
         </div>
+        <section class="mt-5 ml-5">
+    <form method="get">
+        <div class="row alig-items-between">
+            <div class="col text-light">
+                <label>Filtrar</label>
+                <input type="text" name="nome" class="form-control" value="<?= $busca ?>">
+            </div>
+            <div class="col d-flex align-items-end">
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+            </div>
+        </div>
+    </form>
+</section>
         <section>
     <div class="mx-auto container px-6 xl:px-0 py-12 ">
         <p class="uppercase text-center font-serif text-xl text-light">Confira os nossos produtos!</p>
@@ -59,8 +85,8 @@ $categorias = Categoria::getCategorias();
     <?php } else { ?>
         <section class="d-flex justify-content-around flex flex-wrap">
             <?php foreach ($categorias as $key => $value) { ?>
-                <div class="card ml-4 mb-5 " style="width: 30rem;">
-                    <img src="Assets/bolos.png" style="height: 50vh;" class="card-img-top" alt="...">
+                <div class="card ml-4 mb-5 " style="width: 25rem;">
+                    <img src="Assets/bolos.png" style="height: 60vh;" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $value->nome; ?></h5>
                         <a href="./login.php" class="btn btn-danger mt-3 d-flex justify-content-center">Ver Produtos</a>

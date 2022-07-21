@@ -2,8 +2,21 @@
 require __DIR__ . '../Admin/vendor/autoload.php';
 use \App\Entity\Categoria;
 $obCategorias = new Categoria;
-$categorias = $obCategorias::getCategorias();
-// echo "<pre>"; print_r($categorias); echo "</pre>"; exit; 
+//busca
+$busca = filter_input(INPUT_GET, 'nome');
+
+
+//condiçoes sql 
+$condicoes = [
+    strlen($busca) ? 'nome LIKE "%' . str_replace(' ', '%', $busca) . '%"' : null,
+];
+
+$condicoes = array_filter($condicoes);
+
+//clausula where
+$where = implode(' AND ', $condicoes);
+//  echo "<pre>"; print_r($_SESSION['nome']); echo "</pre>"; exit;
+$categorias = Categoria::getCategorias($where);
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -285,7 +298,19 @@ $categorias = $obCategorias::getCategorias();
 </div> 
     </div>
     <!-- products grid -->
-
+    <section class="mt-5 ml-5">
+    <form method="get">
+        <div class="row alig-items-between">
+            <div class="col text-light">
+                <label>Filtrar</label>
+                <input type="text" name="nome" class="form-control" value="<?= $busca ?>">
+            </div>
+            <div class="col d-flex align-items-end">
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+            </div>
+        </div>
+    </form>
+</section>
     <section>
     <div class="mx-auto container px-6 xl:px-0 py-12 ">
         <p class="uppercase text-center font-serif text-xl text-light">Confira os nossos produtos!</p>

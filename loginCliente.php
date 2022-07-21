@@ -251,7 +251,7 @@ $usuarios = $obUsuarios::getUsuarios();
 
             <div class="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
                 <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Entre na sua conta</p>
-                <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Você não tem uma conta? <a href="./Cadastro.php" class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Clique aqui.</a></p>
+                <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Você não tem uma conta? <a href="./Cadastro_Usuarios.php" class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Clique aqui.</a></p>
                 <!-- <button aria-label="Continue com google" role="button" class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">
                     <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg2.svg" alt="google" class="ml-0.5">
                     <p class="text-base font-medium ml-4 text-gray-700">Continue com Google</p>
