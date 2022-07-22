@@ -25,18 +25,18 @@ function exibeMensagem() {
           Swal.fire( 'Deleted!', 'Your file has been deleted.', 'success' ) } })
                   }          </script> -->
 <!-- products cart -->
-<div class="container mx-auto mt-10" style="padding:0;">
-  <div class="flex shadow-md my-10">
-    <div class="w-3/4 bg-white px-10 py-10">
+<div class="container mx-auto" style="padding:5%;">
+  <div class="row" style="background: white;">
+    <div class="col-12 col-lg-6">
       <div class="flex justify-between border-b pb-8">
         <h1 class="font-semibold text-2xl">Carrinho</h1>
         <h2 class="font-semibold text-2xl"><?php echo count($pedidos); ?> Itens</h2>
       </div>
-      <div class="flex mt-10 mb-5">
-        <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Detalhes do produto</h3>
-        <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Quantity</h3>
-        <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Price</h3>
-        <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
+      <div class="flex mt-10 mb-5 row">
+        <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5 col-12 col-sm-3" style="padding:10px;">Detalhes do produto</h3>
+        <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/5 col-12 col-sm-3" style="padding:10px;">Quantity</h3>
+        <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/5 col-12 col-sm-3" style="padding:10px;">Price</h3>
+        <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/5col-12 col-sm-3" style="padding:10px;">Total</h3>
       </div>
       <?php foreach ($pedidos as $key => $value) { ?>
         <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
@@ -87,7 +87,7 @@ function exibeMensagem() {
         Continue comprando
       </a>
     </div>
-    <div id="summary" class="w-1/4 px-2 py-10 bg-white">
+    <div class="col-12 col-lg-6">
       <h1 class="font-semibold text-2xl border-b pb-8">Resumo</h1>
       <div class="flex justify-between mt-10 mb-5">
         <span class="font-semibold text-sm uppercase">Subtotal</span>

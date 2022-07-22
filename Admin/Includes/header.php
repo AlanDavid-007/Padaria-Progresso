@@ -20,7 +20,7 @@ include('protect.php');
     <title>Padaria Progresso</title>
 </head>
 
-<body style="background-color: #7B7782;">
+<body style="background-color: #0e1d34;">
     <!-- navbar -->
     <div class="dark:bg-gray-900">
         <div>
