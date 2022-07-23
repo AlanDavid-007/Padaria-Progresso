@@ -71,8 +71,8 @@ $produtos = Produto::getProdutos($where);
 //  echo "<pre>"; print_r($produtos); echo "</pre>"; exit;
 ?>
 <?php foreach ($produtos as $key => $value) { ?>
-  <section class="mt-5 ml-5">
-    <form method="get" class="d-none">
+  <section class="mb-5 ml-5 d-none">
+    <form method="get">
       <div class="row alig-items-between">
         <div class="col text-light">
           <label>Filtrar Produtos</label>
@@ -86,7 +86,7 @@ $produtos = Produto::getProdutos($where);
   </section>
   <section class="text-gray-700 body-font overflow-hidden bg-white">
     <div class="container px-5 py-24 mx-auto">
-      <div class="flex">
+      <div class="flex mb-3">
         <a href="../produtos/categorias.php"><button class="flex mr-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Voltar</button></a>
         </button>
       </div>
@@ -178,11 +178,11 @@ $produtos = Produto::getProdutos($where);
             <input class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10 d-none" type="number" id="price" name="price" value="<?php echo $preco; ?>">
             <span id="price-total" class="title-font font-medium text-2xl text-gray-900" price="<?php echo $preco; ?>"><?php echo $quantidade > 0 ? 'R$ <span id="get-price">' . $preco . '</span>' : $valor; ?></span>
             <button class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded" type="submit">Adicionar ao Carrinho</button>
-            <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+            <!-- <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
               <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                 <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
               </svg>
-            </button>
+            </button> -->
           </div>
           </form>
         </div>

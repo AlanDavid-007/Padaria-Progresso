@@ -1,5 +1,0 @@
-1 - Correção do bug de id na seção de usuários
-2 - Correção da listagem do usuário admin - Categoria //Pedidos
-3 - Remover tudo que não terá na aplicação do PY
-4 - Botão de login de admin - arrumar text - cadastrar para login
-5 - Tela de excluir carrinho

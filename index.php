@@ -81,7 +81,7 @@ $categorias = Categoria::getCategorias($where);
       <div class="row gy-4 d-flex justify-content-between">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h2 data-aos="fade-up">Tá com fome? Vem comprar!!!</h2>
-          <p data-aos="fade-up" data-aos-delay="100">Facere distinctio molestiae nisi fugit tenetur repellat non praesentium nesciunt optio quis sit odio nemo quisquam. eius quos reiciendis eum vel eum voluptatem eum maiores eaque id optio ullam occaecati odio est possimus vel reprehenderit</p>
+          <p data-aos="fade-up" data-aos-delay="100">Bateu aquela fominha no café da manhã, da tarde ou noite? Então vem pra Padaria Progresso, a melhor padaria da Região!!</p>
 
           <form method="get" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
             <input type="text" name="nome" class="form-control" placeholder="Digite algo..." value="<?= $busca ?>">

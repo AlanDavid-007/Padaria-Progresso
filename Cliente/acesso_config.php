@@ -28,6 +28,8 @@ $nome1 = array_column($usuarios, 'primeiro_nome');
 $acharUsuario = in_array($_SESSION['primeiro_nome'] , $nome1);
 ?>
  <!-- Bloco de Acesso -->
+ <body style="background-image: linear-gradient(to right top, #c9004f, #e8413f, #fa712b, #ffa00d, #fbcf00);">
+ 
 <?php foreach($usuarios as $key => $value) { ?> 
     <section class="mt-5 ml-5 d-none">
     <form method="get">

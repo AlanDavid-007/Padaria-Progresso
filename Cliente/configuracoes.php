@@ -2,10 +2,14 @@
 require __DIR__ . './Includes/header_pasta.php';
 //  echo "<pre>"; print_r($produtos); echo "</pre>"; exit;
 ?>
+<body style="background-image: linear-gradient(to right top, #c9004f, #e8413f, #fa712b, #ffa00d, #fbcf00);">
+ 
     <!-- component -->
-    <div class="container mx-auto">
-        <div class="inputs w-full max-w-2xl p-6 mx-auto">
-            <h2 class="text-2xl text-gray-900">Configurações de Conta</h2>
+    <div class="h-full bg-gradient-to-tl from-black-400 to-gray-900 w-full py-16 px-4">
+        <div class="flex flex-col items-center justify-center">
+
+            <div class="bg-white shadow rounded xl:w-1/3  md:w-1/2 w-full p-10 mt-16">
+                <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Configurações de Conta</p>
             <form class="mt-6 border-t border-gray-400 pt-4" method="post">
                 <div class='flex flex-wrap -mx-3 mb-6'>
                     <div class='w-full md:w-full px-3 mb-6'>
@@ -55,25 +59,32 @@ require __DIR__ . './Includes/header_pasta.php';
                             </div>
 
                         </div>
-                        <div class="personal w-full border-t border-gray-400 pt-4">
+                        <div class="personal w-full border-t border-gray-400 pt-4 mt-3">
                             <h2 class="text-2xl text-gray-900">Informações pessoais:</h2>
                             <div class="flex items-center justify-between mt-4">
-                                <div class='w-full md:w-1/2 px-3 mb-6'>
+                                <div class='w-full md:w-full px-3 mb-6'>
                                     <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Primeiro nome</label>
                                     <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text' name="primeiro_nome" value="<?php echo isset($obUsuarios->primeiro_nome) ? $obUsuarios->primeiro_nome : ''; ?>" placeholder="Digite seu primeiro nome">
                                 </div>
-                                <div class='w-full md:w-1/2 px-3 mb-6'>
+                                </div>
+                                <div class="flex items-center justify-between mt-4">
+                                <div class='w-full md:w-full px-3 mb-6'>
                                     <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Último nome</label>
                                     <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' type='text' name="ultimo_nome" value="<?php echo isset($obUsuarios->ultimo_nome) ? $obUsuarios->ultimo_nome : ''; ?>" placeholder="Digite seu último nome">
                                 </div>
-                                <div class="flex justify-end">
-                                    <button class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md mr-3" type="submit">Salvar mudanças</button>
+                                </div>
+                                <div class="flex items-center justify-between mt-4">
+                                <div class="w-full md:w-full px-3 mb-6">
+                                <input type="submit" id="submit" name="submit" value="Salvar" class="focus:ring-2 focus:ring-offset-2  text-sm font-semibold leading-none text-white focus:outline-none border rounded  py-4 w-full" style="background-image: linear-gradient(to right top, #c9004f, #e8413f, #fa712b, #ffa00d, #fbcf00);"/>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
+            </div>
+        </div>
+    </div>
         <?php
         require __DIR__ . './Includes/footer_pasta.php';
         ?>

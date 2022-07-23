@@ -24,21 +24,6 @@ $produtos = Produto::getProdutos($where);
 //  echo "<pre>"; print_r($produtos); echo "</pre>"; exit;
 require __DIR__ . '../../Includes/header_pasta.php';
 ?>
-<section class="mt-5 ml-5">
-    <form method="get">
-        <div class="row align-items-between" style=" margin-right: 0px;">
-            <div class="col text-light">
-                <label>Filtrar Produtos</label>
-                <input type="text" name="busca" class="form-control" value="<?= $busca ?>">
-            </div>
-            <div class="col d-flex align-items-end">
-                <button type="submit" class="btn btn-primary">Filtrar</button>
-
-                <a href="../Cadastro/cadastro_produtos.php" style="text-decoration:none; color:white;" class="btn btn-success ml-3">Cadastrar</a>
-            </div>
-        </div>
-    </form>
-</section>
 <?php
 
 $mensagem = '';
@@ -62,21 +47,49 @@ if (isset($_GET['status'])) {
         <?php echo $mensagem; ?>
     </section>
 <?php } ?>
-<section>
+<body>
+  <!-- bg hero -->
+  <section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row gy-4 d-flex justify-content-between">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h2 data-aos="fade-up">Tá com fome? Vem comprar!!!</h2>
+          <p data-aos="fade-up" data-aos-delay="100">Escolha abaixo algum de nossos diversos produtos!!!</p>
+          <form method="get" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+            <input type="text" name="nome" class="form-control" placeholder="Digite algo..." value="<?= $busca ?>">
+            <button type="submit" class="btn btn-danger text-light" style="background:#dc3545;">Buscar</button>
+          </form>
+
+        </div>
+
+        <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+          <img src="../Assets/hero5.png" style="width:50vh;" class="img-fluid mb-3 mb-lg-0" alt="">
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+  <section>
     <div class="mx-auto container px-6 xl:px-0 py-12 ">
-        <p class="uppercase text-center font-serif text-xl text-light">Confira os nossos Produtos!</p>
+    <div class="section-header">
+          <span>Veja nossos produtos!</span>
+          <h2>Veja nossos produtos!</h2>
+
+        </div>
     </div>
     <?php if (count($produtos) == 0) {  ?>
         <div class="alert alert-secondary mt-3 ml-5 mr-5">Nenhum Produto encontrado</div>
     <?php } else { ?>
-        <section class="d-flex justify-content-start flex flex-wrap">
-            <?php foreach ($produtos as $key => $value) { ?>
-                <div class="card ml-4 mb-5" style="width: 25rem;">
-                    <img src="../Assets/bolos.png" style="height: 50vh;" class="card-img-top" alt="...">
-                    <div class="card-body ">
-                        <h5 class="card-title"><?php echo $value['nome']; ?></h5>
-                        <p class="card-text">Preço: R$<?php echo $value['preco']; ?>,00</p>
-                        <div class="links d-flex justify-content-end">
+      <section id="service" class="services pt-0">
+      <div class="container" data-aos="fade-up">
+      <div class="row gy-4">
+        <?php foreach ($produtos as $key => $value) { ?>
+              <div class="col-lg-4 col-md-6 categories mb-5" data-aos="fade-up" data-aos-delay="100">
+                <div class="card">
+                  <div class="card-img">
+                    <img src="../Assets/bolos.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="links d-flex justify-content-end">
                         <a class="ml-1  " href="../Editar/editar_produtos.php?id=<?php echo $value['id']; ?>" style="margin-right:10px; margin-top: 3%;">
                             <button type="button" class="neon-bt3 "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" style="margin-left:43%;" viewBox="0 0 16 16">
                                     <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
@@ -104,15 +117,17 @@ if (isset($_GET['status'])) {
                                 <span></span></button>
                         </a>
                         </div>
-                        <a href="<?php echo $value['link']; ?>" class="btn btn-danger mt-3 d-flex justify-content-center">Ver Produto</a>
+                    <h3><?php echo $value['nome'];?></h3>
+                        <p class="card-text">Preço: R$<?php echo $value['preco']; ?>,00</p>
+                        <a href="<?php echo $value['link']; ?>" class="btn btn-danger text-light d-flex justify-content-center">Ver Produto</a>
                     </div>
                 </div>
 
 
             <?php } ?>
+            </div>
+          </div>
         </section>
-        </div>
-        </div>
     <?php } ?>
 </section>
 
